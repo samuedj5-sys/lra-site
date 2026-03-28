@@ -244,22 +244,24 @@ const Home = ({ go }) => {
   ];
 
   return (<>
-    {/* ══ HERO — full-width photo bg with text overlay (RAS style) ══ */}
-    <section style={{ background:C.goldGrad, position:"relative", overflow:"hidden", padding:"clamp(40px,8vw,72px) 24px 0" }}>
-      <div style={{ position:"absolute", inset:0, background:"url("+I.k1+") center/cover", opacity:0.15 }} />
-      <div style={{ maxWidth:800, margin:"0 auto", position:"relative", zIndex:2 }}>
-        <div style={{ fontFamily:Fh, fontSize:14, fontWeight:600, color:"rgba(255,255,255,0.7)", marginBottom:8, fontStyle:"italic" }}>Before & After School Programs</div>
-        <h1 style={{ fontFamily:Fh, fontSize:"clamp(32px,7vw,58px)", fontWeight:900, color:C.white, textTransform:"uppercase", lineHeight:1.05, margin:"0 0 20px" }}>
-          Boredom-Busting, Brain-Boosting <span style={{ background:C.navy, padding:"2px 12px", display:"inline", boxDecorationBreak:"clone", WebkitBoxDecorationBreak:"clone" }}>Fun!</span>
-        </h1>
-        <button onClick={() => go("join")} style={{ background:C.teal, color:C.white, border:"none", borderRadius:30, padding:"15px 36px", fontFamily:Fh, fontWeight:800, fontSize:16, textTransform:"uppercase", letterSpacing:1, cursor:"pointer", boxShadow:`0 4px 18px ${C.teal}55`, marginBottom:32 }}>Enroll Now</button>
-
-        {/* Photo collage — polaroid style */}
-        <div style={{ position:"relative", height:"clamp(250px,45vw,400px)", marginTop:16 }}>
-          <img src={I.j1} alt="" style={{ position:"absolute", left:"5%", bottom:0, width:"55%", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.2)" }} />
-          <Polaroid src={I.k2} rotate={-8} style={{ position:"absolute", left:0, top:0, width:"35%" }} />
-          <Polaroid src={I.j3} rotate={6} style={{ position:"absolute", right:0, top:"10%", width:"35%" }} />
-          <Polaroid src={I.j4} rotate={-4} style={{ position:"absolute", right:"5%", bottom:0, width:"30%" }} />
+    {/* ══ HERO — text left, photo collage right (RAS style) ══ */}
+    <section style={{ background:C.goldGrad, position:"relative", overflow:"hidden", padding:"clamp(48px,8vw,80px) 24px clamp(48px,8vw,80px)" }}>
+      <div style={{ position:"absolute", inset:0, background:"url("+I.k1+") center/cover", opacity:0.12 }} />
+      <div style={{ maxWidth:1100, margin:"0 auto", position:"relative", zIndex:2, display:"grid", gridTemplateColumns:"1fr 1fr", gap:"clamp(24px,4vw,48px)", alignItems:"center" }} className="hero-grid">
+        {/* Left: text */}
+        <div>
+          <div style={{ fontFamily:Fh, fontSize:14, fontWeight:600, color:"rgba(255,255,255,0.7)", marginBottom:12, fontStyle:"italic" }}>Before & After School Programs</div>
+          <h1 style={{ fontFamily:Fh, fontSize:"clamp(32px,6vw,56px)", fontWeight:900, color:C.white, textTransform:"uppercase", lineHeight:1.05, margin:"0 0 24px" }}>
+            Boredom-Busting, Brain-Boosting <span style={{ background:C.navy, padding:"2px 12px", display:"inline", boxDecorationBreak:"clone", WebkitBoxDecorationBreak:"clone" }}>Fun!</span>
+          </h1>
+          <button onClick={() => go("join")} style={{ background:C.teal, color:C.white, border:"none", borderRadius:30, padding:"16px 40px", fontFamily:Fh, fontWeight:800, fontSize:16, textTransform:"uppercase", letterSpacing:1, cursor:"pointer", boxShadow:`0 4px 18px ${C.teal}55` }}>Enroll Now</button>
+        </div>
+        {/* Right: photo collage */}
+        <div style={{ position:"relative", minHeight:"clamp(280px,40vw,420px)" }}>
+          <img src={I.j1} alt="" style={{ position:"absolute", left:"5%", top:"5%", width:"65%", borderRadius:16, boxShadow:"0 8px 32px rgba(0,0,0,0.25)", zIndex:2 }} />
+          <Polaroid src={I.k2} rotate={-8} style={{ position:"absolute", left:"-5%", bottom:"5%", width:"40%", zIndex:3 }} />
+          <Polaroid src={I.j3} rotate={6} style={{ position:"absolute", right:0, top:0, width:"40%", zIndex:1 }} />
+          <Polaroid src={I.j4} rotate={-4} style={{ position:"absolute", right:"2%", bottom:"8%", width:"35%", zIndex:3 }} />
         </div>
       </div>
     </section>
@@ -521,7 +523,7 @@ function App() {
       <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
       <style>{`
         *{box-sizing:border-box;margin:0;padding:0}body{margin:0}input,select,textarea,button{font-family:inherit}img{max-width:100%}
-        @media(max-width:768px){.dN{display:none!important}.mB{display:flex!important}}
+        @media(max-width:768px){.dN{display:none!important}.mB{display:flex!important}.hero-grid{grid-template-columns:1fr!important}}
         @media(min-width:769px){.mB{display:none!important}.mM{display:none!important}}
       `}</style>
       <Nav page={page} go={go} />
@@ -540,3 +542,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(
 </script>
 </body>
 </html>
+
