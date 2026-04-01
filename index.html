@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>*{box-sizing:border-box;margin:0;padding:0}body{margin:0}input,select,textarea,button{font-family:inherit}img{max-width:100%}
-@media(max-width:768px){.dN{display:none!important}.mB{display:flex!important}.hero-grid{grid-template-columns:1fr!important}}
+@media(max-width:768px){.dN{display:none!important}.mB{display:flex!important}.hero-grid{grid-template-columns:1fr!important}.actGrid{grid-template-columns:1fr!important}}
 @media(min-width:769px){.mB{display:none!important}.mM{display:none!important}}
 </style>
 </head>
@@ -85,7 +85,7 @@ const Polaroid = ({
     display: "block"
   }
 }));
-
+ 
 /* NAV - bigger logo, removed Blog, removed Enroll Now from sub-nav */
 const Nav = ({
   page,
@@ -157,9 +157,24 @@ const Nav = ({
     style: {
       color: "rgba(255,255,255,0.55)",
       textDecoration: "none",
-      fontWeight: 600
+      fontWeight: 600,
+      display: "flex",
+      alignItems: "center",
+      gap: 4
     }
-  }, "Instagram"), /*#__PURE__*/React.createElement("a", {
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "rgba(255,255,255,0.55)",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, /*#__PURE__*/React.createElement("rect", { x: "2", y: "2", width: "20", height: "20", rx: "5" }),
+  /*#__PURE__*/React.createElement("circle", { cx: "12", cy: "12", r: "5" }),
+  /*#__PURE__*/React.createElement("circle", { cx: "17.5", cy: "6.5", r: "1.5", fill: "rgba(255,255,255,0.55)", stroke: "none" })
+  )), /*#__PURE__*/React.createElement("a", {
     href: CFG.goFundMe,
     target: "_blank",
     rel: "noreferrer",
@@ -430,7 +445,7 @@ const Nav = ({
     }
   }, "Learn more \u2192")));
 };
-
+ 
 /* FOOTER - removed Blog, Register/Login, Discounts */
 const Foot = ({
   go
@@ -457,8 +472,7 @@ const Foot = ({
   alt: "LRA",
   style: {
     height: 100,
-    marginBottom: 14,
-    filter: "brightness(10)"
+    marginBottom: 14
   }
 }), /*#__PURE__*/React.createElement("p", {
   style: {
@@ -520,7 +534,7 @@ const Foot = ({
     letterSpacing: 1.5
   }
 }, "2026 Legacy Rise Academy | Decatur, GA | ", CFG.email)));
-
+ 
 /* FORM */
 const Form = ({
   blue
@@ -640,7 +654,7 @@ const Form = ({
     }
   }, "Submit"));
 };
-
+ 
 /* REVIEW FORM - parents submit reviews for approval */
 const ReviewForm = () => {
   const [sent, setSent] = useState(false);
@@ -828,7 +842,7 @@ const Hero = ({
     margin: "0 auto"
   }
 }, sub)));
-
+ 
 /* HOME */
 const Home = ({
   go
@@ -851,6 +865,21 @@ const Home = ({
   }, {
     name: "Fitness & Move",
     desc: "Soccer, karate, and active play build coordination, focus, and healthy habits through daily movement."
+  }, {
+    name: "Financial Literacy",
+    desc: "Age-appropriate money games and entrepreneurial projects introduce financial concepts through hands-on, real-world fun."
+  }, {
+    name: "Sign Language",
+    desc: "Scholars learn American Sign Language basics, building communication skills, empathy, and cultural awareness."
+  }, {
+    name: "Spanish",
+    desc: "Interactive language lessons introduce conversational Spanish through songs, games, and daily practice."
+  }, {
+    name: "Culinary Arts",
+    desc: "Hands-on cooking projects teach nutrition, math, and teamwork while scholars create healthy meals and snacks."
+  }, {
+    name: "Technology & Coding",
+    desc: "Scholars explore robotics, coding basics, and digital tools that prepare them for a technology-driven world."
   }];
   const tests = [{
     t: "My daughter truly enjoys being there each day. The staff are amazing, helpful, kind, and communicative. She specifically asks to stay longer!",
@@ -1138,9 +1167,10 @@ const Home = ({
       lineHeight: 1.1
     }
   }, "Daily Enrichment Unlocks Every Child's Potential"), /*#__PURE__*/React.createElement("div", {
+    className: "actGrid",
     style: {
-      display: "flex",
-      flexDirection: "column",
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
       gap: 8,
       marginBottom: 24
     }
@@ -1474,7 +1504,7 @@ const Home = ({
       cursor: "pointer"
     }
   }, "View Open Positions"))),
-
+ 
 /*#__PURE__*/React.createElement("section", {
     style: {
       background: C.white,
@@ -1614,7 +1644,7 @@ const Home = ({
     }
   }, "Learn More")));
 };
-
+ 
 /* OTHER PAGES - same as before */
 const About = ({
   go
@@ -2496,7 +2526,7 @@ function App() {
   }), /*#__PURE__*/React.createElement("link", {
     href: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap",
     rel: "stylesheet"
-  }), /*#__PURE__*/React.createElement("style", null, `*{box-sizing:border-box;margin:0;padding:0}body{margin:0}input,select,textarea,button{font-family:inherit}img{max-width:100%}@media(max-width:768px){.dN{display:none!important}.mB{display:flex!important}.hero-grid{grid-template-columns:1fr!important}}@media(min-width:769px){.mB{display:none!important}.mM{display:none!important}}`), /*#__PURE__*/React.createElement(Nav, {
+  }), /*#__PURE__*/React.createElement("style", null, `*{box-sizing:border-box;margin:0;padding:0}body{margin:0}input,select,textarea,button{font-family:inherit}img{max-width:100%}@media(max-width:768px){.dN{display:none!important}.mB{display:flex!important}.hero-grid{grid-template-columns:1fr!important}.actGrid{grid-template-columns:1fr!important}}@media(min-width:769px){.mB{display:none!important}.mM{display:none!important}}`), /*#__PURE__*/React.createElement(Nav, {
     page: page,
     go: go
   }), page === "home" && /*#__PURE__*/React.createElement(Home, {
@@ -2525,7 +2555,7 @@ function App() {
     go: go
   }));
 }
-
+ 
 ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
 </script>
 </body>
