@@ -17,22 +17,12 @@
 <div id="root"></div>
 <script>
 const React = window.React;
-const {
-  useState,
-  useEffect,
-  useRef
-} = React;
-
-/* ═══ LRA IMAGES ═══ */
+const { useState, useEffect, useRef } = React;
 const I = {
   logo: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/41d31403-a3eb-4004-a89c-e3adae5b55de/Legacy+Rise+Academy+Logo+%284%29.png",
   logoW: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/feb8ff01-0d3c-4ad4-8085-25e1ec839c93/Legacy+Rise+Academy+Logo+%283%29.png",
   k1: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/1760577375891-SRWL1Y2B8MKA7VTNMID3/unsplash-image-78Ae6N7rNvI.jpg",
   k2: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/1760577453564-G90P6U2NXQ5SJ6HESCIS/unsplash-image-dsf3lRHaUuA.jpg",
-  i1: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/b76af97d-1903-443f-938a-68ad43d4f51a/LRA+Infographic+%281%29.png",
-  p1: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/38d0db03-3929-45eb-9aec-35aa939b4793/3.png",
-  p2: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/b97818f1-5434-49d5-9750-9fed101bdd86/4.png",
-  p3: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/00107942-6502-4738-a173-4bdd3c5c4c63/6.png",
   pr1: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/1760580254411-ZC56QZCI63SSYFC94N78/unsplash-image-YTQQYQ6_g1s.jpg",
   pr2: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/8c6465ba-6992-4167-acb9-4cdc9220fecc/Tod2.jpg",
   pr3: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/44b9811e-67f3-448e-a479-0d00fde7a6c9/Tod1.png",
@@ -41,42 +31,35 @@ const I = {
   j1: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/b77c732d-8c9f-4494-a6fc-0f9f1ffe0f73/IMG_0298.jpeg",
   j2: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/1760587787392-18KXLYMXNAXUYWX3GZ84/unsplash-image-OVDtgUhUPBY.jpg",
   j3: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/9ca2869d-13ca-46da-a2bf-2d2f7bed813c/IMG_4040.jpeg",
-  j4: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/1760588142365-ASPAPFK6B5OTXA3T1Z1F/unsplash-image-sCQdogiTaZ8.jpg",
-  s1: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/7849001b-66d7-4e9f-901b-9a25e7d0cc39/Screenshot+2026-01-18+at+8.16.15%E2%80%AFPM.png",
-  s2: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/7a02358f-c8be-43b9-b0f9-3637cdff20e9/Screenshot+2026-01-18+at+8.16.20%E2%80%AFPM.png",
-  s3: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/3ed7b35a-8e47-4272-977d-5b979de6ed10/Screenshot+2026-01-18+at+8.37.45%E2%80%AFPM.png",
-  s4: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/d4e3626c-19a5-4f6f-abb5-49142b7f619c/Screenshot+2026-01-18+at+8.38.04%E2%80%AFPM.png"
+  j4: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/1760588142365-ASPAPFK6B5OTXA3T1Z1F/unsplash-image-sCQdogiTaZ8.jpg"
 };
-
-/* ═══ SITE COLORS ═══ */
 const C = {
-  gold: "#1652F0",
-  goldDk: "#0D3FBF",
-  goldLt: "#4A8CFF",
-  goldGrad: "linear-gradient(135deg,#1652F0 0%,#2B6BFF 50%,#4A8CFF 100%)",
-  accent: "#FF3B6B",
-  accentGrad: "linear-gradient(135deg,#FF3B6B,#FF6B8A)",
-  warmCta: "#FF1654",
-  navy: "#161638",
-  navyMid: "#1E1E4A",
+  blue: "#0f619d",
+  blueDk: "#0a4f80",
+  blueLt: "#e8f4fd",
+  blueGrad: "linear-gradient(135deg,#0f619d 0%,#1a7bc4 50%,#2589d4 100%)",
+  gold: "#ffc91f",
+  goldLt: "#fff8e0",
+  coral: "#ef5d3b",
+  coralGrad: "linear-gradient(135deg,#ef5d3b,#f3b63b)",
+  pink: "#fa4dc8",
+  green: "#3d976e",
+  navy: "#0a0a1a",
   white: "#FFFFFF",
-  offW: "#F5F6FA",
-  gray: "#5C6A7F",
-  grayLt: "#E2E6EE",
-  teal: "#00C9A7"
+  offW: "#faf9f6",
+  gray: "#4a5568",
+  grayLt: "#e2e0dc",
+  amber: "#f3b63b"
 };
 const Fh = "'Poppins','Segoe UI',sans-serif";
 const Fb = "'Nunito Sans','Segoe UI',sans-serif";
 const CFG = {
-  formspreeId: "xyzgkqvl",
+  formId: "xyzgkqvl",
   goFundMe: "https://gofund.me/8d480bdd1",
-  goFundMeEmbed: "https://www.gofundme.com/f/8d480bdd1/widget/large/",
   ig: "https://www.instagram.com/legacyriseacademyllc/",
   phone: "404-491-9284",
   email: "Info@LegacyRiseAcademy.com"
 };
-
-/* ═══ POLAROID PHOTO (tilted frame with shadow — from screenshots) ═══ */
 const Polaroid = ({
   src,
   rotate = 0,
@@ -86,9 +69,9 @@ const Polaroid = ({
     display: "inline-block",
     background: C.white,
     borderRadius: 6,
-    padding: "6px 6px 24px",
+    padding: "6px 6px 22px",
     boxShadow: "0 6px 24px rgba(0,0,0,0.18)",
-    transform: `rotate(${rotate}deg)`,
+    transform: "rotate(" + rotate + "deg)",
     ...s
   }
 }, /*#__PURE__*/React.createElement("img", {
@@ -103,283 +86,89 @@ const Polaroid = ({
   }
 }));
 
-/* ═══ TESTIMONIAL CAROUSEL (pink quotes, arrows, name — exact RAS) ═══ */
-const TestimonialCarousel = ({
-  quotes
-}) => {
-  const [idx, setIdx] = useState(0);
-  useEffect(() => {
-    const t = setInterval(() => setIdx(i => (i + 1) % quotes.length), 6000);
-    return () => clearInterval(t);
-  }, [quotes.length]);
-  const q = quotes[idx];
-  return /*#__PURE__*/React.createElement("section", {
-    style: {
-      background: C.white,
-      padding: "64px 24px",
-      textAlign: "center"
-    }
-  }, /*#__PURE__*/React.createElement("h2", {
-    style: {
-      fontFamily: Fh,
-      fontSize: "clamp(26px,5vw,40px)",
-      fontWeight: 900,
-      color: C.navy,
-      textTransform: "uppercase",
-      marginBottom: 32
-    }
-  }, "Parents Love", /*#__PURE__*/React.createElement("br", null), "Legacy Rise Academy"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      maxWidth: 650,
-      margin: "0 auto",
-      position: "relative",
-      minHeight: 200
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: "Georgia,serif",
-      fontSize: 72,
-      color: C.accent,
-      lineHeight: 1,
-      marginBottom: 8
-    }
-  }, "\""), /*#__PURE__*/React.createElement("p", {
-    style: {
-      fontFamily: Fb,
-      fontSize: 17,
-      color: C.navy,
-      lineHeight: 1.7,
-      marginBottom: 20
-    }
-  }, q.text), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontFamily: Fh,
-      fontSize: 13,
-      fontWeight: 700,
-      color: C.navy,
-      letterSpacing: 2,
-      textTransform: "uppercase"
-    }
-  }, "\u2014 ", q.name), [["left", () => setIdx((idx - 1 + quotes.length) % quotes.length), "‹"], ["right", () => setIdx((idx + 1) % quotes.length), "›"]].map(([side, fn, ch]) => /*#__PURE__*/React.createElement("button", {
-    key: side,
-    onClick: fn,
-    style: {
-      position: "absolute",
-      top: "50%",
-      [side]: -20,
-      transform: "translateY(-50%)",
-      width: 40,
-      height: 40,
-      borderRadius: "50%",
-      border: `2px solid ${C.grayLt}`,
-      background: "transparent",
-      color: C.gray,
-      fontSize: 20,
-      cursor: "pointer",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center"
-    }
-  }, ch))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: "flex",
-      justifyContent: "center",
-      gap: 8,
-      marginTop: 24
-    }
-  }, quotes.map((_, i) => /*#__PURE__*/React.createElement("button", {
-    key: i,
-    onClick: () => setIdx(i),
-    style: {
-      width: i === idx ? 12 : 8,
-      height: i === idx ? 12 : 8,
-      borderRadius: "50%",
-      background: i === idx ? C.gold : "#D0D5DD",
-      border: "none",
-      cursor: "pointer",
-      transition: "0.3s"
-    }
-  }))));
-};
-
-/* ═══ IMPACT CARD (blue icon header + white body — from screenshots) ═══ */
-const ImpactCard = ({
-  icon,
-  title,
-  desc
-}) => /*#__PURE__*/React.createElement("div", {
-  style: {
-    borderRadius: 20,
-    overflow: "hidden",
-    boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
-    border: `1px solid ${C.grayLt}`
-  }
-}, /*#__PURE__*/React.createElement("div", {
-  style: {
-    background: C.goldLt,
-    padding: "28px 20px",
-    textAlign: "center",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-}, /*#__PURE__*/React.createElement("div", {
-  style: {
-    width: 56,
-    height: 56,
-    borderRadius: "50%",
-    background: "rgba(255,255,255,0.5)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-}, icon)), /*#__PURE__*/React.createElement("div", {
-  style: {
-    background: C.white,
-    padding: "24px 20px"
-  }
-}, /*#__PURE__*/React.createElement("h3", {
-  style: {
-    fontFamily: Fh,
-    fontSize: 18,
-    fontWeight: 900,
-    color: C.navy,
-    textTransform: "uppercase",
-    marginBottom: 10
-  }
-}, title), /*#__PURE__*/React.createElement("p", {
-  style: {
-    fontFamily: Fb,
-    fontSize: 14,
-    color: C.gray,
-    lineHeight: 1.65,
-    margin: 0
-  }
-}, desc)));
-
-/* ═══ STAT CARD (big % with circle bg — from screenshots) ═══ */
-const StatCard = ({
-  num,
-  desc
-}) => /*#__PURE__*/React.createElement("div", {
-  style: {
-    background: C.white,
-    borderRadius: 20,
-    padding: "36px 24px",
-    textAlign: "center",
-    boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
-    border: `1px solid ${C.grayLt}`
-  }
-}, /*#__PURE__*/React.createElement("div", {
-  style: {
-    width: 120,
-    height: 120,
-    borderRadius: "50%",
-    background: C.offW,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    margin: "0 auto 16px"
-  }
-}, /*#__PURE__*/React.createElement("span", {
-  style: {
-    fontFamily: Fh,
-    fontSize: 48,
-    fontWeight: 900,
-    color: C.navy
-  }
-}, num)), /*#__PURE__*/React.createElement("p", {
-  style: {
-    fontFamily: Fb,
-    fontSize: 14,
-    color: C.gray,
-    lineHeight: 1.5
-  }
-}, desc));
-
-/* ═══ ACTIVITY TABS (blue pills — from screenshots) ═══ */
-const ActivityTabs = ({
-  acts,
-  active,
-  setActive
-}) => /*#__PURE__*/React.createElement("div", {
-  style: {
-    display: "flex",
-    flexDirection: "column",
-    gap: 8
-  }
-}, acts.map((a, i) => /*#__PURE__*/React.createElement("button", {
-  key: i,
-  onClick: () => setActive(i),
-  style: {
-    background: active === i ? C.white : C.goldLt,
-    color: active === i ? C.navy : C.white,
-    border: "none",
-    borderRadius: 14,
-    padding: "16px 20px",
-    fontFamily: Fh,
-    fontWeight: 800,
-    fontSize: 15,
-    textTransform: "uppercase",
-    cursor: "pointer",
-    transition: "0.25s",
-    textAlign: "center",
-    boxShadow: active === i ? "0 4px 16px rgba(0,0,0,0.1)" : "none"
-  }
-}, a.name)));
-
-/* ═══ NAV — exact RAS layout ═══ */
+/* NAV - bigger logo, removed Blog, removed Enroll Now from sub-nav */
 const Nav = ({
   page,
   go
 }) => {
-  const [open, setOpen] = useState(false);
+  const [mOpen, setMOpen] = useState(false);
+  const [dd, setDd] = useState(null);
   const [sc, setSc] = useState(false);
   useEffect(() => {
     const fn = () => setSc(window.scrollY > 30);
     window.addEventListener("scroll", fn);
     return () => window.removeEventListener("scroll", fn);
   }, []);
-  const links = [{
+  const navItems = [{
     id: "home",
-    l: "Before & After School"
-  }, {
-    id: "programs",
-    l: "Programs"
+    label: "Home"
   }, {
     id: "about",
-    l: "About"
+    label: "About"
   }, {
-    id: "partners",
-    l: "Partner With Us"
+    id: "programs",
+    label: "Our Programs",
+    children: [{
+      id: "afterschool",
+      label: "After School Programs"
+    }, {
+      id: "summer",
+      label: "Summer Programs"
+    }, {
+      id: "enrichment",
+      label: "Enrichment & Special"
+    }]
   }, {
-    id: "join",
-    l: "Join Our Team"
+    id: "locations",
+    label: "Locations"
+  }, {
+    id: "partnerships",
+    label: "For Schools"
+  }, {
+    id: "careers",
+    label: "Careers"
+  }, {
+    id: "faq",
+    label: "Resources"
   }];
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React.createElement("header", null, /*#__PURE__*/React.createElement("div", {
     style: {
       background: C.navy,
       display: "flex",
-      justifyContent: "flex-end",
+      justifyContent: "space-between",
       alignItems: "center",
-      gap: 20,
       padding: "8px 24px",
-      fontSize: 13,
-      fontFamily: Fh,
-      fontWeight: 600
+      fontSize: 12,
+      fontFamily: Fh
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: "rgba(255,255,255,0.55)"
+    }
+  }, CFG.phone, " | ", CFG.email), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 16
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: `mailto:${CFG.email}`,
+    href: CFG.ig,
+    target: "_blank",
+    rel: "noreferrer",
     style: {
-      color: "rgba(255,255,255,0.75)",
-      textDecoration: "none"
+      color: "rgba(255,255,255,0.55)",
+      textDecoration: "none",
+      fontWeight: 600
     }
-  }, "Support"), /*#__PURE__*/React.createElement("span", {
+  }, "Instagram"), /*#__PURE__*/React.createElement("a", {
+    href: CFG.goFundMe,
+    target: "_blank",
+    rel: "noreferrer",
     style: {
-      color: "rgba(255,255,255,0.75)",
-      cursor: "pointer"
+      color: C.gold,
+      textDecoration: "none",
+      fontWeight: 700
     }
-  }, "Login")), /*#__PURE__*/React.createElement("nav", {
+  }, "Donate"))), /*#__PURE__*/React.createElement("nav", {
     style: {
       position: "sticky",
       top: 0,
@@ -395,8 +184,8 @@ const Nav = ({
       display: "flex",
       alignItems: "center",
       justifyContent: "space-between",
-      height: 64,
-      padding: "0 20px"
+      height: 115,
+      padding: "0 24px"
     }
   }, /*#__PURE__*/React.createElement("div", {
     onClick: () => go("home"),
@@ -407,63 +196,97 @@ const Nav = ({
     src: I.logo,
     alt: "LRA",
     style: {
-      height: 44,
-      objectFit: "contain"
+      height: 140
     }
   })), /*#__PURE__*/React.createElement("div", {
     className: "dN",
     style: {
       display: "flex",
       alignItems: "center",
-      gap: 16
+      gap: 2
     }
-  }, /*#__PURE__*/React.createElement("span", {
+  }, navItems.map(item => /*#__PURE__*/React.createElement("div", {
+    key: item.id,
     style: {
+      position: "relative"
+    },
+    onMouseEnter: () => item.children && setDd(item.id),
+    onMouseLeave: () => setDd(null)
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => {
+      if (!item.children) go(item.id);
+    },
+    style: {
+      background: "transparent",
+      color: C.navy,
+      border: "none",
+      padding: "10px 14px",
       fontFamily: Fh,
+      fontWeight: 600,
       fontSize: 13,
+      cursor: "pointer",
+      display: "flex",
+      alignItems: "center",
+      gap: 4
+    }
+  }, item.label, item.children && /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 9,
+      opacity: 0.4
+    }
+  }, "\u25BC")), item.children && dd === item.id && /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      top: "100%",
+      left: 0,
+      background: C.white,
+      borderRadius: 12,
+      boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
+      padding: "8px 0",
+      minWidth: 240,
+      zIndex: 100,
+      border: "1px solid " + C.grayLt
+    }
+  }, item.children.map(ch => /*#__PURE__*/React.createElement("button", {
+    key: ch.id,
+    onClick: () => {
+      go(ch.id);
+      setDd(null);
+    },
+    style: {
+      display: "block",
+      width: "100%",
+      background: "transparent",
+      border: "none",
+      padding: "12px 20px",
+      fontFamily: Fb,
+      fontSize: 14,
       fontWeight: 600,
       color: C.navy,
-      cursor: "pointer"
-    }
-  }, "Blog"), /*#__PURE__*/React.createElement("span", {
+      cursor: "pointer",
+      textAlign: "left"
+    },
+    onMouseEnter: e => e.target.style.background = C.blueLt,
+    onMouseLeave: e => e.target.style.background = "transparent"
+  }, ch.label))))), /*#__PURE__*/React.createElement("button", {
+    onClick: () => go("enroll"),
     style: {
-      fontFamily: Fh,
-      fontSize: 13,
-      fontWeight: 600,
-      color: C.accent,
-      cursor: "pointer"
-    }
-  }, /*#__PURE__*/React.createElement("svg", {
-    width: "14",
-    height: "14",
-    viewBox: "0 0 24 24",
-    fill: "#FF3B6B",
-    style: {
-      display: "inline",
-      verticalAlign: "middle",
-      marginRight: 4
-    }
-  }, /*#__PURE__*/React.createElement("path", {
-    d: "M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
-  })), " Heart of LRA"), /*#__PURE__*/React.createElement("button", {
-    onClick: () => go("join"),
-    style: {
-      background: C.accentGrad,
+      background: C.coral,
       color: C.white,
       border: "none",
       borderRadius: 30,
-      padding: "12px 28px",
+      padding: "11px 26px",
       fontFamily: Fh,
       fontWeight: 800,
-      fontSize: 14,
+      fontSize: 13,
       textTransform: "uppercase",
       letterSpacing: 0.5,
       cursor: "pointer",
-      boxShadow: `0 4px 16px ${C.accent}44`
+      marginLeft: 8
     }
-  }, "Enroll Now")), /*#__PURE__*/React.createElement("button", {
+  }, "Get Started")), /*#__PURE__*/React.createElement("button", {
     className: "mB",
-    onClick: () => setOpen(!open),
+    onClick: () => setMOpen(!mOpen),
     style: {
       display: "none",
       background: "none",
@@ -473,7 +296,8 @@ const Nav = ({
       flexDirection: "column",
       gap: 5
     }
-  }, /*#__PURE__*/React.createElement("span", {
+  }, [0, 1, 2].map(i => /*#__PURE__*/React.createElement("span", {
+    key: i,
     style: {
       display: "block",
       width: 26,
@@ -481,189 +305,223 @@ const Nav = ({
       background: C.navy,
       borderRadius: 2,
       transition: "0.3s",
-      transform: open ? "rotate(45deg) translate(5px,5px)" : "none"
+      transform: i === 0 && mOpen ? "rotate(45deg) translate(5px,5px)" : i === 2 && mOpen ? "rotate(-45deg) translate(5px,-5px)" : "none",
+      opacity: i === 1 && mOpen ? 0 : 1
     }
-  }), /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: "block",
-      width: 26,
-      height: 3,
-      background: C.navy,
-      borderRadius: 2,
-      transition: "0.3s",
-      opacity: open ? 0 : 1
-    }
-  }), /*#__PURE__*/React.createElement("span", {
-    style: {
-      display: "block",
-      width: 26,
-      height: 3,
-      background: C.navy,
-      borderRadius: 2,
-      transition: "0.3s",
-      transform: open ? "rotate(-45deg) translate(5px,-5px)" : "none"
-    }
-  }))), open && /*#__PURE__*/React.createElement("div", {
+  })))), mOpen && /*#__PURE__*/React.createElement("div", {
     className: "mM",
     style: {
-      padding: "8px 20px 20px",
-      borderTop: `1px solid ${C.grayLt}`
+      padding: "8px 20px 24px",
+      borderTop: "1px solid " + C.grayLt
     }
-  }, links.map(l => /*#__PURE__*/React.createElement("button", {
-    key: l.id,
+  }, navItems.map(item => /*#__PURE__*/React.createElement("div", {
+    key: item.id
+  }, /*#__PURE__*/React.createElement("button", {
     onClick: () => {
-      go(l.id);
-      setOpen(false);
+      if (!item.children) {
+        go(item.id);
+        setMOpen(false);
+      } else {
+        setDd(dd === item.id ? null : item.id);
+      }
     },
     style: {
-      display: "block",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
       width: "100%",
       background: "transparent",
       color: C.navy,
       border: "none",
-      borderBottom: `1px solid ${C.grayLt}`,
+      borderBottom: "1px solid " + C.grayLt,
       padding: "16px 0",
       fontFamily: Fh,
-      fontWeight: 600,
+      fontWeight: 700,
       fontSize: 16,
       cursor: "pointer",
       textAlign: "left"
     }
-  }, l.l)))), /*#__PURE__*/React.createElement("div", {
+  }, item.label, item.children && /*#__PURE__*/React.createElement("span", {
     style: {
-      background: C.gold,
-      padding: "10px 16px",
+      fontSize: 12,
+      transform: dd === item.id ? "rotate(180deg)" : "none",
+      transition: "0.2s"
+    }
+  }, "\u25BC")), item.children && dd === item.id && item.children.map(ch => /*#__PURE__*/React.createElement("button", {
+    key: ch.id,
+    onClick: () => {
+      go(ch.id);
+      setMOpen(false);
+      setDd(null);
+    },
+    style: {
+      display: "block",
+      width: "100%",
+      background: C.blueLt,
+      border: "none",
+      padding: "14px 20px",
+      fontFamily: Fb,
+      fontSize: 15,
+      fontWeight: 600,
+      color: C.blue,
+      cursor: "pointer",
+      textAlign: "left",
+      borderBottom: "1px solid " + C.grayLt
+    }
+  }, ch.label)))), /*#__PURE__*/React.createElement("button", {
+    onClick: () => {
+      go("enroll");
+      setMOpen(false);
+    },
+    style: {
+      display: "block",
+      width: "100%",
+      background: C.coral,
+      color: C.white,
+      border: "none",
+      borderRadius: 12,
+      padding: "16px",
+      fontFamily: Fh,
+      fontWeight: 800,
+      fontSize: 16,
+      textTransform: "uppercase",
+      cursor: "pointer",
+      marginTop: 12
+    }
+  }, "Get Started"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: C.goldLt,
+      padding: "12px 24px",
       display: "flex",
       justifyContent: "center",
       gap: 12,
       flexWrap: "wrap",
-      alignItems: "center"
+      alignItems: "center",
+      borderBottom: "2px solid " + C.gold
     }
-  }, ["Home", "Daily Schedule", "Impact", "Discounts", "Testimonials"].map((t, i) => /*#__PURE__*/React.createElement("span", {
-    key: i,
+  }, /*#__PURE__*/React.createElement("span", {
     style: {
-      fontFamily: Fh,
-      fontSize: 12,
-      fontWeight: 700,
-      color: C.white,
-      cursor: "pointer",
-      letterSpacing: 0.3
-    }
-  }, t)), /*#__PURE__*/React.createElement("button", {
-    onClick: () => go("join"),
-    style: {
-      background: C.teal,
-      color: C.white,
-      border: "none",
+      background: C.gold,
       borderRadius: 20,
-      padding: "7px 18px",
+      padding: "3px 12px",
       fontFamily: Fh,
-      fontWeight: 800,
       fontSize: 11,
+      fontWeight: 800,
+      color: C.navy,
       textTransform: "uppercase",
+      letterSpacing: 1
+    }
+  }, "Announcement"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 14,
+      fontWeight: 600,
+      color: C.navy
+    }
+  }, "Now Enrolling for After School Programs in Decatur, GA!"), /*#__PURE__*/React.createElement("span", {
+    onClick: () => go("enroll"),
+    style: {
+      fontFamily: Fh,
+      fontSize: 13,
+      fontWeight: 700,
+      color: C.blue,
+      textDecoration: "underline",
       cursor: "pointer"
     }
-  }, "Enroll Now")));
+  }, "Learn more \u2192")));
 };
 
-/* ═══ FOOTER — exact dark navy from screenshots ═══ */
+/* FOOTER - removed Blog, Register/Login, Discounts */
 const Foot = ({
   go
-}) => {
-  const sections = [{
-    title: "Our Programs",
-    links: [["programs", "After School Collective"], ["programs", "Summer Enrichment"], ["programs", "Early Learning Center"], ["programs", "Break Camps"], ["about", "FAQs"]]
-  }, {
-    title: "Partner With Us",
-    links: [["partners", "Our Approach"], ["partners", "How to Get Started"], ["partners", "Success Stories"]]
-  }, {
-    title: "Careers",
-    links: [["about", "Benefits & Perks"], ["about", "Job Openings"]]
-  }, {
-    title: "About Us",
-    links: [["about", "Our Values"], ["about", "Meet Our Team"], ["about", "Privacy Policy"]]
-  }, {
-    title: "Get in Touch",
-    links: [["join", "Find Your School"], ["join", "Register/Login"], ["join", "Financial Assistance"], ["join", "Discounts"]]
-  }];
-  return /*#__PURE__*/React.createElement("footer", {
-    style: {
-      background: C.navy,
-      color: C.white,
-      padding: "64px 24px 32px"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      maxWidth: 1100,
-      margin: "0 auto"
-    }
-  }, sections.map((s, i) => /*#__PURE__*/React.createElement("div", {
-    key: i,
-    style: {
-      marginBottom: 32
-    }
-  }, /*#__PURE__*/React.createElement("h4", {
-    style: {
-      fontFamily: Fh,
-      fontSize: 18,
-      fontWeight: 800,
-      color: C.white,
-      marginBottom: 12
-    }
-  }, s.title), s.links.map(([pg, label], j) => /*#__PURE__*/React.createElement("div", {
-    key: j,
-    onClick: () => go(pg),
-    style: {
-      fontFamily: Fb,
-      fontSize: 14,
-      color: "rgba(255,255,255,0.6)",
-      marginBottom: 8,
-      cursor: "pointer"
-    }
-  }, label)))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginTop: 20
-    }
-  }, /*#__PURE__*/React.createElement("h3", {
-    style: {
-      fontFamily: Fh,
-      fontSize: 28,
-      fontWeight: 900,
-      color: C.white,
-      marginBottom: 8
-    }
-  }, CFG.phone), /*#__PURE__*/React.createElement("div", {
-    onClick: () => go("join"),
-    style: {
-      fontFamily: Fb,
-      fontSize: 14,
-      color: "rgba(255,255,255,0.6)",
-      cursor: "pointer",
-      marginBottom: 8
-    }
-  }, "Contact Us"), /*#__PURE__*/React.createElement("p", {
-    style: {
-      fontFamily: Fb,
-      fontSize: 13,
-      color: "rgba(255,255,255,0.4)",
-      marginTop: 16
-    }
-  }, "For media inquiries: ", CFG.email)), /*#__PURE__*/React.createElement("div", {
-    style: {
-      borderTop: "1px solid rgba(255,255,255,0.08)",
-      marginTop: 32,
-      paddingTop: 20,
-      fontFamily: Fb,
-      fontSize: 11,
-      color: "rgba(255,255,255,0.25)",
-      textTransform: "uppercase",
-      letterSpacing: 1.5,
-      textAlign: "center"
-    }
-  }, "\xA92026 Legacy Rise Academy \u2022 Decatur, GA")));
-};
+}) => /*#__PURE__*/React.createElement("footer", {
+  style: {
+    background: C.navy,
+    color: C.white,
+    padding: "64px 24px 32px"
+  }
+}, /*#__PURE__*/React.createElement("div", {
+  style: {
+    maxWidth: 1100,
+    margin: "0 auto"
+  }
+}, /*#__PURE__*/React.createElement("div", {
+  style: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit,minmax(180px,1fr))",
+    gap: 32,
+    marginBottom: 48
+  }
+}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("img", {
+  src: I.logo,
+  alt: "LRA",
+  style: {
+    height: 100,
+    marginBottom: 14,
+    filter: "brightness(10)"
+  }
+}), /*#__PURE__*/React.createElement("p", {
+  style: {
+    fontFamily: Fb,
+    fontSize: 13,
+    color: "rgba(255,255,255,0.5)",
+    lineHeight: 1.7
+  }
+}, "Building Bright Futures Through Learning & Legacy"), /*#__PURE__*/React.createElement("div", {
+  style: {
+    marginTop: 12
+  }
+}, /*#__PURE__*/React.createElement("span", {
+  style: {
+    fontFamily: Fh,
+    fontSize: 22,
+    fontWeight: 800
+  }
+}, CFG.phone))), [{
+  t: "Our Programs",
+  lk: [["afterschool", "After School"], ["summer", "Summer"], ["enrichment", "Enrichment"]]
+}, {
+  t: "About",
+  lk: [["about", "Our Story"], ["partnerships", "For Schools"], ["careers", "Careers / Join Our Team"]]
+}, {
+  t: "Get in Touch",
+  lk: [["enroll", "Get Started"], ["faq", "Contact Us"], ["locations", "Locations"]]
+}].map((col, i) => /*#__PURE__*/React.createElement("div", {
+  key: i
+}, /*#__PURE__*/React.createElement("h4", {
+  style: {
+    fontFamily: Fh,
+    fontSize: 14,
+    fontWeight: 800,
+    color: C.gold,
+    textTransform: "uppercase",
+    letterSpacing: 1,
+    marginBottom: 14
+  }
+}, col.t), col.lk.map(([id, lb], j) => /*#__PURE__*/React.createElement("div", {
+  key: j,
+  onClick: () => go(id),
+  style: {
+    fontFamily: Fb,
+    fontSize: 13,
+    color: "rgba(255,255,255,0.55)",
+    marginBottom: 10,
+    cursor: "pointer"
+  }
+}, lb))))), /*#__PURE__*/React.createElement("div", {
+  style: {
+    borderTop: "1px solid rgba(255,255,255,0.08)",
+    paddingTop: 20,
+    textAlign: "center",
+    fontFamily: Fb,
+    fontSize: 11,
+    color: "rgba(255,255,255,0.25)",
+    textTransform: "uppercase",
+    letterSpacing: 1.5
+  }
+}, "2026 Legacy Rise Academy | Decatur, GA | ", CFG.email)));
 
-/* ═══ FORM (Formspree) ═══ */
+/* FORM */
 const Form = ({
   blue
 }) => {
@@ -673,7 +531,7 @@ const Form = ({
     e.preventDefault();
     setLd(true);
     try {
-      await fetch(`https://formspree.io/f/${CFG.formspreeId}`, {
+      await fetch("https://formspree.io/f/" + CFG.formId, {
         method: "POST",
         body: new FormData(e.target),
         headers: {
@@ -681,9 +539,7 @@ const Form = ({
         }
       });
       setSent(true);
-    } catch {
-      alert("Error");
-    }
+    } catch {}
     setLd(false);
   };
   if (sent) return /*#__PURE__*/React.createElement("div", {
@@ -693,27 +549,11 @@ const Form = ({
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      fontSize: 32,
-      color: blue ? C.white : C.gold,
-      fontWeight: 800,
-      marginBottom: 8
-    }
-  }, /*#__PURE__*/React.createElement("svg", {
-    width: "32",
-    height: "32",
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "3",
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
-  }, /*#__PURE__*/React.createElement("polyline", {
-    points: "20,6 9,17 4,12"
-  }))), /*#__PURE__*/React.createElement("h3", {
-    style: {
       fontFamily: Fh,
-      fontSize: 20,
-      color: blue ? C.white : C.navy
+      fontSize: 24,
+      fontWeight: 800,
+      color: blue ? C.white : C.green,
+      marginBottom: 8
     }
   }, "Thank You!"), /*#__PURE__*/React.createElement("p", {
     style: {
@@ -721,7 +561,18 @@ const Form = ({
       fontSize: 14,
       color: blue ? "rgba(255,255,255,0.8)" : C.gray
     }
-  }, "We'll reach out within 24\u201348 hours."));
+  }, "We will reach out within 24-48 hours."));
+  const inp = {
+    width: "100%",
+    padding: "14px 16px",
+    border: "none",
+    borderRadius: 10,
+    fontFamily: Fb,
+    fontSize: 15,
+    outline: "none",
+    boxSizing: "border-box",
+    background: blue ? "rgba(255,255,255,0.95)" : "#f0f2f5"
+  };
   const lbl = {
     fontFamily: Fh,
     fontSize: 13,
@@ -730,166 +581,304 @@ const Form = ({
     display: "block",
     marginBottom: 6
   };
-  const inp = {
-    width: "100%",
-    padding: "14px 16px",
-    border: "none",
-    borderRadius: 8,
-    fontFamily: Fb,
-    fontSize: 15,
-    outline: "none",
-    boxSizing: "border-box",
-    background: blue ? "rgba(255,255,255,0.95)" : "#F0F2F5"
-  };
   return /*#__PURE__*/React.createElement("form", {
     onSubmit: sub
-  }, /*#__PURE__*/React.createElement("div", {
+  }, [["First Name", true], ["Last Name", true], ["Email", true], ["Phone", false]].map(([l, req], i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
     style: {
       marginBottom: 14
     }
   }, /*#__PURE__*/React.createElement("label", {
     style: lbl
-  }, "First Name ", /*#__PURE__*/React.createElement("span", {
+  }, l, " ", req && /*#__PURE__*/React.createElement("span", {
     style: {
-      color: C.accent
+      color: C.coral
     }
   }, "*")), /*#__PURE__*/React.createElement("input", {
-    name: "first_name",
-    required: true,
+    name: l.toLowerCase().replace(/ /g, "_"),
+    type: l === "Email" ? "email" : "text",
+    required: req,
     style: inp
-  })), /*#__PURE__*/React.createElement("div", {
+  }))), /*#__PURE__*/React.createElement("div", {
     style: {
       marginBottom: 14
     }
   }, /*#__PURE__*/React.createElement("label", {
     style: lbl
-  }, "Last Name ", /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: C.accent
-    }
-  }, "*")), /*#__PURE__*/React.createElement("input", {
-    name: "last_name",
-    required: true,
+  }, "I am a..."), /*#__PURE__*/React.createElement("select", {
+    name: "role",
     style: inp
-  })), /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginBottom: 14
-    }
-  }, /*#__PURE__*/React.createElement("label", {
-    style: lbl
-  }, "Email Address ", /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: C.accent
-    }
-  }, "*")), /*#__PURE__*/React.createElement("input", {
-    name: "email",
-    type: "email",
-    required: true,
-    style: inp
-  })), /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginBottom: 14
-    }
-  }, /*#__PURE__*/React.createElement("label", {
-    style: lbl
-  }, "Phone Number (optional)"), /*#__PURE__*/React.createElement("input", {
-    name: "phone",
-    style: inp
-  })), /*#__PURE__*/React.createElement("div", {
-    style: {
-      marginBottom: 14
-    }
-  }, /*#__PURE__*/React.createElement("label", {
-    style: lbl
-  }, "State ", /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: C.accent
-    }
-  }, "*")), /*#__PURE__*/React.createElement("select", {
-    name: "state",
-    required: true,
-    style: {
-      ...inp,
-      background: blue ? "rgba(255,255,255,0.95)" : "#F0F2F5"
-    }
-  }, /*#__PURE__*/React.createElement("option", {
-    value: ""
-  }, "Please select..."), /*#__PURE__*/React.createElement("option", null, "Georgia"), /*#__PURE__*/React.createElement("option", null, "Other"))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("option", null, "Parent / Guardian"), /*#__PURE__*/React.createElement("option", null, "School Administrator"), /*#__PURE__*/React.createElement("option", null, "Community Partner"), /*#__PURE__*/React.createElement("option", null, "Other"))), /*#__PURE__*/React.createElement("div", {
     style: {
       marginBottom: 20
     }
   }, /*#__PURE__*/React.createElement("label", {
     style: lbl
-  }, "District"), /*#__PURE__*/React.createElement("input", {
-    name: "district",
-    style: inp
+  }, "Message"), /*#__PURE__*/React.createElement("textarea", {
+    name: "message",
+    rows: 3,
+    style: {
+      ...inp,
+      resize: "vertical"
+    }
   })), /*#__PURE__*/React.createElement("button", {
     type: "submit",
     disabled: ld,
     style: {
-      background: C.accentGrad,
+      background: C.coralGrad,
       color: C.white,
       border: "none",
       borderRadius: 30,
-      padding: "16px 48px",
+      padding: "15px 40px",
       fontFamily: Fh,
       fontWeight: 800,
       fontSize: 16,
       textTransform: "uppercase",
-      letterSpacing: 1,
+      letterSpacing: 0.5,
       cursor: "pointer",
-      opacity: ld ? 0.7 : 1,
-      boxShadow: `0 4px 18px ${C.accent}44`
+      opacity: ld ? 0.7 : 1
     }
   }, "Submit"));
 };
 
-/* ═══════════════════════════════════════════
-   HOME PAGE
-   ═══════════════════════════════════════════ */
+/* REVIEW FORM - parents submit reviews for approval */
+const ReviewForm = () => {
+  const [sent, setSent] = useState(false);
+  const [ld, setLd] = useState(false);
+  const sub = async e => {
+    e.preventDefault();
+    setLd(true);
+    try {
+      await fetch("https://formspree.io/f/" + CFG.formId, {
+        method: "POST",
+        body: new FormData(e.target),
+        headers: {
+          Accept: "application/json"
+        }
+      });
+      setSent(true);
+    } catch {}
+    setLd(false);
+  };
+  if (sent) return /*#__PURE__*/React.createElement("div", {
+    style: {
+      textAlign: "center",
+      padding: 32,
+      background: C.greenLt || C.blueLt,
+      borderRadius: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: Fh,
+      fontSize: 20,
+      fontWeight: 800,
+      color: C.green,
+      marginBottom: 8
+    }
+  }, "Thank You for Your Review!"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 14,
+      color: C.gray
+    }
+  }, "Your review has been submitted and will be posted once approved by our team."));
+  const inp = {
+    width: "100%",
+    padding: "12px 14px",
+    border: "none",
+    borderRadius: 10,
+    fontFamily: Fb,
+    fontSize: 14,
+    outline: "none",
+    boxSizing: "border-box",
+    background: "#f0f2f5"
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: C.offW,
+      borderRadius: 20,
+      padding: "clamp(24px,4vw,36px)",
+      border: "1px solid " + C.grayLt,
+      maxWidth: 500,
+      margin: "0 auto"
+    }
+  }, /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontFamily: Fh,
+      fontSize: 18,
+      fontWeight: 800,
+      color: C.navy,
+      textTransform: "uppercase",
+      marginBottom: 6,
+      textAlign: "center"
+    }
+  }, "Share Your Experience"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 13,
+      color: C.gray,
+      textAlign: "center",
+      marginBottom: 20
+    }
+  }, "Your review will be posted after approval by our team."), /*#__PURE__*/React.createElement("form", {
+    onSubmit: sub
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginBottom: 12
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    name: "reviewer_name",
+    placeholder: "Your Name",
+    required: true,
+    style: inp
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginBottom: 12
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    name: "reviewer_location",
+    placeholder: "City, State",
+    style: inp
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginBottom: 12
+    }
+  }, /*#__PURE__*/React.createElement("select", {
+    name: "rating",
+    style: inp
+  }, /*#__PURE__*/React.createElement("option", null, "5 Stars"), /*#__PURE__*/React.createElement("option", null, "4 Stars"), /*#__PURE__*/React.createElement("option", null, "3 Stars"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginBottom: 16
+    }
+  }, /*#__PURE__*/React.createElement("textarea", {
+    name: "review_text",
+    placeholder: "Tell us about your experience with Legacy Rise Academy...",
+    rows: 4,
+    required: true,
+    style: {
+      ...inp,
+      resize: "vertical"
+    }
+  })), /*#__PURE__*/React.createElement("input", {
+    type: "hidden",
+    name: "_subject",
+    value: "New Parent Review - Needs Approval"
+  }), /*#__PURE__*/React.createElement("button", {
+    type: "submit",
+    disabled: ld,
+    style: {
+      width: "100%",
+      background: C.blue,
+      color: C.white,
+      border: "none",
+      borderRadius: 12,
+      padding: "14px",
+      fontFamily: Fh,
+      fontWeight: 800,
+      fontSize: 14,
+      textTransform: "uppercase",
+      cursor: "pointer",
+      opacity: ld ? 0.7 : 1
+    }
+  }, "Submit Review")));
+};
+const Hero = ({
+  title,
+  sub,
+  img
+}) => /*#__PURE__*/React.createElement("section", {
+  style: {
+    background: C.blueGrad,
+    position: "relative",
+    overflow: "hidden",
+    padding: "clamp(48px,8vw,80px) 24px"
+  }
+}, img && /*#__PURE__*/React.createElement("div", {
+  style: {
+    position: "absolute",
+    inset: 0,
+    background: "url(" + img + ") center/cover",
+    opacity: 0.1
+  }
+}), /*#__PURE__*/React.createElement("div", {
+  style: {
+    maxWidth: 800,
+    margin: "0 auto",
+    position: "relative",
+    zIndex: 2,
+    textAlign: "center"
+  }
+}, /*#__PURE__*/React.createElement("h1", {
+  style: {
+    fontFamily: Fh,
+    fontSize: "clamp(30px,6vw,50px)",
+    fontWeight: 900,
+    color: C.white,
+    textTransform: "uppercase",
+    lineHeight: 1.1,
+    marginBottom: 14
+  }
+}, title), sub && /*#__PURE__*/React.createElement("p", {
+  style: {
+    fontFamily: Fb,
+    fontSize: 17,
+    color: "rgba(255,255,255,0.8)",
+    lineHeight: 1.7,
+    maxWidth: 600,
+    margin: "0 auto"
+  }
+}, sub)));
+
+/* HOME */
 const Home = ({
   go
 }) => {
+  const [actIdx, setActIdx] = useState(0);
+  const [tI, setTI] = useState(0);
+  const [showReview, setShowReview] = useState(false);
   const acts = [{
     name: "STEM Discovery",
-    desc: "In STEM Discovery, scholars use creativity and teamwork to build, experiment, and solve challenges through hands-on science and engineering activities."
+    desc: "Scholars use creativity and teamwork to build, experiment, and solve challenges through hands-on science and engineering."
   }, {
     name: "Literacy & Story",
-    desc: "Through interactive read-alouds and creative writing, scholars build confidence, vocabulary, and a lifelong love of reading and storytelling."
+    desc: "Through interactive read-alouds and creative writing, scholars build confidence and a lifelong love of reading."
   }, {
     name: "Arts & Design",
-    desc: "From visual arts to digital design, scholars explore their imagination through painting, building, and collaborative creative projects."
+    desc: "From visual arts to digital design, scholars explore imagination through painting, building, and collaborative projects."
   }, {
     name: "Leadership Lab",
-    desc: "Through etiquette training, team challenges, and mentorship moments, scholars develop responsibility, kindness, and self-confidence."
+    desc: "Etiquette training, team challenges, and mentorship develop responsibility, kindness, and self-confidence."
   }, {
     name: "Fitness & Move",
-    desc: "Soccer, karate, and active play build coordination, focus, and healthy habits through energetic daily movement activities."
+    desc: "Soccer, karate, and active play build coordination, focus, and healthy habits through daily movement."
   }];
-  const [actIdx, setActIdx] = useState(0);
-  const testimonials = [{
-    text: "Legacy Rise Academy is my daughter's favorite part of the day. It's the right mix of physical activity, learning, and building friendships. My daughter has specifically asked to stay longer — this is coming from a kid that used to always want to be picked up early!",
-    name: "LRA Parent, Decatur, GA"
+  const tests = [{
+    t: "My daughter truly enjoys being there each day. The staff are amazing, helpful, kind, and communicative. She specifically asks to stay longer!",
+    n: "LRA Parent, Decatur, GA"
   }, {
-    text: "I love everyone who is there for my children. They are understanding, caring, and I trust them. I love that my kids are happy and enjoying their time after school.",
-    name: "LRA Parent, Decatur, GA"
+    t: "I love everyone who is there for my children. They are understanding and caring. My kids are happy and enjoying their time after school.",
+    n: "LRA Parent, Decatur, GA"
   }, {
-    text: "They make a point to have engaging activities to keep the children motivated and involved. I also enjoy the convenience of having the program at my child's school.",
-    name: "LRA Parent, Decatur, GA"
+    t: "They make a point to have engaging activities to keep the children motivated and involved.",
+    n: "LRA Parent, Decatur, GA"
   }];
+  useEffect(() => {
+    const t = setInterval(() => setTI(i => (i + 1) % tests.length), 6000);
+    return () => clearInterval(t);
+  }, []);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("section", {
     style: {
-      background: C.goldGrad,
+      background: C.blueGrad,
       position: "relative",
       overflow: "hidden",
-      padding: "clamp(48px,8vw,80px) 24px clamp(48px,8vw,80px)"
+      padding: "clamp(48px,8vw,80px) 24px"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       position: "absolute",
       inset: 0,
       background: "url(" + I.k1 + ") center/cover",
-      opacity: 0.12
+      opacity: 0.1
     }
   }), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -908,19 +897,19 @@ const Home = ({
       fontFamily: Fh,
       fontSize: 14,
       fontWeight: 600,
-      color: "rgba(255,255,255,0.7)",
-      marginBottom: 12,
+      color: "rgba(255,255,255,0.65)",
+      marginBottom: 10,
       fontStyle: "italic"
     }
   }, "Before & After School Programs"), /*#__PURE__*/React.createElement("h1", {
     style: {
       fontFamily: Fh,
-      fontSize: "clamp(32px,6vw,56px)",
+      fontSize: "clamp(30px,6vw,54px)",
       fontWeight: 900,
       color: C.white,
       textTransform: "uppercase",
       lineHeight: 1.05,
-      margin: "0 0 24px"
+      margin: "0 0 20px"
     }
   }, "Boredom-Busting, Brain-Boosting ", /*#__PURE__*/React.createElement("span", {
     style: {
@@ -931,9 +920,9 @@ const Home = ({
       WebkitBoxDecorationBreak: "clone"
     }
   }, "Fun!")), /*#__PURE__*/React.createElement("button", {
-    onClick: () => go("join"),
+    onClick: () => go("enroll"),
     style: {
-      background: C.teal,
+      background: C.green,
       color: C.white,
       border: "none",
       borderRadius: 30,
@@ -943,27 +932,41 @@ const Home = ({
       fontSize: 16,
       textTransform: "uppercase",
       letterSpacing: 1,
-      cursor: "pointer",
-      boxShadow: `0 4px 18px ${C.teal}55`
+      cursor: "pointer"
     }
-  }, "Enroll Now")), /*#__PURE__*/React.createElement("div", {
+  }, "Get Started")), /*#__PURE__*/React.createElement("div", {
     style: {
       position: "relative",
-      minHeight: "clamp(280px,40vw,420px)"
+      minHeight: "clamp(350px,50vw,520px)"
     }
-  }, /*#__PURE__*/React.createElement("img", {
-    src: I.j1,
-    alt: "",
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       position: "absolute",
-      left: "5%",
-      top: "5%",
-      width: "65%",
-      borderRadius: 16,
-      boxShadow: "0 8px 32px rgba(0,0,0,0.25)",
+      left: "3%",
+      top: "3%",
+      width: "70%",
       zIndex: 2
     }
-  }), /*#__PURE__*/React.createElement(Polaroid, {
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      inset: -6,
+      borderRadius: 22,
+      background: "linear-gradient(135deg, #ffc91f, #ef5d3b, #fa4dc8)",
+      zIndex: 0
+    }
+  }), /*#__PURE__*/React.createElement("img", {
+    src: I.j1,
+    alt: "Legacy Rise Academy",
+    style: {
+      width: "100%",
+      borderRadius: 18,
+      position: "relative",
+      zIndex: 1,
+      display: "block",
+      boxShadow: "0 16px 48px rgba(0,0,0,0.3)"
+    }
+  })), /*#__PURE__*/React.createElement(Polaroid, {
     src: I.k2,
     rotate: -8,
     style: {
@@ -996,7 +999,7 @@ const Home = ({
   })))), /*#__PURE__*/React.createElement("section", {
     style: {
       background: C.offW,
-      padding: "32px 24px",
+      padding: "28px 24px",
       textAlign: "center"
     }
   }, /*#__PURE__*/React.createElement("p", {
@@ -1006,109 +1009,101 @@ const Home = ({
       fontWeight: 600,
       color: C.navy,
       fontStyle: "italic",
-      marginBottom: 14
+      marginBottom: 12
     }
   }, "For program availability, schedules, and pricing"), /*#__PURE__*/React.createElement("button", {
-    onClick: () => go("register"),
+    onClick: () => go("enroll"),
     style: {
-      background: C.gold,
+      background: C.blue,
       color: C.white,
       border: "none",
       borderRadius: 30,
-      padding: "14px 36px",
+      padding: "13px 32px",
       fontFamily: Fh,
       fontWeight: 800,
-      fontSize: 15,
+      fontSize: 14,
       textTransform: "uppercase",
-      letterSpacing: 0.5,
       cursor: "pointer"
     }
   }, "Find Your School")), /*#__PURE__*/React.createElement("section", {
     style: {
-      background: C.gold,
-      padding: "64px 24px",
-      textAlign: "center"
+      background: C.blue,
+      padding: "64px 24px"
     }
-  }, /*#__PURE__*/React.createElement("img", {
-    src: I.logoW,
-    alt: "LRA",
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
-      height: 120,
-      marginBottom: 20
+      maxWidth: 1000,
+      margin: "0 auto",
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))",
+      gap: 40,
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("img", {
+    src: I.logoW,
+    alt: "",
+    style: {
+      height: 220,
+      marginBottom: 16
     }
   }), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: Fh,
-      fontSize: "clamp(26px,5.5vw,44px)",
+      fontSize: "clamp(24px,4.5vw,38px)",
       fontWeight: 900,
       color: C.white,
       textTransform: "uppercase",
-      lineHeight: 1.1,
-      margin: "0 0 12px"
+      marginBottom: 10,
+      lineHeight: 1.15
     }
   }, "Make After School Count with ", /*#__PURE__*/React.createElement("span", {
     style: {
-      background: "#4A8CFF",
-      padding: "2px 12px"
+      background: C.gold,
+      color: C.navy,
+      padding: "2px 10px"
     }
   }, "Legacy Rise!")), /*#__PURE__*/React.createElement("h3", {
     style: {
       fontFamily: Fh,
-      fontSize: 18,
+      fontSize: 17,
       fontWeight: 800,
       color: C.white,
       textTransform: "uppercase",
-      marginBottom: 16
+      marginBottom: 14
     }
   }, "A Place to Learn, Play & Grow!"), /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: Fb,
-      fontSize: 16,
+      fontSize: 15,
       color: "rgba(255,255,255,0.85)",
-      lineHeight: 1.7,
-      maxWidth: 640,
-      margin: "0 auto 32px"
+      lineHeight: 1.7
     }
-  }, "At LRA, we believe before and after school should be meaningful extensions of the school day \u2014 not just afterthoughts. We combine high-quality academic enrichment, active play, and social skill-building \u2014 all wrapped in the fun and energy kids love."), /*#__PURE__*/React.createElement("div", {
+  }, "At LRA, we believe before and after school should be meaningful extensions of the school day. We combine high-quality academic enrichment, active play, and social skill-building, all wrapped in the fun and energy kids love.")), /*#__PURE__*/React.createElement("div", {
     style: {
-      position: "relative",
-      maxWidth: 500,
-      margin: "0 auto",
-      height: "clamp(220px,40vw,350px)"
+      position: "relative"
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: I.k1,
+    src: I.k2,
     alt: "",
     style: {
-      width: "65%",
+      width: "100%",
       borderRadius: 16,
-      boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
-      position: "absolute",
-      left: "10%",
-      top: 0
+      boxShadow: "0 8px 32px rgba(0,0,0,0.2)"
     }
   }), /*#__PURE__*/React.createElement(Polaroid, {
     src: I.j2,
     rotate: 8,
     style: {
       position: "absolute",
-      right: 0,
-      top: "15%",
-      width: "35%"
+      right: -10,
+      top: -10,
+      width: "38%",
+      zIndex: 3
     }
-  }), /*#__PURE__*/React.createElement(Polaroid, {
-    src: I.s1,
-    rotate: -6,
+  })))), /*#__PURE__*/React.createElement("section", {
     style: {
-      position: "absolute",
-      left: 0,
-      bottom: 0,
-      width: "30%"
-    }
-  }))), /*#__PURE__*/React.createElement("section", {
-    style: {
-      background: C.gold,
-      padding: "64px 24px"
+      background: C.blue,
+      padding: "0 24px 64px"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1117,7 +1112,7 @@ const Home = ({
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      background: "#4A8CFF",
+      background: C.gold,
       display: "inline-block",
       borderRadius: 8,
       padding: "10px 28px",
@@ -1128,46 +1123,57 @@ const Home = ({
       fontFamily: Fh,
       fontSize: 14,
       fontWeight: 800,
-      color: C.white,
+      color: C.navy,
       textTransform: "uppercase",
       letterSpacing: 1
     }
   }, "LRA Daily Activities")), /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: Fh,
-      fontSize: "clamp(24px,5vw,38px)",
+      fontSize: "clamp(22px,4.5vw,36px)",
       fontWeight: 900,
       color: C.white,
       textTransform: "uppercase",
-      marginBottom: 12,
+      marginBottom: 24,
       lineHeight: 1.1
     }
-  }, "Daily Enrichment Activities Unlock Every Child's Potential"), /*#__PURE__*/React.createElement("p", {
+  }, "Daily Enrichment Unlocks Every Child's Potential"), /*#__PURE__*/React.createElement("div", {
     style: {
-      fontFamily: Fb,
-      fontSize: 15,
-      color: "rgba(255,255,255,0.8)",
-      marginBottom: 32,
-      lineHeight: 1.6,
-      maxWidth: 600
+      display: "flex",
+      flexDirection: "column",
+      gap: 8,
+      marginBottom: 24
     }
-  }, "Our expertly-designed curriculum is packed with games, crafts, STEM challenges, and much more \u2014 your kids will never do the same thing after school twice!"), /*#__PURE__*/React.createElement(ActivityTabs, {
-    acts: acts,
-    active: actIdx,
-    setActive: setActIdx
-  }), /*#__PURE__*/React.createElement("div", {
+  }, acts.map((a, i) => /*#__PURE__*/React.createElement("button", {
+    key: i,
+    onClick: () => setActIdx(i),
+    style: {
+      background: actIdx === i ? C.white : C.gold,
+      color: C.navy,
+      border: "none",
+      borderRadius: 14,
+      padding: "16px 20px",
+      fontFamily: Fh,
+      fontWeight: 800,
+      fontSize: 15,
+      textTransform: "uppercase",
+      cursor: "pointer",
+      textAlign: "center",
+      boxShadow: actIdx === i ? "0 4px 16px rgba(0,0,0,0.1)" : "none",
+      transition: "0.25s"
+    }
+  }, a.name))), /*#__PURE__*/React.createElement("div", {
     style: {
       background: C.white,
       borderRadius: 20,
-      padding: "clamp(20px,4vw,36px)",
-      marginTop: 24
+      padding: "clamp(20px,4vw,36px)"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       fontFamily: Fh,
       fontSize: 12,
       fontWeight: 700,
-      color: C.goldLt,
+      color: C.coral,
       textTransform: "uppercase",
       letterSpacing: 1,
       fontStyle: "italic",
@@ -1191,50 +1197,8 @@ const Home = ({
     }
   }, acts[actIdx].desc)))), /*#__PURE__*/React.createElement("section", {
     style: {
-      background: C.navy,
-      padding: "48px 24px",
-      textAlign: "center"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      background: "#4A8CFF",
-      display: "inline-block",
-      borderRadius: 8,
-      padding: "12px 32px",
-      marginBottom: 20,
-      transform: "rotate(-1deg)"
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      fontFamily: Fh,
-      fontSize: 16,
-      fontWeight: 800,
-      color: C.white,
-      textTransform: "uppercase",
-      letterSpacing: 1
-    }
-  }, "LRA Daily Schedule")), /*#__PURE__*/React.createElement("h2", {
-    style: {
-      fontFamily: Fh,
-      fontSize: "clamp(26px,5vw,40px)",
-      fontWeight: 900,
-      color: C.white,
-      textTransform: "uppercase",
-      marginBottom: 16
-    }
-  }, "Your Kids at Legacy Rise!"), /*#__PURE__*/React.createElement("p", {
-    style: {
-      fontFamily: Fb,
-      fontSize: 16,
-      color: "rgba(255,255,255,0.75)",
-      maxWidth: 560,
-      margin: "0 auto",
-      lineHeight: 1.7
-    }
-  }, "Kids spend up to 20 hours a week in our programs \u2014 let us walk you through all the ways your child will learn, play, and grow!")), /*#__PURE__*/React.createElement("section", {
-    style: {
-      background: C.gold,
-      padding: "64px 24px"
+      background: C.blueGrad,
+      padding: "72px 24px"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1243,7 +1207,7 @@ const Home = ({
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      background: "#4A8CFF",
+      background: C.gold,
       display: "inline-block",
       borderRadius: 8,
       padding: "10px 28px",
@@ -1254,7 +1218,7 @@ const Home = ({
       fontFamily: Fh,
       fontSize: 14,
       fontWeight: 800,
-      color: C.white,
+      color: C.navy,
       textTransform: "uppercase"
     }
   }, "The Impact of Legacy Rise")), /*#__PURE__*/React.createElement("h2", {
@@ -1264,7 +1228,8 @@ const Home = ({
       fontWeight: 900,
       color: C.white,
       textTransform: "uppercase",
-      marginBottom: 12
+      marginBottom: 12,
+      lineHeight: 1.1
     }
   }, "Lifelong Joy & Success"), /*#__PURE__*/React.createElement("p", {
     style: {
@@ -1275,115 +1240,138 @@ const Home = ({
       maxWidth: 620,
       marginBottom: 40
     }
-  }, /*#__PURE__*/React.createElement("strong", null, "Kids thrive when learning, friendships, and play come together."), " At LRA, every moment is thoughtfully designed to inspire growth \u2014 academically, socially, and physically."), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("strong", null, "Kids thrive when learning, friendships, and play come together."), " At LRA, every moment is thoughtfully designed to inspire growth, academically, socially, and physically. Through hands-on activities, active games, creative play, and lasting friendships, our programs nurture curiosity, confidence, and a love of learning."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))",
       gap: 20
     }
-  }, /*#__PURE__*/React.createElement(ImpactCard, {
-    icon: /*#__PURE__*/React.createElement("svg", {
-      width: "28",
-      height: "28",
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: "#fff",
-      strokeWidth: "2",
-      strokeLinecap: "round",
-      strokeLinejoin: "round"
-    }, /*#__PURE__*/React.createElement("polygon", {
-      points: "12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
-    })),
-    title: "Increased Engagement & Belonging",
-    desc: "Scholars feel more connected to school and reported enjoying learning more."
-  }), /*#__PURE__*/React.createElement(ImpactCard, {
-    icon: /*#__PURE__*/React.createElement("svg", {
-      width: "28",
-      height: "28",
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: "#fff",
-      strokeWidth: "2",
-      strokeLinecap: "round",
-      strokeLinejoin: "round"
-    }, /*#__PURE__*/React.createElement("polyline", {
-      points: "22,12 18,12 15,21 9,3 6,12 2,12"
-    })),
-    title: "Movement & Play \u2014 Healthy Growth",
-    desc: "Active games and fitness challenges help kids develop strength, coordination, and teamwork."
-  }), /*#__PURE__*/React.createElement(ImpactCard, {
-    icon: /*#__PURE__*/React.createElement("svg", {
-      width: "28",
-      height: "28",
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: "#fff",
-      strokeWidth: "2",
-      strokeLinecap: "round",
-      strokeLinejoin: "round"
-    }, /*#__PURE__*/React.createElement("path", {
-      d: "M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"
-    }), /*#__PURE__*/React.createElement("circle", {
-      cx: "9",
-      cy: "7",
-      r: "4"
-    }), /*#__PURE__*/React.createElement("path", {
-      d: "M23 21v-2a4 4 0 00-3-3.87"
-    }), /*#__PURE__*/React.createElement("path", {
-      d: "M16 3.13a4 4 0 010 7.75"
-    })),
-    title: "Friendship & Connection",
-    desc: "Through teamwork and shared adventures, kids build strong friendships and social confidence."
-  }), /*#__PURE__*/React.createElement(ImpactCard, {
-    icon: /*#__PURE__*/React.createElement("svg", {
-      width: "28",
-      height: "28",
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: "#fff",
-      strokeWidth: "2",
-      strokeLinecap: "round",
-      strokeLinejoin: "round"
-    }, /*#__PURE__*/React.createElement("path", {
-      d: "M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
-    }), /*#__PURE__*/React.createElement("circle", {
-      cx: "12",
-      cy: "12",
-      r: "3"
-    })),
-    title: "More Academic Confidence",
-    desc: "74% of K-6 students say that after school programs help them learn."
-  }), /*#__PURE__*/React.createElement(ImpactCard, {
-    icon: /*#__PURE__*/React.createElement("svg", {
-      width: "28",
-      height: "28",
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: "#fff",
-      strokeWidth: "2",
-      strokeLinecap: "round",
-      strokeLinejoin: "round"
-    }, /*#__PURE__*/React.createElement("path", {
-      d: "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
-    })),
-    title: "Improved Outcomes",
-    desc: "Students in structured programs saw a 20 percentile point improvement in standardized tests."
-  }), /*#__PURE__*/React.createElement(ImpactCard, {
-    icon: /*#__PURE__*/React.createElement("svg", {
-      width: "28",
-      height: "28",
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: "#fff",
-      strokeWidth: "2",
-      strokeLinecap: "round",
-      strokeLinejoin: "round"
-    }, /*#__PURE__*/React.createElement("path", {
-      d: "M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
-    })),
-    title: "Higher Grades",
-    desc: "6 in 10 after school students improved their reading grades by at least 5 percentage points."
-  })))), /*#__PURE__*/React.createElement("section", {
+  }, [{
+    t: "Engagement & Belonging",
+    d: "Scholars feel more connected and enjoy learning more.",
+    clr: "#ffc91f"
+  }, {
+    t: "Movement & Healthy Growth",
+    d: "Active games build strength, coordination, and teamwork.",
+    clr: "#3d976e"
+  }, {
+    t: "Friendship & Connection",
+    d: "Kids build strong friendships and social confidence.",
+    clr: "#0f619d"
+  }, {
+    t: "Academic Confidence",
+    d: "74% of K-6 students say after school helps them learn.",
+    clr: "#fa4dc8"
+  }, {
+    t: "Improved Outcomes",
+    d: "20 percentile point improvement in standardized tests.",
+    clr: "#ef5d3b"
+  }, {
+    t: "Higher Grades",
+    d: "6 in 10 students improved reading grades by 5+ points.",
+    clr: "#e53e3e"
+  }].map((c, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      borderRadius: 20,
+      overflow: "hidden",
+      boxShadow: "0 6px 24px rgba(0,0,0,0.08)",
+      border: "1px solid rgba(255,255,255,0.1)",
+      transition: "transform 0.25s",
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: C.white,
+      padding: "32px 20px",
+      textAlign: "center",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "120",
+    height: "100",
+    viewBox: "0 0 120 100"
+  },
+  /* Tilted mint rectangle background */
+  /*#__PURE__*/React.createElement("rect", { x: "15", y: "10", width: "90", height: "75", rx: "8", fill: "#d4f0e8", transform: "rotate(-5 60 50)" }),
+  /* Icon content per card */
+  i === 0 ? /*#__PURE__*/React.createElement("g", null,
+    /*#__PURE__*/React.createElement("circle", { cx: "50", cy: "42", r: "16", fill: "#ffc91f", stroke: "#333", strokeWidth: "2.5" }),
+    /*#__PURE__*/React.createElement("polygon", { points: "50,28 53,38 63,38 55,44 58,54 50,48 42,54 45,44 37,38 47,38", fill: "#fff", stroke: "#333", strokeWidth: "1.5" }),
+    /*#__PURE__*/React.createElement("path", { d: "M70 55 L78 55 L78 30 L85 30", fill: "none", stroke: "#333", strokeWidth: "2.5", strokeLinecap: "round" }),
+    /*#__PURE__*/React.createElement("circle", { cx: "78", cy: "38", r: "3", fill: "#ef5d3b" }),
+    /*#__PURE__*/React.createElement("circle", { cx: "85", cy: "30", r: "3", fill: "#3d976e" })
+  ) :
+  i === 1 ? /*#__PURE__*/React.createElement("g", null,
+    /*#__PURE__*/React.createElement("circle", { cx: "70", cy: "50", r: "18", fill: "#fff", stroke: "#333", strokeWidth: "2.5" }),
+    /*#__PURE__*/React.createElement("path", { d: "M70 50 L70 38 M70 50 L80 50", stroke: "#333", strokeWidth: "2", strokeLinecap: "round" }),
+    /*#__PURE__*/React.createElement("circle", { cx: "42", cy: "55", r: "10", fill: "#ffc91f", stroke: "#333", strokeWidth: "2" }),
+    /*#__PURE__*/React.createElement("circle", { cx: "42", cy: "55", r: "5", fill: "#ef5d3b" }),
+    /*#__PURE__*/React.createElement("circle", { cx: "55", cy: "35", r: "8", fill: "#3d976e", stroke: "#333", strokeWidth: "2" }),
+    /*#__PURE__*/React.createElement("circle", { cx: "55", cy: "35", r: "4", fill: "#0f619d" })
+  ) :
+  i === 2 ? /*#__PURE__*/React.createElement("g", null,
+    /*#__PURE__*/React.createElement("circle", { cx: "42", cy: "40", r: "12", fill: "#a8d8ea", stroke: "#333", strokeWidth: "2.5" }),
+    /*#__PURE__*/React.createElement("circle", { cx: "42", cy: "36", r: "5", fill: "#fff", stroke: "#333", strokeWidth: "2" }),
+    /*#__PURE__*/React.createElement("path", { d: "M32 52 Q42 58 52 52", fill: "none", stroke: "#333", strokeWidth: "2" }),
+    /*#__PURE__*/React.createElement("circle", { cx: "70", cy: "40", r: "12", fill: "#ffd6e0", stroke: "#333", strokeWidth: "2.5" }),
+    /*#__PURE__*/React.createElement("circle", { cx: "70", cy: "36", r: "5", fill: "#fff", stroke: "#333", strokeWidth: "2" }),
+    /*#__PURE__*/React.createElement("path", { d: "M60 52 Q70 58 80 52", fill: "none", stroke: "#333", strokeWidth: "2" }),
+    /*#__PURE__*/React.createElement("path", { d: "M52 44 L60 44", stroke: "#e53e3e", strokeWidth: "3", strokeLinecap: "round" }),
+    /*#__PURE__*/React.createElement("path", { d: "M56 40 L56 48", stroke: "#e53e3e", strokeWidth: "3", strokeLinecap: "round" })
+  ) :
+  i === 3 ? /*#__PURE__*/React.createElement("g", null,
+    /*#__PURE__*/React.createElement("path", { d: "M56 25 C56 25 46 30 46 42 C46 48 48 52 52 54 L52 60 L60 60 L60 54 C64 52 66 48 66 42 C66 30 56 25 56 25Z", fill: "#ffc91f", stroke: "#333", strokeWidth: "2.5" }),
+    /*#__PURE__*/React.createElement("line", { x1: "52", y1: "62", x2: "60", y2: "62", stroke: "#333", strokeWidth: "2.5", strokeLinecap: "round" }),
+    /*#__PURE__*/React.createElement("line", { x1: "52", y1: "66", x2: "60", y2: "66", stroke: "#333", strokeWidth: "2.5", strokeLinecap: "round" }),
+    /*#__PURE__*/React.createElement("line", { x1: "56", y1: "18", x2: "56", y2: "22", stroke: "#ffc91f", strokeWidth: "2", strokeLinecap: "round" }),
+    /*#__PURE__*/React.createElement("line", { x1: "44", y1: "22", x2: "47", y2: "25", stroke: "#ffc91f", strokeWidth: "2", strokeLinecap: "round" }),
+    /*#__PURE__*/React.createElement("line", { x1: "68", y1: "22", x2: "65", y2: "25", stroke: "#ffc91f", strokeWidth: "2", strokeLinecap: "round" })
+  ) :
+  i === 4 ? /*#__PURE__*/React.createElement("g", null,
+    /*#__PURE__*/React.createElement("rect", { x: "38", y: "28", width: "36", height: "28", rx: "3", fill: "#fff", stroke: "#333", strokeWidth: "2.5" }),
+    /*#__PURE__*/React.createElement("path", { d: "M38 38 L56 38 L74 38", stroke: "#333", strokeWidth: "1.5" }),
+    /*#__PURE__*/React.createElement("circle", { cx: "48", cy: "48", r: "4", fill: "#3d976e" }),
+    /*#__PURE__*/React.createElement("circle", { cx: "64", cy: "48", r: "4", fill: "#ef5d3b" }),
+    /*#__PURE__*/React.createElement("circle", { cx: "44", cy: "33", r: "2.5", fill: "#e53e3e" }),
+    /*#__PURE__*/React.createElement("circle", { cx: "50", cy: "33", r: "2.5", fill: "#ffc91f" }),
+    /*#__PURE__*/React.createElement("circle", { cx: "56", cy: "33", r: "2.5", fill: "#3d976e" }),
+    /*#__PURE__*/React.createElement("path", { d: "M56 56 L56 68 L68 68", fill: "none", stroke: "#333", strokeWidth: "2.5", strokeLinecap: "round" }),
+    /*#__PURE__*/React.createElement("polygon", { points: "66,64 72,68 66,72", fill: "#0f619d" })
+  ) :
+  /*#__PURE__*/React.createElement("g", null,
+    /*#__PURE__*/React.createElement("path", { d: "M56 30 C56 30 44 22 38 30 C32 38 40 48 56 60 C72 48 80 38 74 30 C68 22 56 30 56 30Z", fill: "#e53e3e", stroke: "#333", strokeWidth: "2.5" }),
+    /*#__PURE__*/React.createElement("path", { d: "M49 38 C49 38 52 34 56 38", fill: "none", stroke: "#fff", strokeWidth: "2", strokeLinecap: "round" }),
+    /*#__PURE__*/React.createElement("line", { x1: "46", y1: "24", x2: "44", y2: "18", stroke: "#ffc91f", strokeWidth: "2", strokeLinecap: "round" }),
+    /*#__PURE__*/React.createElement("line", { x1: "66", y1: "24", x2: "68", y2: "18", stroke: "#ffc91f", strokeWidth: "2", strokeLinecap: "round" }),
+    /*#__PURE__*/React.createElement("circle", { cx: "44", cy: "16", r: "2", fill: "#ffc91f" }),
+    /*#__PURE__*/React.createElement("circle", { cx: "68", cy: "16", r: "2", fill: "#ffc91f" })
+  )
+  )),  /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: C.white,
+      padding: "20px",
+      borderTop: "3px solid " + c.clr
+    }
+  }, /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontFamily: Fh,
+      fontSize: 16,
+      fontWeight: 900,
+      color: c.clr,
+      textTransform: "uppercase",
+      marginBottom: 8
+    }
+  }, c.t), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 13,
+      color: C.gray,
+      lineHeight: 1.6,
+      margin: 0
+    }
+  }, c.d))))))), /*#__PURE__*/React.createElement("section", {
     style: {
       background: C.offW,
       padding: "64px 24px"
@@ -1393,69 +1381,89 @@ const Home = ({
       maxWidth: 900,
       margin: "0 auto"
     }
-  }, /*#__PURE__*/React.createElement("p", {
-    style: {
-      fontFamily: Fb,
-      fontSize: 15,
-      color: C.gray,
-      textAlign: "center",
-      marginBottom: 32
-    }
-  }, "Here's how families rated Legacy Rise Academy's performance:"), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))",
       gap: 20
     }
-  }, /*#__PURE__*/React.createElement(StatCard, {
-    num: "96%",
-    desc: "say Legacy Rise's safety meets or exceeds expectations"
-  }), /*#__PURE__*/React.createElement(StatCard, {
-    num: "95%",
-    desc: "say Legacy Rise's educators and staff meet or exceed expectations"
-  }), /*#__PURE__*/React.createElement(StatCard, {
-    num: "95%",
-    desc: "say their child experiences joy at Legacy Rise Academy"
-  })))), /*#__PURE__*/React.createElement("section", {
+  }, [{
+    n: "96%",
+    d: "say safety meets or exceeds expectations"
+  }, {
+    n: "95%",
+    d: "say educators meet or exceed expectations"
+  }, {
+    n: "95%",
+    d: "say their child experiences joy"
+  }].map((s, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
     style: {
-      background: C.gold,
+      background: C.white,
+      borderRadius: 20,
+      padding: "36px 24px",
+      textAlign: "center",
+      boxShadow: "0 4px 20px rgba(0,0,0,0.04)",
+      border: "1px solid " + C.grayLt
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 110,
+      height: 140,
+      borderRadius: "50%",
+      background: C.blueLt,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      margin: "0 auto 16px"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: Fh,
+      fontSize: 44,
+      fontWeight: 900,
+      color: C.blue
+    }
+  }, s.n)), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 14,
+      color: C.gray,
+      lineHeight: 1.5
+    }
+  }, s.d)))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      background: C.blue,
       padding: "64px 24px"
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
       maxWidth: 800,
-      margin: "0 auto"
+      margin: "0 auto",
+      textAlign: "center"
     }
   }, /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: Fh,
-      fontSize: "clamp(28px,5.5vw,44px)",
+      fontSize: "clamp(26px,5vw,40px)",
       fontWeight: 900,
       color: C.white,
       textTransform: "uppercase",
-      marginBottom: 16
+      marginBottom: 14
     }
-  }, "Discounts & Financial Aid"), /*#__PURE__*/React.createElement("p", {
+  }, "Careers & Join Our Team"), /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: Fb,
       fontSize: 16,
       color: "rgba(255,255,255,0.85)",
       lineHeight: 1.7,
-      marginBottom: 8
+      marginBottom: 24
     }
-  }, /*#__PURE__*/React.createElement("strong", null, "Legacy Rise Academy is committed to ensuring that all families, regardless of their financial situation, can access our programs.")), /*#__PURE__*/React.createElement("p", {
+  }, "We are always looking for passionate educators, mentors, and leaders who share our mission of building bright futures. Join the Legacy Rise family and make a difference in the lives of children every single day."), /*#__PURE__*/React.createElement("button", {
+    onClick: () => go("careers"),
     style: {
-      fontFamily: Fb,
-      fontSize: 15,
-      color: "rgba(255,255,255,0.75)",
-      lineHeight: 1.7,
-      marginBottom: 28
-    }
-  }, "We offer discounts that benefit families from different walks of life and have partnered with many local state agencies to provide childcare assistance programs."), /*#__PURE__*/React.createElement("button", {
-    onClick: () => go("join"),
-    style: {
-      background: C.teal,
-      color: C.white,
+      background: C.gold,
+      color: C.navy,
       border: "none",
       borderRadius: 30,
       padding: "14px 36px",
@@ -1463,35 +1471,121 @@ const Home = ({
       fontWeight: 800,
       fontSize: 15,
       textTransform: "uppercase",
-      cursor: "pointer",
+      cursor: "pointer"
+    }
+  }, "View Open Positions"))),
+
+/*#__PURE__*/React.createElement("section", {
+    style: {
+      background: C.white,
+      padding: "64px 24px",
+      textAlign: "center"
+    }
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: Fh,
+      fontSize: "clamp(26px,5vw,38px)",
+      fontWeight: 900,
+      color: C.navy,
+      textTransform: "uppercase",
       marginBottom: 32
     }
-  }, "Learn More"), /*#__PURE__*/React.createElement("img", {
-    src: I.pr4,
-    alt: "",
+  }, "Parents Love Legacy Rise"), /*#__PURE__*/React.createElement("div", {
     style: {
-      width: "100%",
-      borderRadius: 20,
-      boxShadow: "0 8px 32px rgba(0,0,0,0.15)"
+      maxWidth: 650,
+      margin: "0 auto",
+      position: "relative",
+      minHeight: 180
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "Georgia,serif",
+      fontSize: 72,
+      color: C.coral,
+      lineHeight: 1,
+      marginBottom: 8
+    }
+  }, "\""), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 17,
+      color: C.navy,
+      lineHeight: 1.7,
+      marginBottom: 20
+    }
+  }, tests[tI].t), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: Fh,
+      fontSize: 13,
+      fontWeight: 700,
+      color: C.navy,
+      letterSpacing: 2,
+      textTransform: "uppercase"
+    }
+  }, "\u2014 ", tests[tI].n), [["left", () => setTI((tI - 1 + tests.length) % tests.length), "\u2039"], ["right", () => setTI((tI + 1) % tests.length), "\u203A"]].map(([side, fn, ch]) => /*#__PURE__*/React.createElement("button", {
+    key: side,
+    onClick: fn,
+    style: {
+      position: "absolute",
+      top: "50%",
+      [side]: -20,
+      transform: "translateY(-50%)",
+      width: 40,
+      height: 40,
+      borderRadius: "50%",
+      border: "2px solid " + C.grayLt,
+      background: "transparent",
+      color: C.gray,
+      fontSize: 20,
+      cursor: "pointer",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center"
+    }
+  }, ch))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      justifyContent: "center",
+      gap: 8,
+      marginTop: 24
+    }
+  }, tests.map((_, i) => /*#__PURE__*/React.createElement("button", {
+    key: i,
+    onClick: () => setTI(i),
+    style: {
+      width: tI === i ? 12 : 8,
+      height: tI === i ? 12 : 8,
+      borderRadius: "50%",
+      background: tI === i ? C.blue : C.grayLt,
+      border: "none",
+      cursor: "pointer",
+      transition: "0.3s"
     }
   }))), /*#__PURE__*/React.createElement("div", {
     style: {
-      position: "relative"
+      marginTop: 40
     }
-  }, /*#__PURE__*/React.createElement("img", {
-    src: I.j1,
-    alt: "",
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => setShowReview(!showReview),
     style: {
-      width: "100%",
-      height: 350,
-      objectFit: "cover",
-      display: "block"
+      background: showReview ? "transparent" : C.blue,
+      color: showReview ? C.blue : C.white,
+      border: showReview ? "2px solid " + C.blue : "none",
+      borderRadius: 30,
+      padding: "14px 32px",
+      fontFamily: Fh,
+      fontWeight: 800,
+      fontSize: 14,
+      textTransform: "uppercase",
+      cursor: "pointer"
     }
-  })), /*#__PURE__*/React.createElement(TestimonialCarousel, {
-    quotes: testimonials
-  }), /*#__PURE__*/React.createElement("section", {
+  }, showReview ? "Close" : "Share Your Review")), showReview && /*#__PURE__*/React.createElement("div", {
     style: {
-      background: "linear-gradient(135deg,#FF1654,#FF6B8A)",
+      marginTop: 24
+    }
+  }, /*#__PURE__*/React.createElement(ReviewForm, null))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      background: C.coralGrad,
       padding: "56px 24px",
       textAlign: "center"
     }
@@ -1504,8 +1598,8 @@ const Home = ({
       marginBottom: 20,
       lineHeight: 1.4
     }
-  }, "Are you a school or community leader looking for onsite childcare support?"), /*#__PURE__*/React.createElement("button", {
-    onClick: () => go("partners"),
+  }, "Are you a school or community leader looking for onsite enrichment support?"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => go("partnerships"),
     style: {
       background: C.navy,
       color: C.white,
@@ -1521,118 +1615,14 @@ const Home = ({
   }, "Learn More")));
 };
 
-/* ═══ REGISTER PAGE ═══ */
-const Register = ({
-  go
-}) => /*#__PURE__*/React.createElement("section", {
-  style: {
-    background: C.goldGrad,
-    padding: "64px 24px",
-    minHeight: "80vh"
-  }
-}, /*#__PURE__*/React.createElement("div", {
-  style: {
-    maxWidth: 600,
-    margin: "0 auto"
-  }
-}, /*#__PURE__*/React.createElement("h1", {
-  style: {
-    fontFamily: Fh,
-    fontSize: "clamp(32px,7vw,52px)",
-    fontWeight: 900,
-    color: C.white,
-    textTransform: "uppercase",
-    lineHeight: 1.05,
-    marginBottom: 16
-  }
-}, "Register for ", /*#__PURE__*/React.createElement("span", {
-  style: {
-    textDecoration: "underline",
-    textDecorationColor: C.accent,
-    textDecorationThickness: 4,
-    textUnderlineOffset: 4
-  }
-}, "Programs")), /*#__PURE__*/React.createElement("p", {
-  style: {
-    fontFamily: Fb,
-    fontSize: 16,
-    color: "rgba(255,255,255,0.8)",
-    lineHeight: 1.6,
-    marginBottom: 32
-  }
-}, "Here you can view your school's unique program offerings, schedules, and pricing \u2014 and start the registration process."), /*#__PURE__*/React.createElement(Form, {
-  blue: true
-}), /*#__PURE__*/React.createElement("div", {
-  style: {
-    position: "relative",
-    height: 250,
-    marginTop: 40
-  }
-}, /*#__PURE__*/React.createElement("img", {
-  src: I.j1,
-  alt: "",
-  style: {
-    position: "absolute",
-    left: "5%",
-    bottom: 0,
-    width: "50%",
-    borderRadius: 16,
-    boxShadow: "0 8px 32px rgba(0,0,0,0.2)"
-  }
-}), /*#__PURE__*/React.createElement(Polaroid, {
-  src: I.k2,
-  rotate: 8,
-  style: {
-    position: "absolute",
-    right: 0,
-    top: 0,
-    width: "35%"
-  }
-}), /*#__PURE__*/React.createElement(Polaroid, {
-  src: I.j3,
-  rotate: -6,
-  style: {
-    position: "absolute",
-    right: "10%",
-    bottom: 0,
-    width: "28%"
-  }
-}))));
-
-/* ═══ ABOUT ═══ */
+/* OTHER PAGES - same as before */
 const About = ({
   go
-}) => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("section", {
-  style: {
-    background: C.goldGrad,
-    padding: "64px 24px",
-    textAlign: "center"
-  }
-}, /*#__PURE__*/React.createElement("img", {
-  src: I.logoW,
-  alt: "",
-  style: {
-    height: 100,
-    marginBottom: 20
-  }
-}), /*#__PURE__*/React.createElement("h1", {
-  style: {
-    fontFamily: Fh,
-    fontSize: "clamp(28px,6vw,46px)",
-    fontWeight: 900,
-    color: C.white,
-    textTransform: "uppercase",
-    marginBottom: 16
-  }
-}, "About Legacy Rise Academy"), /*#__PURE__*/React.createElement("p", {
-  style: {
-    fontFamily: Fb,
-    fontSize: 17,
-    color: "rgba(255,255,255,0.8)",
-    maxWidth: 560,
-    margin: "0 auto"
-  }
-}, "Building bright futures through learning & legacy.")), /*#__PURE__*/React.createElement("section", {
+}) => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Hero, {
+  title: "About Legacy Rise Academy",
+  sub: "Dream Big. Learn Bold. Rise Together.",
+  img: I.k1
+}), /*#__PURE__*/React.createElement("section", {
   style: {
     background: C.white,
     padding: "64px 24px"
@@ -1654,7 +1644,7 @@ const About = ({
     left: 0,
     width: 6,
     height: "100%",
-    background: `linear-gradient(${C.gold},${C.accent})`
+    background: "linear-gradient(#0f619d,#ef5d3b)"
   }
 }), /*#__PURE__*/React.createElement("div", {
   style: {
@@ -1663,7 +1653,7 @@ const About = ({
     fontWeight: 800,
     letterSpacing: 2,
     textTransform: "uppercase",
-    color: C.accent,
+    color: C.coral,
     marginBottom: 14
   }
 }, "A Note from Our Founder"), /*#__PURE__*/React.createElement("p", {
@@ -1683,16 +1673,16 @@ const About = ({
     lineHeight: 1.75,
     marginBottom: 20
   }
-}, "Legacy Rise Academy is my promise to create that environment \u2014 one where children learn through play, grow through purpose, and build the foundation for a bright, lasting legacy."), /*#__PURE__*/React.createElement("div", {
+}, "Legacy Rise Academy is my promise to create that environment, one where children learn through play, grow through purpose, and build the foundation for a bright, lasting legacy."), /*#__PURE__*/React.createElement("div", {
   style: {
     fontFamily: Fh,
     fontWeight: 800,
     fontSize: 14,
     color: C.navy
   }
-}, "\u2014 Tiayana Logan, ", /*#__PURE__*/React.createElement("span", {
+}, "Tiayana Logan, ", /*#__PURE__*/React.createElement("span", {
   style: {
-    color: C.gold
+    color: C.blue
   }
 }, "Founder & Executive Director")))), /*#__PURE__*/React.createElement("section", {
   style: {
@@ -1701,7 +1691,7 @@ const About = ({
   }
 }, /*#__PURE__*/React.createElement("div", {
   style: {
-    maxWidth: 900,
+    maxWidth: 1000,
     margin: "0 auto"
   }
 }, /*#__PURE__*/React.createElement("h2", {
@@ -1710,8 +1700,8 @@ const About = ({
     fontSize: 28,
     fontWeight: 900,
     color: C.navy,
-    textTransform: "uppercase",
     textAlign: "center",
+    textTransform: "uppercase",
     marginBottom: 36
   }
 }, "The Legacy Rise Promise"), /*#__PURE__*/React.createElement("div", {
@@ -1723,15 +1713,15 @@ const About = ({
 }, [{
   img: I.pr1,
   t: "Whole-Child Care",
-  d: "Nurturing education for ages 3 months–5 years."
+  d: "Nurturing education for ages 3 months to 5 years."
 }, {
   img: I.pr2,
   t: "Affordable Tuition",
-  d: "Transparent pricing — no hidden fees."
+  d: "Transparent pricing with no hidden fees."
 }, {
   img: I.pr3,
   t: "Extended Hours",
-  d: "6:30 AM – 6:30 PM for working parents."
+  d: "6:30 AM to 6:30 PM for working parents."
 }, {
   img: I.pr4,
   t: "Lifelong Learning",
@@ -1780,11 +1770,6 @@ const About = ({
     padding: "72px 24px",
     textAlign: "center"
   }
-}, /*#__PURE__*/React.createElement("div", {
-  style: {
-    maxWidth: 800,
-    margin: "0 auto"
-  }
 }, /*#__PURE__*/React.createElement("h2", {
   style: {
     fontFamily: Fh,
@@ -1794,7 +1779,12 @@ const About = ({
     textTransform: "uppercase",
     marginBottom: 24
   }
-}, "Enrichment Pathways"), /*#__PURE__*/React.createElement("img", {
+}, "Enrichment Pathways"), /*#__PURE__*/React.createElement("div", {
+  style: {
+    maxWidth: 800,
+    margin: "0 auto"
+  }
+}, /*#__PURE__*/React.createElement("img", {
   src: I.en,
   alt: "",
   style: {
@@ -1804,7 +1794,7 @@ const About = ({
   }
 }))), /*#__PURE__*/React.createElement("section", {
   style: {
-    background: C.goldGrad,
+    background: C.blueGrad,
     padding: "56px 24px",
     textAlign: "center"
   }
@@ -1818,9 +1808,9 @@ const About = ({
     marginBottom: 20
   }
 }, "When we nurture our youngest learners, we plant seeds for lifelong success."), /*#__PURE__*/React.createElement("button", {
-  onClick: () => go("join"),
+  onClick: () => go("enroll"),
   style: {
-    background: C.accent,
+    background: C.coral,
     color: C.white,
     border: "none",
     borderRadius: 30,
@@ -1832,118 +1822,100 @@ const About = ({
     cursor: "pointer"
   }
 }, "Join the Legacy")));
-
-/* ═══ PROGRAMS ═══ */
-const Programs = ({
+const ProgPage = ({
+  title,
+  sub,
+  desc,
+  features,
+  highlight,
+  img,
   go
-}) => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("section", {
+}) => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Hero, {
+  title: title,
+  sub: sub,
+  img: img
+}), /*#__PURE__*/React.createElement("section", {
   style: {
-    background: C.goldGrad,
-    padding: "64px 24px",
-    textAlign: "center"
-  }
-}, /*#__PURE__*/React.createElement("h1", {
-  style: {
-    fontFamily: Fh,
-    fontSize: "clamp(28px,6vw,44px)",
-    fontWeight: 900,
-    color: C.white,
-    textTransform: "uppercase",
-    marginBottom: 16
-  }
-}, "Our Programs")), [{
-  t: "After School Collective",
-  tag: "Now Enrolling",
-  tc: C.gold,
-  desc: "A safe, structured environment for K–12 scholars with hands-on clubs and leadership development.",
-  img: I.s1
-}, {
-  t: "Summer Enrichment",
-  tag: "Seasonal",
-  tc: "#FF9800",
-  desc: "Keeping scholars engaged all summer through academics, exploration, and adventure.",
-  img: I.j2
-}, {
-  t: "Early Learning Center",
-  tag: "Coming Soon",
-  tc: C.accent,
-  desc: "Our flagship center for ages 3 months–5 years combining nurturing education with research-based learning.",
-  img: I.pr1
-}].map((p, i) => /*#__PURE__*/React.createElement("section", {
-  key: i,
-  style: {
-    background: i % 2 === 0 ? C.white : C.offW,
-    padding: "64px 24px"
+    background: C.white,
+    padding: "72px 24px"
   }
 }, /*#__PURE__*/React.createElement("div", {
   style: {
-    maxWidth: 900,
+    maxWidth: 1000,
     margin: "0 auto",
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
+    gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))",
     gap: 40,
     alignItems: "center"
   }
-}, /*#__PURE__*/React.createElement("div", {
+}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
   style: {
-    order: i % 2 === 0 ? 0 : 1
+    fontFamily: Fb,
+    fontSize: 16,
+    color: C.gray,
+    lineHeight: 1.8,
+    marginBottom: 24
+  }
+}, desc), /*#__PURE__*/React.createElement("div", {
+  style: {
+    fontFamily: Fh,
+    fontSize: 12,
+    fontWeight: 800,
+    letterSpacing: 2,
+    textTransform: "uppercase",
+    color: C.coral,
+    marginBottom: 14
+  }
+}, "What We Offer"), features.map((f, i) => /*#__PURE__*/React.createElement("div", {
+  key: i,
+  style: {
+    display: "flex",
+    gap: 10,
+    alignItems: "flex-start",
+    marginBottom: 10
   }
 }, /*#__PURE__*/React.createElement("span", {
   style: {
-    background: p.tc,
-    color: C.white,
-    fontFamily: Fh,
-    fontSize: 11,
+    color: C.green,
     fontWeight: 800,
-    padding: "4px 14px",
-    borderRadius: 20,
-    textTransform: "uppercase",
-    letterSpacing: 1
+    fontSize: 18,
+    flexShrink: 0
   }
-}, p.tag), /*#__PURE__*/React.createElement("h2", {
-  style: {
-    fontFamily: Fh,
-    fontSize: "clamp(24px,4vw,36px)",
-    fontWeight: 900,
-    color: C.navy,
-    textTransform: "uppercase",
-    margin: "12px 0",
-    lineHeight: 1.15
-  }
-}, p.t), /*#__PURE__*/React.createElement("p", {
+}, "\u2713"), /*#__PURE__*/React.createElement("span", {
   style: {
     fontFamily: Fb,
-    fontSize: 15,
-    color: C.gray,
-    lineHeight: 1.7,
-    marginBottom: 20
-  }
-}, p.desc), /*#__PURE__*/React.createElement("button", {
-  onClick: () => go("join"),
-  style: {
-    background: C.accentGrad,
-    color: C.white,
-    border: "none",
-    borderRadius: 30,
-    padding: "13px 30px",
-    fontFamily: Fh,
-    fontWeight: 800,
     fontSize: 14,
-    textTransform: "uppercase",
-    cursor: "pointer"
+    color: C.navy,
+    lineHeight: 1.5
   }
-}, "Learn More")), /*#__PURE__*/React.createElement("img", {
-  src: p.img,
+}, f))), /*#__PURE__*/React.createElement("div", {
+  style: {
+    background: C.blueGrad,
+    borderRadius: 16,
+    padding: "22px 26px",
+    marginTop: 24
+  }
+}, /*#__PURE__*/React.createElement("p", {
+  style: {
+    fontFamily: Fh,
+    fontSize: 16,
+    fontWeight: 700,
+    color: C.white,
+    lineHeight: 1.5,
+    fontStyle: "italic",
+    margin: 0
+  }
+}, highlight))), /*#__PURE__*/React.createElement("img", {
+  src: img,
   alt: "",
   style: {
     width: "100%",
     borderRadius: 20,
-    boxShadow: "0 8px 32px rgba(0,0,0,0.08)",
-    order: i % 2 === 0 ? 1 : 0
+    boxShadow: "0 8px 32px rgba(0,0,0,0.08)"
   }
-})))), /*#__PURE__*/React.createElement("section", {
+}))), /*#__PURE__*/React.createElement("section", {
   style: {
-    background: C.goldGrad,
+    background: C.coralGrad,
     padding: "56px 24px",
     textAlign: "center"
   }
@@ -1956,10 +1928,10 @@ const Programs = ({
     textTransform: "uppercase",
     marginBottom: 20
   }
-}, "Ready to Enroll?"), /*#__PURE__*/React.createElement("button", {
-  onClick: () => go("register"),
+}, "Interested in enrolling?"), /*#__PURE__*/React.createElement("button", {
+  onClick: () => go("enroll"),
   style: {
-    background: C.accent,
+    background: C.navy,
     color: C.white,
     border: "none",
     borderRadius: 30,
@@ -1970,23 +1942,502 @@ const Programs = ({
     textTransform: "uppercase",
     cursor: "pointer"
   }
-}, "Register Now")));
-
-/* ═══ JOIN ═══ */
-const Join = ({
+}, "Get Started")));
+const Programs = ({
+  go
+}) => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Hero, {
+  title: "Our Programs",
+  sub: "From after school enrichment to summer adventures, every program nurtures the whole child.",
+  img: I.k1
+}), /*#__PURE__*/React.createElement("section", {
+  style: {
+    background: C.offW,
+    padding: "72px 24px"
+  }
+}, /*#__PURE__*/React.createElement("div", {
+  style: {
+    maxWidth: 1000,
+    margin: "0 auto",
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))",
+    gap: 24
+  }
+}, [{
+  t: "After School Programs",
+  d: "A safe, enriching environment for K-12 scholars.",
+  img: I.k1,
+  tag: "Now Enrolling",
+  tc: C.green,
+  id: "afterschool"
+}, {
+  t: "Summer Programs",
+  d: "Themed adventure weeks of academics and movement.",
+  img: I.j2,
+  tag: "Coming Soon",
+  tc: C.amber,
+  id: "summer"
+}, {
+  t: "Enrichment & Special",
+  d: "Sign language, financial literacy, etiquette, fitness, and technology.",
+  img: I.pr1,
+  tag: "Year-Round",
+  tc: C.blue,
+  id: "enrichment"
+}].map((p, i) => /*#__PURE__*/React.createElement("div", {
+  key: i,
+  onClick: () => go(p.id),
+  style: {
+    borderRadius: 20,
+    overflow: "hidden",
+    background: C.white,
+    boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
+    cursor: "pointer",
+    border: "1px solid " + C.grayLt
+  }
+}, /*#__PURE__*/React.createElement("div", {
+  style: {
+    position: "relative"
+  }
+}, /*#__PURE__*/React.createElement("img", {
+  src: p.img,
+  alt: "",
+  style: {
+    width: "100%",
+    height: 220,
+    objectFit: "cover",
+    display: "block"
+  }
+}), /*#__PURE__*/React.createElement("span", {
+  style: {
+    position: "absolute",
+    top: 16,
+    left: 16,
+    background: p.tc,
+    color: C.white,
+    fontFamily: Fh,
+    fontSize: 11,
+    fontWeight: 800,
+    padding: "5px 14px",
+    borderRadius: 20,
+    textTransform: "uppercase"
+  }
+}, p.tag)), /*#__PURE__*/React.createElement("div", {
+  style: {
+    padding: 24
+  }
+}, /*#__PURE__*/React.createElement("h3", {
+  style: {
+    fontFamily: Fh,
+    fontSize: 20,
+    fontWeight: 800,
+    color: C.navy,
+    marginBottom: 8
+  }
+}, p.t), /*#__PURE__*/React.createElement("p", {
+  style: {
+    fontFamily: Fb,
+    fontSize: 14,
+    color: C.gray,
+    lineHeight: 1.65,
+    margin: 0
+  }
+}, p.d)))))));
+const AfterSchool = ({
+  go
+}) => /*#__PURE__*/React.createElement(ProgPage, {
+  go: go,
+  title: "After School Programs",
+  sub: "K-12 Scholars | Now Enrolling",
+  desc: "Our After School Program provides a safe, structured, and enriching environment for scholars in grades K through 12.",
+  features: ["Academic enrichment through STEM, literacy, and learning support", "Creative exploration through media, music, culinary arts, and movement", "Character development rooted in leadership and teamwork", "Safe supervision with intentional transitions", "Exposure to mentors and real-world experiences", "Culturally responsive programming"],
+  highlight: "We are not simply after school care. We are a leadership lab for young scholars.",
+  img: I.k1
+});
+const Summer = ({
+  go
+}) => /*#__PURE__*/React.createElement(ProgPage, {
+  go: go,
+  title: "Summer Programs",
+  sub: "Seasonal Enrichment Experience",
+  desc: "Our Summer Enrichment Experience keeps scholars engaged and inspired through meaningful, joy-filled experiences.",
+  features: ["Themed learning weeks with literacy, STEM, and projects", "Field experiences with community partners", "Leadership challenges", "Physical wellness and movement", "Creative arts and cultural exploration", "Structured for working families"],
+  highlight: "Summer at Legacy Rise is about growth, discovery, and empowerment.",
+  img: I.j2
+});
+const Enrichment = ({
+  go
+}) => /*#__PURE__*/React.createElement(ProgPage, {
+  go: go,
+  title: "Enrichment & Special Programs",
+  sub: "Year-Round Pathways",
+  desc: "Legacy Rise Academy offers specialized enrichment pathways beyond traditional academics.",
+  features: ["Early Literacy and Math Foundations", "Sign Language and Spanish", "Etiquette and Social Skills", "Fitness including soccer, karate, and active play", "Technology Exploration", "Fine Arts, Visual Arts, and STEM Labs"],
+  highlight: "Every child explores multiple enrichment pathways, all included.",
+  img: I.en
+});
+const Locations = ({
+  go
+}) => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Hero, {
+  title: "Communities We Serve",
+  sub: "Building a network of community-centered learning environments."
+}), /*#__PURE__*/React.createElement("section", {
+  style: {
+    background: C.white,
+    padding: "72px 24px"
+  }
+}, /*#__PURE__*/React.createElement("div", {
+  style: {
+    maxWidth: 800,
+    margin: "0 auto",
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))",
+    gap: 24
+  }
+}, /*#__PURE__*/React.createElement("div", {
+  style: {
+    background: C.white,
+    borderRadius: 20,
+    padding: 32,
+    boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
+    border: "2px solid " + C.green
+  }
+}, /*#__PURE__*/React.createElement("span", {
+  style: {
+    background: C.green,
+    color: C.white,
+    fontFamily: Fh,
+    fontSize: 11,
+    fontWeight: 800,
+    padding: "4px 14px",
+    borderRadius: 20,
+    textTransform: "uppercase"
+  }
+}, "Active"), /*#__PURE__*/React.createElement("h3", {
+  style: {
+    fontFamily: Fh,
+    fontSize: 22,
+    fontWeight: 800,
+    color: C.navy,
+    margin: "16px 0 8px"
+  }
+}, "Decatur, GA"), /*#__PURE__*/React.createElement("p", {
+  style: {
+    fontFamily: Fb,
+    fontSize: 14,
+    color: C.gray,
+    lineHeight: 1.6,
+    marginBottom: 16
+  }
+}, "Currently serving at DeKalb Brilliance Academy. After School Collective now enrolling."), /*#__PURE__*/React.createElement("button", {
+  onClick: () => go("enroll"),
+  style: {
+    background: C.coral,
+    color: C.white,
+    border: "none",
+    borderRadius: 30,
+    padding: "12px 28px",
+    fontFamily: Fh,
+    fontWeight: 800,
+    fontSize: 13,
+    textTransform: "uppercase",
+    cursor: "pointer"
+  }
+}, "Get Started")), /*#__PURE__*/React.createElement("div", {
+  style: {
+    background: C.white,
+    borderRadius: 20,
+    padding: 32,
+    boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
+    border: "2px dashed " + C.amber
+  }
+}, /*#__PURE__*/React.createElement("span", {
+  style: {
+    background: C.amber,
+    color: C.white,
+    fontFamily: Fh,
+    fontSize: 11,
+    fontWeight: 800,
+    padding: "4px 14px",
+    borderRadius: 20,
+    textTransform: "uppercase"
+  }
+}, "Coming Soon"), /*#__PURE__*/React.createElement("h3", {
+  style: {
+    fontFamily: Fh,
+    fontSize: 22,
+    fontWeight: 800,
+    color: C.navy,
+    margin: "16px 0 8px"
+  }
+}, "Henry County, GA"), /*#__PURE__*/React.createElement("p", {
+  style: {
+    fontFamily: Fb,
+    fontSize: 14,
+    color: C.gray,
+    lineHeight: 1.6,
+    marginBottom: 16
+  }
+}, "Early Learning Center in development. Join our interest list."), /*#__PURE__*/React.createElement("button", {
+  onClick: () => go("enroll"),
+  style: {
+    background: C.blue,
+    color: C.white,
+    border: "none",
+    borderRadius: 30,
+    padding: "12px 28px",
+    fontFamily: Fh,
+    fontWeight: 800,
+    fontSize: 13,
+    textTransform: "uppercase",
+    cursor: "pointer"
+  }
+}, "Join Interest List")))));
+const Partnerships = ({
+  go
+}) => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Hero, {
+  title: "For Schools & Partnerships",
+  sub: "Bring Legacy Rise enrichment to your school or community.",
+  img: I.j3
+}), /*#__PURE__*/React.createElement("section", {
+  style: {
+    background: C.white,
+    padding: "72px 24px"
+  }
+}, /*#__PURE__*/React.createElement("div", {
+  style: {
+    maxWidth: 1000,
+    margin: "0 auto",
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))",
+    gap: 40,
+    alignItems: "center"
+  }
+}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", {
+  style: {
+    fontFamily: Fh,
+    fontSize: 28,
+    fontWeight: 900,
+    color: C.navy,
+    textTransform: "uppercase",
+    marginBottom: 16
+  }
+}, "Why Partner With Us"), /*#__PURE__*/React.createElement("p", {
+  style: {
+    fontFamily: Fb,
+    fontSize: 15,
+    color: C.gray,
+    lineHeight: 1.8,
+    marginBottom: 20
+  }
+}, "We work directly with schools to provide on-site enrichment that extends the school day in meaningful ways."), ["Research-backed curriculum", "Credentialed, trained staff", "Seamless school-day transitions", "Family communication and reporting", "Financial assistance partnerships", "Flexible scheduling"].map((f, i) => /*#__PURE__*/React.createElement("div", {
+  key: i,
+  style: {
+    display: "flex",
+    gap: 10,
+    alignItems: "center",
+    marginBottom: 10
+  }
+}, /*#__PURE__*/React.createElement("span", {
+  style: {
+    color: C.green,
+    fontWeight: 800,
+    fontSize: 18
+  }
+}, "\u2713"), /*#__PURE__*/React.createElement("span", {
+  style: {
+    fontFamily: Fb,
+    fontSize: 14,
+    color: C.navy
+  }
+}, f)))), /*#__PURE__*/React.createElement("div", {
+  style: {
+    background: C.blueGrad,
+    borderRadius: 24,
+    padding: 36
+  }
+}, /*#__PURE__*/React.createElement("h3", {
+  style: {
+    fontFamily: Fh,
+    fontSize: 22,
+    fontWeight: 800,
+    color: C.white,
+    marginBottom: 12,
+    textTransform: "uppercase",
+    textAlign: "center"
+  }
+}, "Get Started"), /*#__PURE__*/React.createElement(Form, {
+  blue: true
+})))));
+const Careers = ({
+  go
+}) => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Hero, {
+  title: "Careers at Legacy Rise",
+  sub: "Join a team building bright futures.",
+  img: I.j4
+}), /*#__PURE__*/React.createElement("section", {
+  style: {
+    background: C.white,
+    padding: "72px 24px"
+  }
+}, /*#__PURE__*/React.createElement("div", {
+  style: {
+    maxWidth: 700,
+    margin: "0 auto",
+    textAlign: "center"
+  }
+}, /*#__PURE__*/React.createElement("h2", {
+  style: {
+    fontFamily: Fh,
+    fontSize: 28,
+    fontWeight: 900,
+    color: C.navy,
+    textTransform: "uppercase",
+    marginBottom: 16
+  }
+}, "Join Our Team"), /*#__PURE__*/React.createElement("p", {
+  style: {
+    fontFamily: Fb,
+    fontSize: 16,
+    color: C.gray,
+    lineHeight: 1.7,
+    marginBottom: 32
+  }
+}, "We are always looking for passionate educators and leaders who share our mission."), ["Program Educators & Activity Leaders", "Site Coordinators", "Summer Camp Counselors", "Administrative & Operations Support"].map((r, i) => /*#__PURE__*/React.createElement("div", {
+  key: i,
+  style: {
+    background: C.offW,
+    borderRadius: 14,
+    padding: "20px 24px",
+    marginBottom: 12,
+    textAlign: "left",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center"
+  }
+}, /*#__PURE__*/React.createElement("span", {
+  style: {
+    fontFamily: Fh,
+    fontSize: 16,
+    fontWeight: 700,
+    color: C.navy
+  }
+}, r), /*#__PURE__*/React.createElement("span", {
+  style: {
+    fontFamily: Fh,
+    fontSize: 12,
+    fontWeight: 700,
+    color: C.blue,
+    cursor: "pointer"
+  }
+}, "View on Indeed \u2192"))))));
+const FAQ = ({
+  go
+}) => {
+  const [oQ, setOQ] = useState(null);
+  const faqs = [["What ages do you serve?", "Our After School Collective serves grades K through 12. Our upcoming Early Learning Center will serve ages 3 months to 5 years."], ["What are your hours?", "Extended hours from 6:30 AM to 6:30 PM to support working families."], ["What is included in tuition?", "All enrichment activities including STEM, arts, literacy, and movement. No hidden fees."], ["Where are you located?", "Currently in Decatur, GA at DeKalb Brilliance Academy. Early Learning Center launching in Henry County, GA."], ["How do I enroll?", "Fill out our interest form and a team member will reach out within 24-48 hours."], ["Do you offer financial assistance?", "Yes. Contact us for details on available assistance programs."]];
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Hero, {
+    title: "Resources & FAQ",
+    sub: "Find answers and get in touch."
+  }), /*#__PURE__*/React.createElement("section", {
+    style: {
+      background: C.white,
+      padding: "72px 24px"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 700,
+      margin: "0 auto"
+    }
+  }, faqs.map(([q, a], i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      borderBottom: "1px solid " + C.grayLt
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => setOQ(oQ === i ? null : i),
+    style: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      width: "100%",
+      background: "transparent",
+      border: "none",
+      padding: "20px 0",
+      cursor: "pointer"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: Fh,
+      fontSize: 16,
+      fontWeight: 700,
+      color: C.navy,
+      textAlign: "left"
+    }
+  }, q), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 20,
+      color: C.blue,
+      transform: oQ === i ? "rotate(180deg)" : "none",
+      transition: "0.2s",
+      flexShrink: 0,
+      marginLeft: 12
+    }
+  }, "\u25BC")), oQ === i && /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 14,
+      color: C.gray,
+      lineHeight: 1.7,
+      padding: "0 0 20px"
+    }
+  }, a))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      background: C.offW,
+      padding: "72px 24px"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 600,
+      margin: "0 auto",
+      textAlign: "center"
+    }
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: Fh,
+      fontSize: 28,
+      fontWeight: 900,
+      color: C.navy,
+      textTransform: "uppercase",
+      marginBottom: 12
+    }
+  }, "Contact Us"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 15,
+      color: C.gray,
+      marginBottom: 24
+    }
+  }, CFG.email, " | ", CFG.phone), /*#__PURE__*/React.createElement(Form, null))));
+};
+const Enroll = ({
   go
 }) => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("section", {
   style: {
-    background: C.goldGrad,
-    padding: "64px 24px",
+    background: C.blueGrad,
+    padding: "clamp(48px,8vw,80px) 24px",
     textAlign: "center"
   }
 }, /*#__PURE__*/React.createElement("div", {
   style: {
+    maxWidth: 600,
+    margin: "0 auto"
+  }
+}, /*#__PURE__*/React.createElement("div", {
+  style: {
     fontFamily: Fh,
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: 600,
-    color: C.white,
+    color: C.gold,
     fontStyle: "italic",
     marginBottom: 8
   }
@@ -1997,188 +2448,29 @@ const Join = ({
     fontWeight: 900,
     color: C.white,
     textTransform: "uppercase",
-    marginBottom: 24
+    marginBottom: 24,
+    lineHeight: 1.1
   }
-}, "Sign Up to Get Updates About Programs in Your District!"), /*#__PURE__*/React.createElement("div", {
+}, "Sign Up to Get Updates About Programs in Your Community!"), /*#__PURE__*/React.createElement("div", {
   style: {
-    maxWidth: 550,
-    margin: "0 auto",
     background: "rgba(255,255,255,0.08)",
     border: "2px solid rgba(255,255,255,0.15)",
     borderRadius: 24,
-    padding: "clamp(24px,4vw,40px)"
+    padding: "clamp(24px,4vw,40px)",
+    textAlign: "left"
   }
 }, /*#__PURE__*/React.createElement(Form, {
   blue: true
-}))));
-
-/* ═══ PARTNERS ═══ */
-const Partners = ({
-  go
-}) => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("section", {
+})))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("img", {
+  src: I.j1,
+  alt: "",
   style: {
-    background: C.goldGrad,
-    padding: "64px 24px",
-    textAlign: "center"
+    width: "100%",
+    height: 300,
+    objectFit: "cover",
+    display: "block"
   }
-}, /*#__PURE__*/React.createElement("h1", {
-  style: {
-    fontFamily: Fh,
-    fontSize: "clamp(28px,6vw,44px)",
-    fontWeight: 900,
-    color: C.white,
-    textTransform: "uppercase",
-    marginBottom: 12
-  }
-}, "Partner With Us"), /*#__PURE__*/React.createElement("p", {
-  style: {
-    fontFamily: Fb,
-    fontSize: 17,
-    color: "rgba(255,255,255,0.85)"
-  }
-}, "Organizations and leaders who support our mission.")), /*#__PURE__*/React.createElement("section", {
-  style: {
-    background: C.offW,
-    padding: "56px 24px"
-  }
-}, /*#__PURE__*/React.createElement("div", {
-  style: {
-    maxWidth: 900,
-    margin: "0 auto"
-  }
-}, /*#__PURE__*/React.createElement("div", {
-  style: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))",
-    gap: 20,
-    marginBottom: 40
-  }
-}, ["DeKalb Brilliance Academy", "AML Partners", "Brittany Partnerships", "CTS Community", "All-Blue Foundation", "Community Badge Partners"].map((n, i) => /*#__PURE__*/React.createElement("div", {
-  key: i,
-  style: {
-    background: C.white,
-    borderRadius: 18,
-    padding: "36px 20px",
-    boxShadow: "0 3px 14px rgba(0,0,0,0.04)",
-    textAlign: "center"
-  }
-}, /*#__PURE__*/React.createElement("div", {
-  style: {
-    width: 60,
-    height: 60,
-    borderRadius: "50%",
-    background: i % 2 === 0 ? "#E3F0FF" : "#FFE0EB",
-    margin: "0 auto 14px",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontFamily: Fh,
-    fontSize: 22,
-    fontWeight: 900,
-    color: i % 2 === 0 ? C.gold : C.accent
-  }
-}, n[0]), /*#__PURE__*/React.createElement("div", {
-  style: {
-    fontFamily: Fh,
-    fontSize: 15,
-    fontWeight: 800,
-    color: C.navy
-  }
-}, n)))), /*#__PURE__*/React.createElement("div", {
-  style: {
-    background: C.white,
-    borderRadius: 24,
-    padding: "40px 32px",
-    boxShadow: "0 8px 36px rgba(0,0,0,0.05)",
-    textAlign: "center"
-  }
-}, /*#__PURE__*/React.createElement("h3", {
-  style: {
-    fontFamily: Fh,
-    fontSize: 22,
-    fontWeight: 800,
-    color: C.navy,
-    textTransform: "uppercase",
-    marginBottom: 10
-  }
-}, "Become a Partner"), /*#__PURE__*/React.createElement("p", {
-  style: {
-    fontFamily: Fb,
-    fontSize: 15,
-    color: C.gray,
-    maxWidth: 480,
-    margin: "0 auto 24px"
-  }
-}, "Let's build bright futures together."), /*#__PURE__*/React.createElement("div", {
-  style: {
-    display: "flex",
-    gap: 14,
-    justifyContent: "center",
-    flexWrap: "wrap"
-  }
-}, /*#__PURE__*/React.createElement("button", {
-  onClick: () => go("join"),
-  style: {
-    background: C.gold,
-    color: C.white,
-    border: "none",
-    borderRadius: 30,
-    padding: "13px 30px",
-    fontFamily: Fh,
-    fontWeight: 800,
-    fontSize: 14,
-    textTransform: "uppercase",
-    cursor: "pointer"
-  }
-}, "Contact Us"), /*#__PURE__*/React.createElement("a", {
-  href: CFG.goFundMe,
-  target: "_blank",
-  rel: "noreferrer",
-  style: {
-    background: C.accentGrad,
-    color: C.white,
-    border: "none",
-    borderRadius: 30,
-    padding: "13px 30px",
-    fontFamily: Fh,
-    fontWeight: 800,
-    fontSize: 14,
-    textTransform: "uppercase",
-    cursor: "pointer",
-    textDecoration: "none",
-    display: "inline-block"
-  }
-}, "Donate Now"))))), /*#__PURE__*/React.createElement("section", {
-  style: {
-    background: "linear-gradient(135deg,#FF1654,#FF6B8A)",
-    padding: "56px 24px",
-    textAlign: "center"
-  }
-}, /*#__PURE__*/React.createElement("h2", {
-  style: {
-    fontFamily: Fh,
-    fontSize: "clamp(20px,4vw,28px)",
-    fontWeight: 800,
-    color: C.white,
-    marginBottom: 20
-  }
-}, "Are you a school or community leader looking for onsite childcare support?"), /*#__PURE__*/React.createElement("button", {
-  onClick: () => go("join"),
-  style: {
-    background: C.navy,
-    color: C.white,
-    border: "none",
-    borderRadius: 30,
-    padding: "14px 36px",
-    fontFamily: Fh,
-    fontWeight: 800,
-    fontSize: 15,
-    textTransform: "uppercase",
-    cursor: "pointer"
-  }
-}, "Learn More")));
-
-/* ═══ APP ═══ */
+})));
 function App() {
   const [page, setPage] = useState("home");
   const go = p => {
@@ -2204,11 +2496,7 @@ function App() {
   }), /*#__PURE__*/React.createElement("link", {
     href: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap",
     rel: "stylesheet"
-  }), /*#__PURE__*/React.createElement("style", null, `
-        *{box-sizing:border-box;margin:0;padding:0}body{margin:0}input,select,textarea,button{font-family:inherit}img{max-width:100%}
-        @media(max-width:768px){.dN{display:none!important}.mB{display:flex!important}.hero-grid{grid-template-columns:1fr!important}}
-        @media(min-width:769px){.mB{display:none!important}.mM{display:none!important}}
-      `), /*#__PURE__*/React.createElement(Nav, {
+  }), /*#__PURE__*/React.createElement("style", null, `*{box-sizing:border-box;margin:0;padding:0}body{margin:0}input,select,textarea,button{font-family:inherit}img{max-width:100%}@media(max-width:768px){.dN{display:none!important}.mB{display:flex!important}.hero-grid{grid-template-columns:1fr!important}}@media(min-width:769px){.mB{display:none!important}.mM{display:none!important}}`), /*#__PURE__*/React.createElement(Nav, {
     page: page,
     go: go
   }), page === "home" && /*#__PURE__*/React.createElement(Home, {
@@ -2217,19 +2505,28 @@ function App() {
     go: go
   }), page === "programs" && /*#__PURE__*/React.createElement(Programs, {
     go: go
-  }), page === "join" && /*#__PURE__*/React.createElement(Join, {
+  }), page === "afterschool" && /*#__PURE__*/React.createElement(AfterSchool, {
     go: go
-  }), page === "register" && /*#__PURE__*/React.createElement(Register, {
+  }), page === "summer" && /*#__PURE__*/React.createElement(Summer, {
     go: go
-  }), page === "partners" && /*#__PURE__*/React.createElement(Partners, {
+  }), page === "enrichment" && /*#__PURE__*/React.createElement(Enrichment, {
+    go: go
+  }), page === "locations" && /*#__PURE__*/React.createElement(Locations, {
+    go: go
+  }), page === "partnerships" && /*#__PURE__*/React.createElement(Partnerships, {
+    go: go
+  }), page === "careers" && /*#__PURE__*/React.createElement(Careers, {
+    go: go
+  }), page === "faq" && /*#__PURE__*/React.createElement(FAQ, {
+    go: go
+  }), page === "enroll" && /*#__PURE__*/React.createElement(Enroll, {
     go: go
   }), /*#__PURE__*/React.createElement(Foot, {
     go: go
   }));
 }
+
 ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
 </script>
 </body>
 </html>
-
- 
