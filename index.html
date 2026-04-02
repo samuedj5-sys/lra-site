@@ -85,7 +85,7 @@ const Polaroid = ({
     display: "block"
   }
 }));
- 
+
 /* NAV - bigger logo, removed Blog, removed Enroll Now from sub-nav */
 const Nav = ({
   page,
@@ -445,7 +445,7 @@ const Nav = ({
     }
   }, "Learn more \u2192")));
 };
- 
+
 /* FOOTER - removed Blog, Register/Login, Discounts */
 const Foot = ({
   go
@@ -534,7 +534,7 @@ const Foot = ({
     letterSpacing: 1.5
   }
 }, "2026 Legacy Rise Academy | Decatur, GA | ", CFG.email)));
- 
+
 /* FORM */
 const Form = ({
   blue
@@ -654,7 +654,7 @@ const Form = ({
     }
   }, "Submit"));
 };
- 
+
 /* REVIEW FORM - parents submit reviews for approval */
 const ReviewForm = () => {
   const [sent, setSent] = useState(false);
@@ -842,7 +842,7 @@ const Hero = ({
     margin: "0 auto"
   }
 }, sub)));
- 
+
 /* HOME */
 const Home = ({
   go
@@ -852,34 +852,44 @@ const Home = ({
   const [showReview, setShowReview] = useState(false);
   const acts = [{
     name: "STEM Discovery",
-    desc: "Scholars use creativity and teamwork to build, experiment, and solve challenges through hands-on science and engineering."
+    why: "STEM learning builds critical thinking, problem solving, and curiosity. Students exposed to STEM early are more likely to develop confidence in math and science over time.",
+    numbers: "Students engaged in STEM activities are up to 2x more likely to pursue advanced problem solving and analytical thinking skills.",
+    offer: "Hands on experiments, robotics, engineering challenges, and real world problem solving that allow scholars to explore, build, test, and think like innovators."
   }, {
     name: "Literacy & Story",
-    desc: "Through interactive read-alouds and creative writing, scholars build confidence and a lifelong love of reading."
+    why: "Strong reading skills are the foundation of all learning. Literacy supports comprehension, communication, and long term academic success.",
+    numbers: "Children who read at grade level by third grade are 4x more likely to graduate high school.",
+    offer: "Guided reading, storytelling, writing workshops, and creative expression that build confident readers and powerful voices."
   }, {
     name: "Arts & Design",
-    desc: "From visual arts to digital design, scholars explore imagination through painting, building, and collaborative projects."
+    why: "Creative expression supports brain development, emotional processing, and confidence.",
+    numbers: "Students involved in the arts show higher engagement in school and improved problem solving skills.",
+    offer: "Visual arts, crafts, design challenges, and creative projects that allow scholars to express themselves and think outside the box."
   }, {
     name: "Leadership Lab",
-    desc: "Etiquette training, team challenges, and mentorship develop responsibility, kindness, and self-confidence."
+    why: "Leadership skills build confidence, decision making, and communication.",
+    numbers: "Students who develop leadership skills early show stronger social awareness and higher self esteem.",
+    offer: "Team building, public speaking, conflict resolution, and real leadership opportunities where scholars practice using their voice and leading with purpose."
   }, {
     name: "Fitness & Move",
-    desc: "Soccer, karate, and active play build coordination, focus, and healthy habits through daily movement."
-  }, {
-    name: "Financial Literacy",
-    desc: "Age-appropriate money games and entrepreneurial projects introduce financial concepts through hands-on, real-world fun."
-  }, {
-    name: "Sign Language",
-    desc: "Scholars learn American Sign Language basics, building communication skills, empathy, and cultural awareness."
+    why: "Physical activity strengthens not only the body, but the mind. Movement supports focus, emotional regulation, discipline, and teamwork, all of which directly impact how children learn and show up in the classroom.",
+    numbers: "Students who engage in regular physical activity show improved concentration, stronger memory, and higher academic performance.",
+    offer: "Scholars participate in a dynamic mix of sports and movement experiences including karate, soccer, basketball, baseball, lacrosse, and fencing, along with structured fitness and team based activities. Through these experiences, students build strength, coordination, confidence, and learn the value of teamwork, discipline, and perseverance."
   }, {
     name: "Spanish",
-    desc: "Interactive language lessons introduce conversational Spanish through songs, games, and daily practice."
+    why: "Learning a second language strengthens brain development, memory, and cultural awareness.",
+    numbers: "Bilingual students often show stronger problem solving skills and cognitive flexibility.",
+    offer: "Conversational Spanish, vocabulary building, songs, and cultural learning that make language fun and meaningful."
   }, {
     name: "Culinary Arts",
-    desc: "Hands-on cooking projects teach nutrition, math, and teamwork while scholars create healthy meals and snacks."
+    why: "Cooking builds life skills, math application, and independence.",
+    numbers: "Hands-on cooking experiences improve following directions, measurement skills, and confidence.",
+    offer: "Simple recipes, food prep, nutrition lessons, and collaborative cooking experiences that connect learning to real life."
   }, {
     name: "Technology & Coding",
-    desc: "Scholars explore robotics, coding basics, and digital tools that prepare them for a technology-driven world."
+    why: "Technology skills are essential for the future workforce and digital literacy.",
+    numbers: "Early exposure to coding strengthens logic, sequencing, and problem solving skills.",
+    offer: "Intro to coding, digital tools, interactive tech activities, and creative projects that prepare scholars for a tech driven world."
   }];
   const tests = [{
     t: "My daughter truly enjoys being there each day. The staff are amazing, helpful, kind, and communicative. She specifically asks to stay longer!",
@@ -1068,14 +1078,7 @@ const Home = ({
       gap: 40,
       alignItems: "center"
     }
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("img", {
-    src: I.logoW,
-    alt: "",
-    style: {
-      height: 220,
-      marginBottom: 16
-    }
-  }), /*#__PURE__*/React.createElement("h2", {
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", {
     style: {
       fontFamily: Fh,
       fontSize: "clamp(24px,4.5vw,38px)",
@@ -1085,13 +1088,13 @@ const Home = ({
       marginBottom: 10,
       lineHeight: 1.15
     }
-  }, "Make After School Count with ", /*#__PURE__*/React.createElement("span", {
+  }, "WHERE LEARNING CONTINUES AND ", /*#__PURE__*/React.createElement("span", {
     style: {
       background: C.gold,
       color: C.navy,
       padding: "2px 10px"
     }
-  }, "Legacy Rise!")), /*#__PURE__*/React.createElement("h3", {
+  }, "LEGACIES BEGIN !")), /*#__PURE__*/React.createElement("h3", {
     style: {
       fontFamily: Fh,
       fontSize: 17,
@@ -1100,14 +1103,47 @@ const Home = ({
       textTransform: "uppercase",
       marginBottom: 14
     }
-  }, "A Place to Learn, Play & Grow!"), /*#__PURE__*/React.createElement("p", {
+  }, "A Place to Learn, Play & Grow!"), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: Fb,
       fontSize: 15,
       color: "rgba(255,255,255,0.85)",
-      lineHeight: 1.7
+      lineHeight: 1.7,
+      marginBottom: 14
     }
-  }, "At LRA, we believe before and after school should be meaningful extensions of the school day. We combine high-quality academic enrichment, active play, and social skill-building, all wrapped in the fun and energy kids love.")), /*#__PURE__*/React.createElement("div", {
+  }, "At Legacy Rise Academy, we are more than a program. We are a community rooted in purpose, care, and excellence."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 15,
+      color: "rgba(255,255,255,0.85)",
+      lineHeight: 1.7,
+      marginBottom: 14
+    }
+  }, "We provide a safe, joyful, and enriching space where children grow academically, socially, and emotionally beyond the traditional school day. From before care to after school and summer programming, every moment is designed with intention."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 15,
+      color: "rgba(255,255,255,0.85)",
+      lineHeight: 1.7,
+      marginBottom: 14
+    }
+  }, "Our scholars engage in hands on learning, creative exploration, and meaningful connection. Through academic pathways, enrichment, STEM,STEAM, arts, movement, and social emotional learning, we are building confident learners and strong leaders."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 15,
+      color: "rgba(255,255,255,0.85)",
+      lineHeight: 1.7,
+      marginBottom: 14
+    }
+  }, "Families can move through their day with peace, knowing their children are supported, challenged, and inspired in an environment that feels like home."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 15,
+      color: "rgba(255,255,255,0.85)",
+      lineHeight: 1.7,
+      margin: 0
+    }
+  }, "At LRA, we are not just filling time.", /*#__PURE__*/React.createElement("br", null), "We are shaping futures.", /*#__PURE__*/React.createElement("br", null), "We are building legacy."))), /*#__PURE__*/React.createElement("div", {
     style: {
       position: "relative"
     }
@@ -1216,16 +1252,59 @@ const Home = ({
       fontWeight: 900,
       color: C.navy,
       textTransform: "uppercase",
-      marginBottom: 12
+      marginBottom: 16
     }
   }, acts[actIdx].name), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fh,
+      fontSize: 13,
+      fontWeight: 800,
+      color: C.navy,
+      textTransform: "uppercase",
+      marginBottom: 6
+    }
+  }, "Why it matters:"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 15,
+      color: C.gray,
+      lineHeight: 1.7,
+      marginBottom: 14
+    }
+  }, acts[actIdx].why), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fh,
+      fontSize: 13,
+      fontWeight: 800,
+      color: C.navy,
+      textTransform: "uppercase",
+      marginBottom: 6
+    }
+  }, "By the numbers:"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 15,
+      color: C.gray,
+      lineHeight: 1.7,
+      marginBottom: 14
+    }
+  }, acts[actIdx].numbers), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fh,
+      fontSize: 13,
+      fontWeight: 800,
+      color: C.navy,
+      textTransform: "uppercase",
+      marginBottom: 6
+    }
+  }, "What we offer at LRA:"), /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: Fb,
       fontSize: 15,
       color: C.gray,
       lineHeight: 1.7
     }
-  }, acts[actIdx].desc)))), /*#__PURE__*/React.createElement("section", {
+  }, acts[actIdx].offer)))), /*#__PURE__*/React.createElement("section", {
     style: {
       background: C.blueGrad,
       padding: "72px 24px"
@@ -1261,16 +1340,51 @@ const Home = ({
       marginBottom: 12,
       lineHeight: 1.1
     }
-  }, "Lifelong Joy & Success"), /*#__PURE__*/React.createElement("p", {
+  }, "BUILDING HEALTHY CHILDREN. RESTORING COMMUNITY."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 620,
+      marginBottom: 40
+    }
+  }, /*#__PURE__*/React.createElement("p", {
     style: {
       fontFamily: Fb,
       fontSize: 16,
       color: "rgba(255,255,255,0.85)",
       lineHeight: 1.7,
-      maxWidth: 620,
-      marginBottom: 40
+      marginBottom: 14
     }
-  }, /*#__PURE__*/React.createElement("strong", null, "Kids thrive when learning, friendships, and play come together."), " At LRA, every moment is thoughtfully designed to inspire growth, academically, socially, and physically. Through hands-on activities, active games, creative play, and lasting friendships, our programs nurture curiosity, confidence, and a love of learning."), /*#__PURE__*/React.createElement("div", {
+  }, "Children need more than supervision. They need movement, sunlight, connection, and care."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 16,
+      color: "rgba(255,255,255,0.85)",
+      lineHeight: 1.7,
+      marginBottom: 14
+    }
+  }, "At Legacy Rise Academy, we are intentional about getting our scholars outside, active, and engaged with the world around them. Daily exposure to fresh air and sunlight supports Vitamin D production, strengthens immune systems, improves mood, and increases focus and energy."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 16,
+      color: "rgba(255,255,255,0.85)",
+      lineHeight: 1.7,
+      marginBottom: 14
+    }
+  }, "In a time where many children are indoors, on screens, and disconnected, we are creating space for them to move, explore, and simply be children again."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 16,
+      color: "rgba(255,255,255,0.85)",
+      lineHeight: 1.7,
+      marginBottom: 14
+    }
+  }, "Our programming brings learning to life through outdoor play, hands on experiences, and real connection. Students are not just participating, they are building confidence, forming healthy habits, and developing socially in ways that last far beyond the classroom."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 16,
+      color: "rgba(255,255,255,0.85)",
+      lineHeight: 1.7
+    }
+  }, "This is bigger than programming. We are restoring what it means to grow up in a community. We are creating safe spaces where children are seen, supported, and surrounded by care. We are partnering with families to ensure every child has access to joy, structure, and opportunity. Because it truly takes a village. And at Legacy Rise Academy, we are building one every single day.")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))",
@@ -1278,27 +1392,27 @@ const Home = ({
     }
   }, [{
     t: "Engagement & Belonging",
-    d: "Scholars feel more connected and enjoy learning more.",
+    d: "Scholars feel seen, valued, and connected in a space where they belong. When children feel safe and supported, they engage more, take academic risks, and build a deeper love for learning and community.",
     clr: "#ffc91f"
   }, {
     t: "Movement & Healthy Growth",
-    d: "Active games build strength, coordination, and teamwork.",
+    d: "Daily movement and outdoor time support physical health, focus, and emotional balance. Through active play and sunlight, scholars build strength, improve mood, and develop healthy habits for lifelong wellness.",
     clr: "#3d976e"
   }, {
     t: "Friendship & Connection",
-    d: "Kids build strong friendships and social confidence.",
+    d: "Scholars build meaningful relationships rooted in trust, respect, and shared experiences. These connections strengthen communication, confidence, and a lasting sense of community.",
     clr: "#0f619d"
   }, {
     t: "Academic Confidence",
-    d: "74% of K-6 students say after school helps them learn.",
+    d: "Scholars grow as confident learners through consistent academic support and enrichment. 84% of K-6 students report after school programs help them better understand what they learn during the school day.",
     clr: "#fa4dc8"
   }, {
     t: "Improved Outcomes",
-    d: "20 percentile point improvement in standardized tests.",
+    d: "Consistent participation leads to measurable academic growth and stronger performance over time. Students in high-quality programs can see up to a 20 percentile point increase on standardized assessments.",
     clr: "#ef5d3b"
   }, {
     t: "Higher Grades",
-    d: "6 in 10 students improved reading grades by 5+ points.",
+    d: "Targeted support and extended learning time drive measurable academic growth. Students attend more regularly, complete more work, and improve reading performance over time.",
     clr: "#e53e3e"
   }].map((c, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
@@ -1504,7 +1618,7 @@ const Home = ({
       cursor: "pointer"
     }
   }, "View Open Positions"))),
- 
+
 /*#__PURE__*/React.createElement("section", {
     style: {
       background: C.white,
@@ -1644,7 +1758,7 @@ const Home = ({
     }
   }, "Learn More")));
 };
- 
+
 /* OTHER PAGES - same as before */
 const About = ({
   go
@@ -1837,7 +1951,7 @@ const About = ({
     textTransform: "uppercase",
     marginBottom: 20
   }
-}, "When we pour into our youngest learners, we strengthen families, uplift communities, and shape the future."), /*#__PURE__*/React.createElement("button", {
+}, "When we nurture our youngest learners, we plant seeds for lifelong success."), /*#__PURE__*/React.createElement("button", {
   onClick: () => go("enroll"),
   style: {
     background: C.coral,
@@ -2555,7 +2669,7 @@ function App() {
     go: go
   }));
 }
- 
+
 ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
 </script>
 </body>
