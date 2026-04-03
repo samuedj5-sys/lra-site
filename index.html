@@ -121,7 +121,17 @@ const Nav = ({
     label: "Home"
   }, {
     id: "about",
-    label: "About"
+    label: "About",
+    children: [{
+      id: "about",
+      label: "Our Story"
+    }, {
+      id: "founder",
+      label: "Meet the Founder"
+    }, {
+      id: "team",
+      label: "Our Team"
+    }]
   }, {
     id: "programs",
     label: "Our Programs",
@@ -146,7 +156,7 @@ const Nav = ({
     label: "Careers"
   }, {
     id: "faq",
-    label: "Resources"
+    label: "Family Guide"
   }];
   return /*#__PURE__*/React.createElement("header", null, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -511,11 +521,13 @@ const Foot = ({
 }), /*#__PURE__*/React.createElement("p", {
   style: {
     fontFamily: Fb,
-    fontSize: 13,
-    color: "rgba(255,255,255,0.5)",
-    lineHeight: 1.7
+    fontSize: 14,
+    color: "rgba(255,255,255,0.6)",
+    lineHeight: 1.5,
+    whiteSpace: "nowrap",
+    marginTop: 4
   }
-}, "Building Bright Futures Through Learning & Legacy"), /*#__PURE__*/React.createElement("div", {
+}, "Building Bright Beginnings, One Legacy at a Time"), /*#__PURE__*/React.createElement("div", {
   style: {
     marginTop: 12
   }
@@ -530,7 +542,7 @@ const Foot = ({
   lk: [["afterschool", "Before/After-School"], ["summer", "Summer"], ["enrichment", "Legacy in Action"]]
 }, {
   t: "About",
-  lk: [["about", "Our Story"], ["founder", "Meet the Founder"], ["partnerships", "For Schools"], ["careers", "Careers / Join Our Team"]]
+  lk: [["about", "Our Story"], ["founder", "Meet the Founder"], ["team", "Our Team"], ["partnerships", "For Schools"], ["careers", "Careers / Join Our Team"]]
 }, {
   t: "Get in Touch",
   lk: [["enroll", "Get Started"], ["faq", "Family Guide"], ["locations", "Locations"]]
@@ -3057,74 +3069,85 @@ const FounderBio = ({
   )),
 
   /*#__PURE__*/React.createElement("section", {
-    style: {
-      background: C.offW,
-      padding: "72px 24px"
-    }
-  }, /*#__PURE__*/React.createElement("div", {
-    style: {
-      maxWidth: 900,
-      margin: "0 auto"
-    }
-  },
-    /*#__PURE__*/React.createElement("h2", {
-      style: { fontFamily: Fh, fontSize: "clamp(22px,4vw,30px)", fontWeight: 900, color: C.navy, textTransform: "uppercase", textAlign: "center", marginBottom: 12 }
-    }, "Our Leadership Team"),
-    /*#__PURE__*/React.createElement("p", {
-      style: { fontFamily: Fb, fontSize: 16, color: C.gray, lineHeight: 1.7, textAlign: "center", maxWidth: 600, margin: "0 auto 36px" }
-    }, "The passionate leaders behind Legacy Rise Academy, committed to building bright futures every single day."),
-    /*#__PURE__*/React.createElement("div", {
-      style: { display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 20 }
-    },
-      [{name: "Tiayana Logan", title: "She-EO and Founder", color: C.gold},
-       {name: "Shakur Joseph", title: "Director of People and Finance", color: C.blue},
-       {name: "Venessa Lynch", title: "Director of Operations & Community Growth", color: C.coral},
-       {name: "Jasmine Fields", title: "Executive Assistant and Site Lead", color: C.green},
-       {name: "Sophia Martin-Clark", title: "Program Director", color: "#fa4dc8"}
-      ].map((person, i) => /*#__PURE__*/React.createElement("div", {
-        key: i,
-        style: {
-          background: C.white,
-          borderRadius: 20,
-          padding: "32px 24px",
-          textAlign: "center",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
-          borderTop: "4px solid " + person.color
-        }
-      },
-        /*#__PURE__*/React.createElement("div", {
-          style: {
-            width: 80,
-            height: 80,
-            borderRadius: "50%",
-            background: person.color,
-            margin: "0 auto 16px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontFamily: Fh,
-            fontSize: 28,
-            fontWeight: 900,
-            color: C.white
-          }
-        }, person.name.split(" ").map(n => n[0]).join("")),
-        /*#__PURE__*/React.createElement("h3", {
-          style: { fontFamily: Fh, fontSize: 18, fontWeight: 900, color: C.navy, marginBottom: 6 }
-        }, person.name),
-        /*#__PURE__*/React.createElement("p", {
-          style: { fontFamily: Fb, fontSize: 14, color: C.gray, lineHeight: 1.5, margin: 0 }
-        }, person.title)
-      ))
-    )
-  )),
-
-  /*#__PURE__*/React.createElement("section", {
+    style: { background: C.blueGrad, padding: "56px 24px", textAlign: "center" }
   }, /*#__PURE__*/React.createElement("h2", {
     style: { fontFamily: Fh, fontSize: 26, fontWeight: 900, color: C.white, textTransform: "uppercase", marginBottom: 20 }
   }, "Join the Legacy Tiayana is Building"), /*#__PURE__*/React.createElement("button", {
     onClick: () => go("enroll"),
     style: { background: C.coral, color: C.white, border: "none", borderRadius: 30, padding: "14px 32px", fontFamily: Fh, fontWeight: 800, fontSize: 15, textTransform: "uppercase", cursor: "pointer" }
   }, "Get Started"))
+);
+const TeamPage = ({
+  go
+}) => /*#__PURE__*/React.createElement(React.Fragment, null,
+  /*#__PURE__*/React.createElement(Hero, {
+    title: "Our Team",
+    sub: "The Passionate Leaders Behind Legacy Rise Academy"
+  }),
+  /*#__PURE__*/React.createElement("section", {
+    style: { background: C.white, padding: "72px 24px" }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: { maxWidth: 800, margin: "0 auto", textAlign: "center", marginBottom: 36 }
+  },
+    /*#__PURE__*/React.createElement("p", {
+      style: { fontFamily: Fb, fontSize: 17, color: C.gray, lineHeight: 1.8, maxWidth: 600, margin: "0 auto" }
+    }, "Every member of our team is committed to building bright futures. Together, we create safe, joyful, and enriching spaces where children and families thrive.")
+  ),
+  /*#__PURE__*/React.createElement("div", {
+    style: { maxWidth: 900, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 20 }
+  },
+    [{name: "Tiayana Logan", title: "She-EO and Founder", color: C.gold, role: "Visionary leader, mother, and educator driving the mission and direction of Legacy Rise Academy."},
+     {name: "Shakur Joseph", title: "Director of People and Finance", color: C.blue, role: "Oversees talent development, financial operations, and organizational growth."},
+     {name: "Venessa Lynch", title: "Director of Operations & Community Growth", color: C.coral, role: "Leads daily operations and builds meaningful community partnerships."},
+     {name: "Jasmine Fields", title: "Executive Assistant and Site Lead", color: C.green, role: "Supports leadership and manages site-level coordination and programming."},
+     {name: "Sophia Martin-Clark", title: "Program Director", color: "#fa4dc8", role: "Designs and leads enrichment programming that keeps scholars engaged and growing."}
+    ].map((person, i) => /*#__PURE__*/React.createElement("div", {
+      key: i,
+      style: {
+        background: C.offW,
+        borderRadius: 20,
+        padding: "36px 24px",
+        textAlign: "center",
+        boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
+        borderTop: "4px solid " + person.color
+      }
+    },
+      /*#__PURE__*/React.createElement("div", {
+        style: {
+          width: 90,
+          height: 90,
+          borderRadius: "50%",
+          background: person.color,
+          margin: "0 auto 18px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontFamily: Fh,
+          fontSize: 30,
+          fontWeight: 900,
+          color: C.white,
+          boxShadow: "0 8px 24px rgba(0,0,0,0.12)"
+        }
+      }, person.name.split(" ").map(n => n[0]).join("")),
+      /*#__PURE__*/React.createElement("h3", {
+        style: { fontFamily: Fh, fontSize: 18, fontWeight: 900, color: C.navy, marginBottom: 4 }
+      }, person.name),
+      /*#__PURE__*/React.createElement("div", {
+        style: { fontFamily: Fh, fontSize: 12, fontWeight: 700, color: person.color, textTransform: "uppercase", letterSpacing: 0.8, marginBottom: 12 }
+      }, person.title),
+      /*#__PURE__*/React.createElement("p", {
+        style: { fontFamily: Fb, fontSize: 14, color: C.gray, lineHeight: 1.6, margin: 0 }
+      }, person.role)
+    ))
+  )),
+  /*#__PURE__*/React.createElement("section", {
+    style: { background: C.blueGrad, padding: "56px 24px", textAlign: "center" }
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: { fontFamily: Fh, fontSize: 26, fontWeight: 900, color: C.white, textTransform: "uppercase", marginBottom: 20 }
+  }, "Want to Join Our Team?"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => go("careers"),
+    style: { background: C.coral, color: C.white, border: "none", borderRadius: 30, padding: "14px 32px", fontFamily: Fh, fontWeight: 800, fontSize: 15, textTransform: "uppercase", cursor: "pointer" }
+  }, "View Careers"))
 );
 const Locations = ({
   go
@@ -3334,8 +3357,8 @@ const Careers = ({
   /*#__PURE__*/React.createElement("div", { style: { maxWidth: 900, margin: "0 auto" } },
     /*#__PURE__*/React.createElement("h2", { style: { fontFamily: Fh, fontSize: "clamp(22px,4vw,30px)", fontWeight: 900, color: C.navy, textTransform: "uppercase", marginBottom: 28, textAlign: "center" } }, "Why Work With Us"),
     /*#__PURE__*/React.createElement("div", { style: { display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 16 } },
-      [{t:"Purpose Driven Work",d:"Every day, you are making a real impact in the lives of children and families in our community."},{t:"Joy Filled Environment",d:"We believe learning should feel alive. Our spaces are filled with energy, creativity, and connection."},{t:"Whole Child Focus",d:"We center social emotional learning and restorative practices, ensuring our scholars are supported academically and emotionally."},{t:"Growth and Development",d:"We invest in our team through coaching, training, and opportunities to grow as educators and leaders."},{t:"Community and Culture",d:"We are building something special. A place where staff feel valued, supported, and part of a shared vision."}].map((item, i) => /*#__PURE__*/React.createElement("div", { key: i, style: { flex: "0 0 calc(33.333% - 12px)", minWidth: 220, background: C.white, borderRadius: 20, padding: "28px 24px", boxShadow: "0 4px 20px rgba(0,0,0,0.05)", border: "1px solid " + C.grayLt } },
-        /*#__PURE__*/React.createElement("h3", { style: { fontFamily: Fh, fontSize: 16, fontWeight: 800, color: C.navy, textTransform: "uppercase", marginBottom: 8 } }, item.t),
+      [{t:"Purpose Driven Work",c:C.gold,d:"Every day, you are making a real impact in the lives of children and families in our community."},{t:"Joy Filled Environment",c:C.coral,d:"We believe learning should feel alive. Our spaces are filled with energy, creativity, and connection."},{t:"Whole Child Focus",c:C.blue,d:"We center social emotional learning and restorative practices, ensuring our scholars are supported academically and emotionally."},{t:"Growth and Development",c:C.green,d:"We invest in our team through coaching, training, and opportunities to grow as educators and leaders."},{t:"Community and Culture",c:"#fa4dc8",d:"We are building something special. A place where staff feel valued, supported, and part of a shared vision."}].map((item, i) => /*#__PURE__*/React.createElement("div", { key: i, style: { flex: "0 0 calc(33.333% - 12px)", minWidth: 220, background: C.white, borderRadius: 20, padding: "28px 24px", boxShadow: "0 4px 20px rgba(0,0,0,0.05)", borderTop: "4px solid " + item.c } },
+        /*#__PURE__*/React.createElement("h3", { style: { fontFamily: Fh, fontSize: 16, fontWeight: 800, color: item.c, textTransform: "uppercase", marginBottom: 8 } }, item.t),
         /*#__PURE__*/React.createElement("p", { style: { fontFamily: Fb, fontSize: 14, color: C.gray, lineHeight: 1.7, margin: 0 } }, item.d)
       ))
     )
@@ -3360,7 +3383,7 @@ const Careers = ({
     /*#__PURE__*/React.createElement("div", { style: { display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 16 } },
       ["Helps children feel safe and seen", "Builds confidence and social skills", "Supports academic growth beyond the classroom", "Creates spaces where joy, movement, and learning come together"].map((item, i) =>
         /*#__PURE__*/React.createElement("div", { key: i, style: { flex: "0 0 calc(50% - 12px)", minWidth: 220, display: "flex", gap: 12, alignItems: "flex-start", background: C.offW, borderRadius: 14, padding: "18px 20px" } },
-          /*#__PURE__*/React.createElement("span", { style: { color: C.green, fontWeight: 800, fontSize: 20, flexShrink: 0 } }, "\u2713"),
+          /*#__PURE__*/React.createElement("span", { style: { color: [C.gold, C.coral, C.blue, C.green][i], fontWeight: 800, fontSize: 20, flexShrink: 0 } }, "2713"),
           /*#__PURE__*/React.createElement("span", { style: { fontFamily: Fb, fontSize: 15, color: C.navy, lineHeight: 1.5 } }, item)
         )
       )
@@ -3374,7 +3397,7 @@ const Careers = ({
     /*#__PURE__*/React.createElement("p", { style: { fontFamily: Fb, fontSize: 16, color: C.gray, lineHeight: 1.8, marginBottom: 24, textAlign: "center" } }, "You will thrive at Legacy Rise Academy if you:"),
     /*#__PURE__*/React.createElement("div", { style: { display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12 } },
       ["Love working with children", "Show up consistently and on time", "Communicate clearly and respectfully", "Bring positive energy and professionalism", "Are open to growth and feedback"].map((item, i) =>
-        /*#__PURE__*/React.createElement("div", { key: i, style: { flex: "0 0 calc(33.333% - 8px)", minWidth: 200, display: "flex", gap: 10, alignItems: "center", background: C.white, borderRadius: 14, padding: "16px 18px", boxShadow: "0 2px 12px rgba(0,0,0,0.04)" } },
+        /*#__PURE__*/React.createElement("div", { key: i, style: { flex: "0 0 calc(33.333% - 8px)", minWidth: 200, display: "flex", gap: 10, alignItems: "center", background: C.white, borderRadius: 14, padding: "16px 18px", boxShadow: "0 2px 12px rgba(0,0,0,0.04)", borderLeft: "3px solid " + [C.gold, C.blue, C.coral, C.green, "#fa4dc8"][i] } },
           /*#__PURE__*/React.createElement("span", { style: { fontFamily: Fb, fontSize: 14, fontWeight: 600, color: C.navy } }, item)
         )
       )
@@ -3385,7 +3408,7 @@ const Careers = ({
   /*#__PURE__*/React.createElement("div", { style: { maxWidth: 700, margin: "0 auto", textAlign: "center" } },
     /*#__PURE__*/React.createElement("h2", { style: { fontFamily: Fh, fontSize: "clamp(22px,4vw,30px)", fontWeight: 900, color: C.navy, textTransform: "uppercase", marginBottom: 32 } }, "Open Positions"),
     ["Program Educators & Activity Leaders", "Site Coordinators", "Summer Camp Counselors", "Administrative & Operations Support"].map((r, i) =>
-      /*#__PURE__*/React.createElement("div", { key: i, style: { background: C.offW, borderRadius: 14, padding: "20px 24px", marginBottom: 12, textAlign: "left", display: "flex", justifyContent: "space-between", alignItems: "center" } },
+      /*#__PURE__*/React.createElement("div", { key: i, style: { background: C.offW, borderRadius: 14, padding: "20px 24px", marginBottom: 12, textAlign: "left", display: "flex", justifyContent: "space-between", alignItems: "center", borderLeft: "4px solid " + [C.gold, C.blue, C.coral, C.green][i] } },
         /*#__PURE__*/React.createElement("span", { style: { fontFamily: Fh, fontSize: 16, fontWeight: 700, color: C.navy } }, r),
         /*#__PURE__*/React.createElement("span", { style: { fontFamily: Fh, fontSize: 12, fontWeight: 700, color: C.blue, cursor: "pointer" } }, "View on Indeed \u2192")
       )
@@ -3592,6 +3615,8 @@ function App() {
   }), page === "about" && /*#__PURE__*/React.createElement(About, {
     go: go
   }), page === "founder" && /*#__PURE__*/React.createElement(FounderBio, {
+    go: go
+  }), page === "team" && /*#__PURE__*/React.createElement(TeamPage, {
     go: go
   }), page === "programs" && /*#__PURE__*/React.createElement(Programs, {
     go: go
