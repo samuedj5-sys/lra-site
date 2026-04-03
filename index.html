@@ -12,7 +12,7 @@
 @media(max-width:768px){
 .dN{display:none!important}
 .mB{display:flex!important}
-.hero-grid{grid-template-columns:1fr!important}.photo-grid{grid-template-columns:1fr 1fr!important;grid-template-rows:140px 140px!important;height:auto!important}.photo-grid img{grid-row:auto!important;height:140px!important;object-fit:cover!important}
+.hero-grid{grid-template-columns:1fr!important}
 .actGrid{grid-template-columns:1fr!important}
 .about-two-col{grid-template-columns:1fr!important!important}
 .about-story-grid{grid-template-columns:1fr!important!important}
@@ -86,8 +86,8 @@ const Polaroid = ({
   style: {
     display: "inline-block",
     background: C.white,
-    borderRadius: 6,
-    padding: "6px 6px 22px",
+    borderRadius: 10,
+    padding: 3,
     boxShadow: "0 6px 24px rgba(0,0,0,0.18)",
     transform: "rotate(" + rotate + "deg)",
     ...s
@@ -97,9 +97,9 @@ const Polaroid = ({
   alt: "",
   style: {
     width: "100%",
-    height: 120,
+    height: 150,
     objectFit: "cover",
-    borderRadius: 4,
+    borderRadius: 8,
     display: "block"
   }
 }));
@@ -1009,56 +1009,66 @@ const Home = ({
       cursor: "pointer"
     }
   }, "Get Started")), /*#__PURE__*/React.createElement("div", {
-    className: "photo-grid",
     style: {
-      display: "grid",
-      gridTemplateColumns: "1.4fr 1fr",
-      gridTemplateRows: "1fr 1fr 1fr",
-      gap: 8,
-      height: "clamp(320px,50vw,580px)",
-      borderRadius: 20,
-      overflow: "hidden",
-      boxShadow: "0 16px 48px rgba(0,0,0,0.25)"
+      position: "relative",
+      minHeight: "clamp(350px,50vw,520px)"
     }
-  }, /*#__PURE__*/React.createElement("img", {
-    src: "/images/DSC03044.JPG",
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      left: "3%",
+      top: "3%",
+      width: "70%",
+      zIndex: 2
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      inset: -6,
+      borderRadius: 22,
+      background: "linear-gradient(135deg, #ffc91f, #ef5d3b, #fa4dc8)",
+      zIndex: 0
+    }
+  }), /*#__PURE__*/React.createElement("img", {
+    src: I.j1,
     alt: "Legacy Rise Academy",
     style: {
       width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      objectPosition: "center 60%",
-      gridRow: "1 / 4",
-      borderRadius: "16px 0 0 16px",
-      display: "block"
+      borderRadius: 18,
+      position: "relative",
+      zIndex: 1,
+      display: "block",
+      boxShadow: "0 16px 48px rgba(0,0,0,0.3)"
     }
-  }), /*#__PURE__*/React.createElement("img", {
-    src: "/images/DSC03065.JPG",
-    alt: "Healthy learning",
+  })), /*#__PURE__*/React.createElement(Polaroid, {
+    src: I.k2,
+    rotate: -8,
     style: {
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      display: "block"
+      position: "absolute",
+      left: "-5%",
+      bottom: "5%",
+      width: "40%",
+      zIndex: 3
     }
-  }), /*#__PURE__*/React.createElement("img", {
-    src: "/images/DSC03071.JPG",
-    alt: "Kids together",
+  }), /*#__PURE__*/React.createElement(Polaroid, {
+    src: I.j3,
+    rotate: 6,
     style: {
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      display: "block"
+      position: "absolute",
+      right: 0,
+      top: 0,
+      width: "40%",
+      zIndex: 1
     }
-  }), /*#__PURE__*/React.createElement("img", {
-    src: "/images/DSC03124.JPG",
-    alt: "Focused learning",
+  }), /*#__PURE__*/React.createElement(Polaroid, {
+    src: I.j4,
+    rotate: -4,
     style: {
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-      borderRadius: "0 0 16px 0",
-      display: "block"
+      position: "absolute",
+      right: "2%",
+      bottom: "8%",
+      width: "35%",
+      zIndex: 3
     }
   })))), /*#__PURE__*/React.createElement("section", {
     style: {
@@ -3231,7 +3241,7 @@ function App() {
   }), /*#__PURE__*/React.createElement("link", {
     href: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap",
     rel: "stylesheet"
-  }), /*#__PURE__*/React.createElement("style", null, `*{box-sizing:border-box;margin:0;padding:0}body{margin:0}input,select,textarea,button{font-family:inherit}img{max-width:100%}@media(max-width:768px){.dN{display:none!important}.mB{display:flex!important}.hero-grid{grid-template-columns:1fr!important}.photo-grid{grid-template-columns:1fr 1fr!important;grid-template-rows:140px 140px!important;height:auto!important}.photo-grid img{grid-row:auto!important;height:140px!important;object-fit:cover!important}.actGrid{grid-template-columns:1fr!important}.about-two-col{grid-template-columns:1fr!important!important}.about-story-grid{grid-template-columns:1fr!important!important}.founder-grid{grid-template-columns:1fr!important!important}.pillars-grid{grid-template-columns:1fr 1fr!important}.pillars-image-wrap{margin-top:20px!important;margin-bottom:26px!important}.pillars-image-frame{max-width:100%!important}.pillars-image-frame img{border-radius:18px!important}.mobile-center{text-align:center!important}.mobile-center-flex{align-items:center!important}.mobile-full{max-width:100%!important}}@media(max-width:560px){.pillars-grid{grid-template-columns:1fr!important}}@media(min-width:769px){.mB{display:none!important}.mM{display:none!important}}`), /*#__PURE__*/React.createElement(Nav, {
+  }), /*#__PURE__*/React.createElement("style", null, `*{box-sizing:border-box;margin:0;padding:0}body{margin:0}input,select,textarea,button{font-family:inherit}img{max-width:100%}@media(max-width:768px){.dN{display:none!important}.mB{display:flex!important}.hero-grid{grid-template-columns:1fr!important}.actGrid{grid-template-columns:1fr!important}.about-two-col{grid-template-columns:1fr!important!important}.about-story-grid{grid-template-columns:1fr!important!important}.founder-grid{grid-template-columns:1fr!important!important}.pillars-grid{grid-template-columns:1fr 1fr!important}.pillars-image-wrap{margin-top:20px!important;margin-bottom:26px!important}.pillars-image-frame{max-width:100%!important}.pillars-image-frame img{border-radius:18px!important}.mobile-center{text-align:center!important}.mobile-center-flex{align-items:center!important}.mobile-full{max-width:100%!important}}@media(max-width:560px){.pillars-grid{grid-template-columns:1fr!important}}@media(min-width:769px){.mB{display:none!important}.mM{display:none!important}}`), /*#__PURE__*/React.createElement(Nav, {
     page: page,
     go: go
   }), page === "home" && /*#__PURE__*/React.createElement(Home, {
