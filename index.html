@@ -12,7 +12,7 @@
 @media(max-width:768px){
 .dN{display:none!important}
 .mB{display:flex!important}
-.hero-grid{grid-template-columns:1fr!important}
+.hero-grid{grid-template-columns:1fr!important}.photo-grid{gridTemplateColumns:1fr 1fr!important;grid-template-columns:1fr 1fr!important;grid-template-rows:auto auto!important;height:auto!important}.photo-grid img:first-child{grid-row:auto!important}.photo-grid img:last-child{display:none!important}
 .actGrid{grid-template-columns:1fr!important}
 .about-two-col{grid-template-columns:1fr!important!important}
 .about-story-grid{grid-template-columns:1fr!important!important}
@@ -1009,12 +1009,13 @@ const Home = ({
       cursor: "pointer"
     }
   }, "Get Started")), /*#__PURE__*/React.createElement("div", {
+    className: "photo-grid",
     style: {
       display: "grid",
       gridTemplateColumns: "1.4fr 1fr",
       gridTemplateRows: "1fr 1fr 1fr",
       gap: 8,
-      height: "clamp(300px,40vw,500px)",
+      height: "clamp(320px,50vw,580px)",
       borderRadius: 20,
       overflow: "hidden",
       boxShadow: "0 16px 48px rgba(0,0,0,0.25)"
@@ -1026,6 +1027,7 @@ const Home = ({
       width: "100%",
       height: "100%",
       objectFit: "cover",
+      objectPosition: "center 60%",
       gridRow: "1 / 4",
       borderRadius: "16px 0 0 16px",
       display: "block"
@@ -3229,7 +3231,7 @@ function App() {
   }), /*#__PURE__*/React.createElement("link", {
     href: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap",
     rel: "stylesheet"
-  }), /*#__PURE__*/React.createElement("style", null, `*{box-sizing:border-box;margin:0;padding:0}body{margin:0}input,select,textarea,button{font-family:inherit}img{max-width:100%}@media(max-width:768px){.dN{display:none!important}.mB{display:flex!important}.hero-grid{grid-template-columns:1fr!important}.actGrid{grid-template-columns:1fr!important}.about-two-col{grid-template-columns:1fr!important!important}.about-story-grid{grid-template-columns:1fr!important!important}.founder-grid{grid-template-columns:1fr!important!important}.pillars-grid{grid-template-columns:1fr 1fr!important}.pillars-image-wrap{margin-top:20px!important;margin-bottom:26px!important}.pillars-image-frame{max-width:100%!important}.pillars-image-frame img{border-radius:18px!important}.mobile-center{text-align:center!important}.mobile-center-flex{align-items:center!important}.mobile-full{max-width:100%!important}}@media(max-width:560px){.pillars-grid{grid-template-columns:1fr!important}}@media(min-width:769px){.mB{display:none!important}.mM{display:none!important}}`), /*#__PURE__*/React.createElement(Nav, {
+  }), /*#__PURE__*/React.createElement("style", null, `*{box-sizing:border-box;margin:0;padding:0}body{margin:0}input,select,textarea,button{font-family:inherit}img{max-width:100%}@media(max-width:768px){.dN{display:none!important}.mB{display:flex!important}.hero-grid{grid-template-columns:1fr!important}.photo-grid{gridTemplateColumns:1fr 1fr!important;grid-template-columns:1fr 1fr!important;grid-template-rows:auto auto!important;height:auto!important}.photo-grid img:first-child{grid-row:auto!important}.photo-grid img:last-child{display:none!important}.actGrid{grid-template-columns:1fr!important}.about-two-col{grid-template-columns:1fr!important!important}.about-story-grid{grid-template-columns:1fr!important!important}.founder-grid{grid-template-columns:1fr!important!important}.pillars-grid{grid-template-columns:1fr 1fr!important}.pillars-image-wrap{margin-top:20px!important;margin-bottom:26px!important}.pillars-image-frame{max-width:100%!important}.pillars-image-frame img{border-radius:18px!important}.mobile-center{text-align:center!important}.mobile-center-flex{align-items:center!important}.mobile-full{max-width:100%!important}}@media(max-width:560px){.pillars-grid{grid-template-columns:1fr!important}}@media(min-width:769px){.mB{display:none!important}.mM{display:none!important}}`), /*#__PURE__*/React.createElement(Nav, {
     page: page,
     go: go
   }), page === "home" && /*#__PURE__*/React.createElement(Home, {
