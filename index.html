@@ -37,19 +37,19 @@
 const React = window.React;
 const { useState, useEffect, useRef } = React;
 const I = {
-  logo: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/41d31403-a3eb-4004-a89c-e3adae5b55de/Legacy+Rise+Academy+Logo+%284%29.png",
-  logoW: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/feb8ff01-0d3c-4ad4-8085-25e1ec839c93/Legacy+Rise+Academy+Logo+%283%29.png",
-  k1: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/1760577375891-SRWL1Y2B8MKA7VTNMID3/unsplash-image-78Ae6N7rNvI.jpg",
-  k2: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/1760577453564-G90P6U2NXQ5SJ6HESCIS/unsplash-image-dsf3lRHaUuA.jpg",
-  pr1: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/1760580254411-ZC56QZCI63SSYFC94N78/unsplash-image-YTQQYQ6_g1s.jpg",
-  pr2: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/8c6465ba-6992-4167-acb9-4cdc9220fecc/Tod2.jpg",
-  pr3: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/44b9811e-67f3-448e-a479-0d00fde7a6c9/Tod1.png",
-  pr4: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/1760580557660-H0PE48E05VMC1TGT8L3W/unsplash-image-GDokEYnOfnE.jpg",
-  en: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/e12847c4-a405-4761-98b8-6f37b1daffef/Untitled+design+%283%29.png",
-  j1: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/b77c732d-8c9f-4494-a6fc-0f9f1ffe0f73/IMG_0298.jpeg",
-  j2: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/1760587787392-18KXLYMXNAXUYWX3GZ84/unsplash-image-OVDtgUhUPBY.jpg",
-  j3: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/9ca2869d-13ca-46da-a2bf-2d2f7bed813c/IMG_4040.jpeg",
-  j4: "https://images.squarespace-cdn.com/content/v1/68e069613392e3266f0c2d1d/1760588142365-ASPAPFK6B5OTXA3T1Z1F/unsplash-image-sCQdogiTaZ8.jpg"
+  logo: "/images/logo.webp",
+  logoW: "/images/logo-white.webp",
+  k1: "/images/kids-group.webp",
+  k2: "/images/kids-classroom.webp",
+  pr1: "/images/kids-learning.webp",
+  pr2: "/images/toddler-2.webp",
+  pr3: "/images/toddler-1.webp",
+  pr4: "/images/kids-outdoor.webp",
+  en: "/images/enrichment.webp",
+  j1: "/images/founder.webp",
+  j2: "/images/kids-reading.webp",
+  j3: "/images/kids-play.webp",
+  j4: "/images/kids-active.webp"
 };
 const C = {
   blue: "#0f619d",
@@ -169,7 +169,7 @@ const Nav = ({
       gap: 16
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "https://www.facebook.com/legacyriseacademy",
+    href: "https://www.facebook.com/people/Legacy-Rise-Academy/61581914596974/",
     target: "_blank",
     rel: "noreferrer",
     style: {
@@ -1428,27 +1428,33 @@ const Home = ({
   }, [{
     t: "Engagement & Belonging",
     d: "Scholars feel seen, valued, and connected in a space where they belong. When children feel safe and supported, they engage more, take academic risks, and build a deeper love for learning and community.",
-    clr: "#ffc91f"
+    clr: "#ffc91f",
+    img: I.k1
   }, {
     t: "Movement & Healthy Growth",
     d: "Daily movement and outdoor time support physical health, focus, and emotional balance. Through active play and sunlight, scholars build strength, improve mood, and develop healthy habits for lifelong wellness.",
-    clr: "#3d976e"
+    clr: "#3d976e",
+    img: I.j4
   }, {
     t: "Friendship & Connection",
     d: "Scholars build meaningful relationships rooted in trust, respect, and shared experiences. These connections strengthen communication, confidence, and a lasting sense of community.",
-    clr: "#0f619d"
+    clr: "#0f619d",
+    img: I.k2
   }, {
     t: "Academic Confidence",
     d: "Scholars grow as confident learners through consistent academic support and enrichment. 84% of K-6 students report after school programs help them better understand what they learn during the school day.",
-    clr: "#fa4dc8"
+    clr: "#fa4dc8",
+    img: I.pr1
   }, {
     t: "Improved Outcomes",
     d: "Consistent participation leads to measurable academic growth and stronger performance over time. Students in high-quality programs can see up to a 20 percentile point increase on standardized assessments.",
-    clr: "#ef5d3b"
+    clr: "#ef5d3b",
+    img: I.j2
   }, {
     t: "Higher Grades",
     d: "Targeted support and extended learning time drive measurable academic growth. Students attend more regularly, complete more work, and improve reading performance over time.",
-    clr: "#e53e3e"
+    clr: "#e53e3e",
+    img: I.j3
   }].map((c, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     style: {
@@ -1456,78 +1462,23 @@ const Home = ({
       overflow: "hidden",
       boxShadow: "0 6px 24px rgba(0,0,0,0.08)",
       border: "1px solid rgba(255,255,255,0.1)",
-      transition: "transform 0.25s",
+      background: C.white
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
-      background: C.white,
-      padding: "32px 20px",
-      textAlign: "center",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center"
+      position: "relative",
+      overflow: "hidden"
     }
-  }, /*#__PURE__*/React.createElement("svg", {
-    width: "120",
-    height: "100",
-    viewBox: "0 0 120 100"
-  },
-  /* Tilted mint rectangle background */
-  /*#__PURE__*/React.createElement("rect", { x: "15", y: "10", width: "90", height: "75", rx: "8", fill: "#d4f0e8", transform: "rotate(-5 60 50)" }),
-  /* Icon content per card */
-  i === 0 ? /*#__PURE__*/React.createElement("g", null,
-    /*#__PURE__*/React.createElement("circle", { cx: "50", cy: "42", r: "16", fill: "#ffc91f", stroke: "#333", strokeWidth: "2.5" }),
-    /*#__PURE__*/React.createElement("polygon", { points: "50,28 53,38 63,38 55,44 58,54 50,48 42,54 45,44 37,38 47,38", fill: "#fff", stroke: "#333", strokeWidth: "1.5" }),
-    /*#__PURE__*/React.createElement("path", { d: "M70 55 L78 55 L78 30 L85 30", fill: "none", stroke: "#333", strokeWidth: "2.5", strokeLinecap: "round" }),
-    /*#__PURE__*/React.createElement("circle", { cx: "78", cy: "38", r: "3", fill: "#ef5d3b" }),
-    /*#__PURE__*/React.createElement("circle", { cx: "85", cy: "30", r: "3", fill: "#3d976e" })
-  ) :
-  i === 1 ? /*#__PURE__*/React.createElement("g", null,
-    /*#__PURE__*/React.createElement("circle", { cx: "70", cy: "50", r: "18", fill: "#fff", stroke: "#333", strokeWidth: "2.5" }),
-    /*#__PURE__*/React.createElement("path", { d: "M70 50 L70 38 M70 50 L80 50", stroke: "#333", strokeWidth: "2", strokeLinecap: "round" }),
-    /*#__PURE__*/React.createElement("circle", { cx: "42", cy: "55", r: "10", fill: "#ffc91f", stroke: "#333", strokeWidth: "2" }),
-    /*#__PURE__*/React.createElement("circle", { cx: "42", cy: "55", r: "5", fill: "#ef5d3b" }),
-    /*#__PURE__*/React.createElement("circle", { cx: "55", cy: "35", r: "8", fill: "#3d976e", stroke: "#333", strokeWidth: "2" }),
-    /*#__PURE__*/React.createElement("circle", { cx: "55", cy: "35", r: "4", fill: "#0f619d" })
-  ) :
-  i === 2 ? /*#__PURE__*/React.createElement("g", null,
-    /*#__PURE__*/React.createElement("circle", { cx: "42", cy: "40", r: "12", fill: "#a8d8ea", stroke: "#333", strokeWidth: "2.5" }),
-    /*#__PURE__*/React.createElement("circle", { cx: "42", cy: "36", r: "5", fill: "#fff", stroke: "#333", strokeWidth: "2" }),
-    /*#__PURE__*/React.createElement("path", { d: "M32 52 Q42 58 52 52", fill: "none", stroke: "#333", strokeWidth: "2" }),
-    /*#__PURE__*/React.createElement("circle", { cx: "70", cy: "40", r: "12", fill: "#ffd6e0", stroke: "#333", strokeWidth: "2.5" }),
-    /*#__PURE__*/React.createElement("circle", { cx: "70", cy: "36", r: "5", fill: "#fff", stroke: "#333", strokeWidth: "2" }),
-    /*#__PURE__*/React.createElement("path", { d: "M60 52 Q70 58 80 52", fill: "none", stroke: "#333", strokeWidth: "2" }),
-    /*#__PURE__*/React.createElement("path", { d: "M52 44 L60 44", stroke: "#e53e3e", strokeWidth: "3", strokeLinecap: "round" }),
-    /*#__PURE__*/React.createElement("path", { d: "M56 40 L56 48", stroke: "#e53e3e", strokeWidth: "3", strokeLinecap: "round" })
-  ) :
-  i === 3 ? /*#__PURE__*/React.createElement("g", null,
-    /*#__PURE__*/React.createElement("path", { d: "M56 25 C56 25 46 30 46 42 C46 48 48 52 52 54 L52 60 L60 60 L60 54 C64 52 66 48 66 42 C66 30 56 25 56 25Z", fill: "#ffc91f", stroke: "#333", strokeWidth: "2.5" }),
-    /*#__PURE__*/React.createElement("line", { x1: "52", y1: "62", x2: "60", y2: "62", stroke: "#333", strokeWidth: "2.5", strokeLinecap: "round" }),
-    /*#__PURE__*/React.createElement("line", { x1: "52", y1: "66", x2: "60", y2: "66", stroke: "#333", strokeWidth: "2.5", strokeLinecap: "round" }),
-    /*#__PURE__*/React.createElement("line", { x1: "56", y1: "18", x2: "56", y2: "22", stroke: "#ffc91f", strokeWidth: "2", strokeLinecap: "round" }),
-    /*#__PURE__*/React.createElement("line", { x1: "44", y1: "22", x2: "47", y2: "25", stroke: "#ffc91f", strokeWidth: "2", strokeLinecap: "round" }),
-    /*#__PURE__*/React.createElement("line", { x1: "68", y1: "22", x2: "65", y2: "25", stroke: "#ffc91f", strokeWidth: "2", strokeLinecap: "round" })
-  ) :
-  i === 4 ? /*#__PURE__*/React.createElement("g", null,
-    /*#__PURE__*/React.createElement("rect", { x: "38", y: "28", width: "36", height: "28", rx: "3", fill: "#fff", stroke: "#333", strokeWidth: "2.5" }),
-    /*#__PURE__*/React.createElement("path", { d: "M38 38 L56 38 L74 38", stroke: "#333", strokeWidth: "1.5" }),
-    /*#__PURE__*/React.createElement("circle", { cx: "48", cy: "48", r: "4", fill: "#3d976e" }),
-    /*#__PURE__*/React.createElement("circle", { cx: "64", cy: "48", r: "4", fill: "#ef5d3b" }),
-    /*#__PURE__*/React.createElement("circle", { cx: "44", cy: "33", r: "2.5", fill: "#e53e3e" }),
-    /*#__PURE__*/React.createElement("circle", { cx: "50", cy: "33", r: "2.5", fill: "#ffc91f" }),
-    /*#__PURE__*/React.createElement("circle", { cx: "56", cy: "33", r: "2.5", fill: "#3d976e" }),
-    /*#__PURE__*/React.createElement("path", { d: "M56 56 L56 68 L68 68", fill: "none", stroke: "#333", strokeWidth: "2.5", strokeLinecap: "round" }),
-    /*#__PURE__*/React.createElement("polygon", { points: "66,64 72,68 66,72", fill: "#0f619d" })
-  ) :
-  /*#__PURE__*/React.createElement("g", null,
-    /*#__PURE__*/React.createElement("path", { d: "M56 30 C56 30 44 22 38 30 C32 38 40 48 56 60 C72 48 80 38 74 30 C68 22 56 30 56 30Z", fill: "#e53e3e", stroke: "#333", strokeWidth: "2.5" }),
-    /*#__PURE__*/React.createElement("path", { d: "M49 38 C49 38 52 34 56 38", fill: "none", stroke: "#fff", strokeWidth: "2", strokeLinecap: "round" }),
-    /*#__PURE__*/React.createElement("line", { x1: "46", y1: "24", x2: "44", y2: "18", stroke: "#ffc91f", strokeWidth: "2", strokeLinecap: "round" }),
-    /*#__PURE__*/React.createElement("line", { x1: "66", y1: "24", x2: "68", y2: "18", stroke: "#ffc91f", strokeWidth: "2", strokeLinecap: "round" }),
-    /*#__PURE__*/React.createElement("circle", { cx: "44", cy: "16", r: "2", fill: "#ffc91f" }),
-    /*#__PURE__*/React.createElement("circle", { cx: "68", cy: "16", r: "2", fill: "#ffc91f" })
-  )
-  )),  /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("img", {
+    src: c.img,
+    alt: c.t,
+    style: {
+      width: "100%",
+      height: 200,
+      objectFit: "cover",
+      display: "block"
+    }
+  })),  /*#__PURE__*/React.createElement("div", {
     style: {
       background: C.white,
       padding: "20px",
@@ -1798,11 +1749,66 @@ const Home = ({
 const About = ({
   go
 }) => /*#__PURE__*/React.createElement(React.Fragment, null,
-  /*#__PURE__*/React.createElement(Hero, {
-    title: "About Legacy Rise Academy",
-    sub: "Building Bright Beginnings, One Legacy at a Time",
-    img: null
+  /*#__PURE__*/React.createElement("section", {
+    style: {
+      background: C.blueGrad,
+      position: "relative",
+      overflow: "hidden",
+      padding: "clamp(48px,8vw,80px) 24px"
+    }
+  },
+  /*#__PURE__*/React.createElement("video", {
+    autoPlay: true,
+    muted: true,
+    loop: true,
+    playsInline: true,
+    style: {
+      position: "absolute",
+      inset: 0,
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      opacity: 0.2
+    },
+    src: "/images/about-bg.mp4"
   }),
+  /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      inset: 0,
+      background: "linear-gradient(135deg, rgba(15,97,157,0.85), rgba(10,79,128,0.9))"
+    }
+  }),
+  /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 800,
+      margin: "0 auto",
+      position: "relative",
+      zIndex: 2,
+      textAlign: "center"
+    }
+  },
+  /*#__PURE__*/React.createElement("h1", {
+    style: {
+      fontFamily: Fh,
+      fontSize: "clamp(30px,6vw,50px)",
+      fontWeight: 900,
+      color: C.white,
+      textTransform: "uppercase",
+      lineHeight: 1.1,
+      marginBottom: 14
+    }
+  }, "About Legacy Rise Academy"),
+  /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 17,
+      color: "rgba(255,255,255,0.8)",
+      lineHeight: 1.7,
+      maxWidth: 600,
+      margin: "0 auto"
+    }
+  }, "Building Bright Beginnings, One Legacy at a Time"))),
   /*#__PURE__*/React.createElement("section", {
     style: {
       background: "linear-gradient(180deg, #ffffff 0%, #f8fbff 40%, #faf9f6 100%)",
