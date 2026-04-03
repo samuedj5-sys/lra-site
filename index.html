@@ -127,13 +127,13 @@ const Nav = ({
     label: "Our Programs",
     children: [{
       id: "afterschool",
-      label: "Before/ After School Programs"
+      label: "Before/After-School Programs"
     }, {
       id: "summer",
       label: "Summer Programs"
     }, {
       id: "enrichment",
-      label: "Enrichment & Special"
+      label: "Legacy in Action"
     }]
   }, {
     id: "locations",
@@ -527,10 +527,10 @@ const Foot = ({
   }
 }, CFG.phone))), [{
   t: "Our Programs",
-  lk: [["afterschool", "Before/ After School"], ["summer", "Summer"], ["enrichment", "Enrichment"]]
+  lk: [["afterschool", "Before/After-School"], ["summer", "Summer"], ["enrichment", "Legacy in Action"]]
 }, {
   t: "About",
-  lk: [["about", "Our Story"], ["partnerships", "For Schools"], ["careers", "Careers / Join Our Team"]]
+  lk: [["about", "Our Story"], ["founder", "Meet the Founder"], ["partnerships", "For Schools"], ["careers", "Careers / Join Our Team"]]
 }, {
   t: "Get in Touch",
   lk: [["enroll", "Get Started"], ["faq", "Contact Us"], ["locations", "Locations"]]
@@ -2676,7 +2676,7 @@ const Programs = ({
     gap: 24
   }
 }, [{
-  t: "Before/ After School Programs",
+  t: "Before/After-School Programs",
   d: "A safe, enriching environment for K-12 scholars.",
   img: I.k1,
   tag: "Now Enrolling",
@@ -2690,7 +2690,7 @@ const Programs = ({
   tc: C.amber,
   id: "summer"
 }, {
-  t: "Enrichment & Special",
+  t: "Legacy in Action",
   d: "Sign language, financial literacy, etiquette, fitness, and technology.",
   img: I.pr1,
   tag: "Year-Round",
@@ -2759,7 +2759,7 @@ const AfterSchool = ({
   go
 }) => /*#__PURE__*/React.createElement(ProgPage, {
   go: go,
-  title: "Before/ After School Programs",
+  title: "Before/After-School Programs",
   sub: "K-12 Scholars | Now Enrolling",
   desc: "Our After School Program provides a safe, structured, and enriching environment for scholars in grades K through 12.",
   features: ["Academic enrichment through STEM, literacy, and learning support", "Creative exploration through media, music, culinary arts, and movement", "Character development rooted in leadership and teamwork", "Safe supervision with intentional transitions", "Exposure to mentors and real-world experiences", "Culturally responsive programming"],
@@ -2779,15 +2779,353 @@ const Summer = ({
 });
 const Enrichment = ({
   go
-}) => /*#__PURE__*/React.createElement(ProgPage, {
-  go: go,
-  title: "Enrichment & Special Programs",
-  sub: "Year-Round Pathways",
-  desc: "Legacy Rise Academy offers specialized enrichment pathways beyond traditional academics.",
-  features: ["Early Literacy and Math Foundations", "Sign Language and Spanish", "Etiquette and Social Skills", "Fitness including soccer, karate, and active play", "Technology Exploration", "Fine Arts, Visual Arts, and STEM Labs"],
-  highlight: "Every child explores multiple enrichment pathways, all included.",
-  img: I.en
-});
+}) => /*#__PURE__*/React.createElement(React.Fragment, null,
+  /*#__PURE__*/React.createElement(Hero, {
+    title: "Legacy in Action",
+    sub: "See Our Scholars Learn, Grow, and Thrive"
+  }),
+  /*#__PURE__*/React.createElement("section", {
+    style: {
+      background: C.offW,
+      padding: "72px 24px"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1100,
+      margin: "0 auto",
+      textAlign: "center",
+      marginBottom: 36
+    }
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: Fh,
+      fontSize: "clamp(22px,4vw,32px)",
+      fontWeight: 900,
+      color: C.navy,
+      textTransform: "uppercase",
+      marginBottom: 12
+    }
+  }, "Our Scholars in Action"),
+  /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: Fb,
+      fontSize: 16,
+      color: C.gray,
+      lineHeight: 1.7,
+      maxWidth: 600,
+      margin: "0 auto"
+    }
+  }, "From hands-on learning to creative exploration, here is a glimpse into the everyday magic at Legacy Rise Academy.")),
+  /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1100,
+      margin: "0 auto",
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))",
+      gap: 16
+    }
+  },
+    ["/images/DSC03044.JPG", "/images/DSC03052.JPG", "/images/DSC03065.JPG", "/images/DSC03071.JPG", "/images/DSC03124.JPG", "/images/DSC03528.JPG", "/images/DSC03529.JPG", "/images/DSC03888.JPG", "/images/DSC03933.JPG", "/images/DSC03909.JPG"].map((src, i) =>
+      /*#__PURE__*/React.createElement("div", {
+        key: i,
+        style: {
+          borderRadius: 16,
+          overflow: "hidden",
+          boxShadow: "0 4px 20px rgba(0,0,0,0.1)"
+        }
+      }, /*#__PURE__*/React.createElement("img", {
+        src: src,
+        alt: "Legacy Rise Academy",
+        style: {
+          width: "100%",
+          height: 240,
+          objectFit: "cover",
+          display: "block"
+        }
+      }))
+    )
+  )),
+  /*#__PURE__*/React.createElement("section", {
+    style: {
+      background: C.blueGrad,
+      padding: "56px 24px",
+      textAlign: "center"
+    }
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: Fh,
+      fontSize: 26,
+      fontWeight: 900,
+      color: C.white,
+      textTransform: "uppercase",
+      marginBottom: 20
+    }
+  }, "Want to see your child thrive?"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => go("enroll"),
+    style: {
+      background: C.coral,
+      color: C.white,
+      border: "none",
+      borderRadius: 30,
+      padding: "14px 32px",
+      fontFamily: Fh,
+      fontWeight: 800,
+      fontSize: 15,
+      textTransform: "uppercase",
+      cursor: "pointer"
+    }
+  }, "Enroll Now")));
+const FounderBio = ({
+  go
+}) => /*#__PURE__*/React.createElement(React.Fragment, null,
+  /*#__PURE__*/React.createElement("section", {
+    style: {
+      background: C.blueGrad,
+      position: "relative",
+      overflow: "hidden",
+      padding: "clamp(60px,10vw,100px) 24px"
+    }
+  },
+  /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1000,
+      margin: "0 auto",
+      display: "grid",
+      gridTemplateColumns: "340px 1fr",
+      gap: 48,
+      alignItems: "center",
+      position: "relative",
+      zIndex: 2
+    },
+    className: "founder-grid"
+  },
+    /*#__PURE__*/React.createElement("div", {
+      style: { position: "relative" }
+    },
+      /*#__PURE__*/React.createElement("div", {
+        style: {
+          position: "absolute",
+          inset: -6,
+          borderRadius: 24,
+          background: "linear-gradient(135deg, #ffc91f, #ef5d3b, #fa4dc8)",
+          zIndex: 0
+        }
+      }),
+      /*#__PURE__*/React.createElement("img", {
+        src: I.j1,
+        alt: "Tiayana Logan",
+        style: {
+          width: "100%",
+          height: 420,
+          objectFit: "cover",
+          objectPosition: "center top",
+          borderRadius: 20,
+          position: "relative",
+          zIndex: 1,
+          display: "block",
+          boxShadow: "0 20px 60px rgba(0,0,0,0.3)"
+        }
+      })
+    ),
+    /*#__PURE__*/React.createElement("div", null,
+      /*#__PURE__*/React.createElement("div", {
+        style: {
+          display: "inline-block",
+          background: "rgba(255,201,31,0.2)",
+          borderRadius: 999,
+          padding: "6px 16px",
+          fontFamily: Fh,
+          fontSize: 12,
+          fontWeight: 800,
+          color: C.gold,
+          textTransform: "uppercase",
+          letterSpacing: 1.2,
+          marginBottom: 12
+        }
+      }, "Founder & Executive Director"),
+      /*#__PURE__*/React.createElement("h1", {
+        style: {
+          fontFamily: Fh,
+          fontSize: "clamp(32px,5vw,48px)",
+          fontWeight: 900,
+          color: C.white,
+          lineHeight: 1.1,
+          marginBottom: 16
+        }
+      }, "Tiayana Logan"),
+      /*#__PURE__*/React.createElement("p", {
+        style: {
+          fontFamily: Fb,
+          fontSize: 17,
+          color: "rgba(255,255,255,0.85)",
+          lineHeight: 1.8,
+          marginBottom: 16
+        }
+      }, "Mother. Educator. Visionary Leader. Community Builder."),
+      /*#__PURE__*/React.createElement("div", {
+        style: {
+          width: 80,
+          height: 4,
+          borderRadius: 999,
+          background: "linear-gradient(90deg, #ffc91f, #ef5d3b)"
+        }
+      })
+    )
+  )),
+
+  /*#__PURE__*/React.createElement("section", {
+    style: {
+      background: C.white,
+      padding: "72px 24px"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 800,
+      margin: "0 auto"
+    }
+  },
+    /*#__PURE__*/React.createElement("p", {
+      style: { fontFamily: Fb, fontSize: 17, color: C.gray, lineHeight: 1.9, marginBottom: 20 }
+    }, "Tiayana Logan is a mother, lifelong learner, and visionary education leader with a deep commitment to building equitable and joyful learning environments for children and families."),
+    /*#__PURE__*/React.createElement("p", {
+      style: { fontFamily: Fb, fontSize: 17, color: C.gray, lineHeight: 1.9, marginBottom: 20 }
+    }, "With extensive experience as an assistant principal, instructional coach, school designer, and director of operations, Tiayana has driven impactful school systems, strengthened instruction, and designed programs that elevate student success. Her work spans school design, program development, operations management, and instructional support, all grounded in a belief that every child deserves access to high quality education."),
+    /*#__PURE__*/React.createElement("p", {
+      style: { fontFamily: Fb, fontSize: 17, color: C.gray, lineHeight: 1.9, marginBottom: 20 }
+    }, "After years of leading school operations, designing systems, and advocating for educational equity, Tiayana recognized that families were seeking more than just childcare. They were searching for a place where their children could be deeply cared for while also being academically prepared and inspired.")
+  )),
+
+  /*#__PURE__*/React.createElement("section", {
+    style: {
+      background: C.offW,
+      padding: "64px 24px"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 700,
+      margin: "0 auto",
+      background: "linear-gradient(135deg, rgba(15,97,157,0.06), rgba(239,93,59,0.06))",
+      border: "1px solid rgba(15,97,157,0.1)",
+      borderRadius: 28,
+      padding: "clamp(28px,4vw,48px)",
+      position: "relative"
+    }
+  },
+    /*#__PURE__*/React.createElement("div", {
+      style: { fontFamily: "Georgia,serif", fontSize: 60, color: C.coral, lineHeight: 1, marginBottom: 8 }
+    }, "\u201C"),
+    /*#__PURE__*/React.createElement("p", {
+      style: { fontFamily: Fb, fontSize: 18, color: C.navy, lineHeight: 1.8, fontStyle: "italic", marginBottom: 16 }
+    }, "As the founder of Legacy Rise Academy, Tiayana brings her passion, expertise, and lived experience together to create a space where children are nurtured, challenged, and inspired. Her leadership is rooted in love, excellence, and a clear vision to build spaces where children and families can grow, thrive, and rise together."),
+    /*#__PURE__*/React.createElement("div", {
+      style: { fontFamily: Fh, fontSize: 14, fontWeight: 800, color: C.navy, textTransform: "uppercase" }
+    }, "Tiayana Logan"),
+    /*#__PURE__*/React.createElement("div", {
+      style: { fontFamily: Fb, fontSize: 13, color: C.gray }
+    }, "Founder & Executive Director, Legacy Rise Academy")
+  )),
+
+  /*#__PURE__*/React.createElement("section", {
+    style: {
+      background: C.white,
+      padding: "72px 24px"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 900,
+      margin: "0 auto"
+    }
+  },
+    /*#__PURE__*/React.createElement("h2", {
+      style: { fontFamily: Fh, fontSize: "clamp(22px,4vw,30px)", fontWeight: 900, color: C.navy, textTransform: "uppercase", textAlign: "center", marginBottom: 32 }
+    }, "Leadership & Experience"),
+    /*#__PURE__*/React.createElement("div", {
+      style: { display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 16 }
+    },
+      [{t: "School Design & Operations", d: "Led the design and execution of high performing educational programs and school systems."},
+       {t: "Instructional Leadership", d: "Served as assistant principal and instructional coach, strengthening teaching and student outcomes."},
+       {t: "Program Development", d: "Created enrichment and academic programs that center student success and community impact."},
+       {t: "Community Advocacy", d: "Championed educational equity and built partnerships that serve families and uplift communities."}
+      ].map((item, i) => /*#__PURE__*/React.createElement("div", {
+        key: i,
+        style: { background: C.offW, borderRadius: 20, padding: "28px 24px", borderLeft: "4px solid " + [C.gold, C.blue, C.coral, C.green][i] }
+      },
+        /*#__PURE__*/React.createElement("h3", { style: { fontFamily: Fh, fontSize: 16, fontWeight: 800, color: C.navy, marginBottom: 8 } }, item.t),
+        /*#__PURE__*/React.createElement("p", { style: { fontFamily: Fb, fontSize: 14, color: C.gray, lineHeight: 1.7, margin: 0 } }, item.d)
+      ))
+    )
+  )),
+
+  /*#__PURE__*/React.createElement("section", {
+    style: {
+      background: C.offW,
+      padding: "72px 24px"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 900,
+      margin: "0 auto"
+    }
+  },
+    /*#__PURE__*/React.createElement("h2", {
+      style: { fontFamily: Fh, fontSize: "clamp(22px,4vw,30px)", fontWeight: 900, color: C.navy, textTransform: "uppercase", textAlign: "center", marginBottom: 12 }
+    }, "Our Leadership Team"),
+    /*#__PURE__*/React.createElement("p", {
+      style: { fontFamily: Fb, fontSize: 16, color: C.gray, lineHeight: 1.7, textAlign: "center", maxWidth: 600, margin: "0 auto 36px" }
+    }, "The passionate leaders behind Legacy Rise Academy, committed to building bright futures every single day."),
+    /*#__PURE__*/React.createElement("div", {
+      style: { display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 20 }
+    },
+      [{name: "Tiayana Logan", title: "She-EO and Founder", color: C.gold},
+       {name: "Shakur Joseph", title: "Director of People and Finance", color: C.blue},
+       {name: "Venessa Lynch", title: "Director of Operations & Community Growth", color: C.coral},
+       {name: "Jasmine Fields", title: "Executive Assistant and Site Lead", color: C.green},
+       {name: "Sophia Martin-Clark", title: "Program Director", color: "#fa4dc8"}
+      ].map((person, i) => /*#__PURE__*/React.createElement("div", {
+        key: i,
+        style: {
+          background: C.white,
+          borderRadius: 20,
+          padding: "32px 24px",
+          textAlign: "center",
+          boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
+          borderTop: "4px solid " + person.color
+        }
+      },
+        /*#__PURE__*/React.createElement("div", {
+          style: {
+            width: 80,
+            height: 80,
+            borderRadius: "50%",
+            background: person.color,
+            margin: "0 auto 16px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontFamily: Fh,
+            fontSize: 28,
+            fontWeight: 900,
+            color: C.white
+          }
+        }, person.name.split(" ").map(n => n[0]).join("")),
+        /*#__PURE__*/React.createElement("h3", {
+          style: { fontFamily: Fh, fontSize: 18, fontWeight: 900, color: C.navy, marginBottom: 6 }
+        }, person.name),
+        /*#__PURE__*/React.createElement("p", {
+          style: { fontFamily: Fb, fontSize: 14, color: C.gray, lineHeight: 1.5, margin: 0 }
+        }, person.title)
+      ))
+    )
+  )),
+
+  /*#__PURE__*/React.createElement("section", {
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: { fontFamily: Fh, fontSize: 26, fontWeight: 900, color: C.white, textTransform: "uppercase", marginBottom: 20 }
+  }, "Join the Legacy Tiayana is Building"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => go("enroll"),
+    style: { background: C.coral, color: C.white, border: "none", borderRadius: 30, padding: "14px 32px", fontFamily: Fh, fontWeight: 800, fontSize: 15, textTransform: "uppercase", cursor: "pointer" }
+  }, "Get Started"))
+);
 const Locations = ({
   go
 }) => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Hero, {
@@ -3239,6 +3577,8 @@ function App() {
   }), page === "home" && /*#__PURE__*/React.createElement(Home, {
     go: go
   }), page === "about" && /*#__PURE__*/React.createElement(About, {
+    go: go
+  }), page === "founder" && /*#__PURE__*/React.createElement(FounderBio, {
     go: go
   }), page === "programs" && /*#__PURE__*/React.createElement(Programs, {
     go: go
