@@ -2744,16 +2744,16 @@ const FounderBio = ({
       maxWidth: 1000,
       margin: "0 auto",
       display: "grid",
-      gridTemplateColumns: "340px 1fr",
-      gap: 48,
+      gridTemplateColumns: "minmax(0,340px) 1fr",
+      gap: 32,
       alignItems: "center",
       position: "relative",
       zIndex: 2
     },
-    className: "founder-grid"
+    className: "founder-grid mobile-center"
   },
     /*#__PURE__*/React.createElement("div", {
-      style: { position: "relative" }
+      style: { position: "relative", maxWidth: 340, margin: "0 auto" }
     },
       /*#__PURE__*/React.createElement("div", {
         style: {
@@ -2769,7 +2769,7 @@ const FounderBio = ({
         alt: "Tiayana Logan",
         style: {
           width: "100%",
-          height: 420,
+          height: "clamp(280px,50vw,420px)",
           objectFit: "cover",
           objectPosition: "center top",
           borderRadius: 20,
@@ -2780,7 +2780,10 @@ const FounderBio = ({
         }
       })
     ),
-    /*#__PURE__*/React.createElement("div", null,
+    /*#__PURE__*/React.createElement("div", {
+      className: "mobile-center",
+      style: {}
+    },
       /*#__PURE__*/React.createElement("div", {
         style: {
           display: "inline-block",
