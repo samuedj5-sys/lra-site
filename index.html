@@ -2845,31 +2845,55 @@ const FounderBio = ({
 
   /*#__PURE__*/React.createElement("section", {
     style: {
-      background: C.offW,
-      padding: "64px 24px"
+      background: "linear-gradient(135deg, #ffc91f 0%, #ffe066 40%, #fff8e0 70%, #ffc91f 100%)",
+      padding: "64px 24px",
+      position: "relative",
+      overflow: "hidden"
     }
-  }, /*#__PURE__*/React.createElement("div", {
+  },
+  /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 700,
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      height: 4,
+      background: "linear-gradient(90deg, #0f619d, #ffc91f, #ef5d3b)"
+    }
+  }),
+  /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      right: 0,
+      height: 4,
+      background: "linear-gradient(90deg, #ef5d3b, #ffc91f, #0f619d)"
+    }
+  }),
+  /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 800,
       margin: "0 auto",
-      background: C.goldLt,
-      border: "1px solid " + C.gold,
-      borderRadius: 28,
-      padding: "clamp(28px,4vw,48px)",
-      position: "relative"
+      textAlign: "center",
+      position: "relative",
+      zIndex: 1
     }
   },
     /*#__PURE__*/React.createElement("div", {
       style: { fontFamily: "Georgia,serif", fontSize: 60, color: C.coral, lineHeight: 1, marginBottom: 8 }
     }, "\u201C"),
     /*#__PURE__*/React.createElement("p", {
-      style: { fontFamily: Fb, fontSize: 18, color: C.navy, lineHeight: 1.8, fontStyle: "italic", marginBottom: 16 }
+      style: { fontFamily: Fb, fontSize: 19, color: C.navy, lineHeight: 1.8, fontStyle: "italic", marginBottom: 20 }
     }, "As the founder of Legacy Rise Academy, Tiayana brings her passion, expertise, and lived experience together to create a space where children are nurtured, challenged, and inspired. Her leadership is rooted in love, excellence, and a clear vision to build spaces where children and families can grow, thrive, and rise together."),
     /*#__PURE__*/React.createElement("div", {
-      style: { fontFamily: Fh, fontSize: 14, fontWeight: 800, color: C.navy, textTransform: "uppercase" }
+      style: { width: 60, height: 3, borderRadius: 999, background: C.navy, margin: "0 auto 14px" }
+    }),
+    /*#__PURE__*/React.createElement("div", {
+      style: { fontFamily: Fh, fontSize: 15, fontWeight: 800, color: C.navy, textTransform: "uppercase" }
     }, "Tiayana Logan"),
     /*#__PURE__*/React.createElement("div", {
-      style: { fontFamily: Fb, fontSize: 13, color: C.gray }
+      style: { fontFamily: Fb, fontSize: 13, color: "rgba(10,10,26,0.6)", marginTop: 4 }
     }, "Founder & Executive Director, Legacy Rise Academy")
   )),
 
@@ -2908,7 +2932,7 @@ const FounderBio = ({
     style: { background: C.blueGrad, padding: "56px 24px", textAlign: "center" }
   }, /*#__PURE__*/React.createElement("h2", {
     style: { fontFamily: Fh, fontSize: 26, fontWeight: 900, color: C.white, textTransform: "uppercase", marginBottom: 20 }
-  }, "Join the Legacy Tiayana is Building"), /*#__PURE__*/React.createElement("button", {
+  }, "Join the Legacy Today"), /*#__PURE__*/React.createElement("button", {
     onClick: () => go("enroll"),
     style: { background: C.coral, color: C.white, border: "none", borderRadius: 30, padding: "14px 32px", fontFamily: Fh, fontWeight: 800, fontSize: 15, textTransform: "uppercase", cursor: "pointer" }
   }, "Get Started"))
