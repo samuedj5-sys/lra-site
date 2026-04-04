@@ -166,13 +166,15 @@ const Nav = ({
       alignItems: "center",
       padding: "8px 24px",
       fontSize: 12,
-      fontFamily: Fh
+      fontFamily: Fh,
+      flexWrap: "wrap",
+      gap: 6
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
       color: "rgba(255,255,255,0.55)"
     }
-  }, CFG.email), /*#__PURE__*/React.createElement("div", {
+  }, CFG.email, " | ", CFG.phone), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       gap: 16
@@ -515,20 +517,10 @@ const Foot = ({
   src: I.logo,
   alt: "LRA",
   style: {
-    height: 100,
+    height: 140,
     marginBottom: 14
   }
-}), /*#__PURE__*/React.createElement("div", {
-  style: {
-    marginTop: 12
-  }
-}, /*#__PURE__*/React.createElement("span", {
-  style: {
-    fontFamily: Fh,
-    fontSize: 22,
-    fontWeight: 800
-  }
-}, CFG.phone))), [{
+})), [{
   t: "Our Programs",
   lk: [["afterschool", "Before/After-School"], ["summer", "Summer"], ["enrichment", "Legacy in Action"]]
 }, {
@@ -2860,8 +2852,8 @@ const FounderBio = ({
     style: {
       maxWidth: 700,
       margin: "0 auto",
-      background: "linear-gradient(135deg, rgba(15,97,157,0.06), rgba(239,93,59,0.06))",
-      border: "1px solid rgba(15,97,157,0.1)",
+      background: C.goldLt,
+      border: "1px solid " + C.gold,
       borderRadius: 28,
       padding: "clamp(28px,4vw,48px)",
       position: "relative"
@@ -3227,7 +3219,7 @@ const Careers = ({
     /*#__PURE__*/React.createElement("div", { style: { display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 16 } },
       ["Helps children feel safe and seen", "Builds confidence and social skills", "Supports academic growth beyond the classroom", "Creates spaces where joy, movement, and learning come together"].map((item, i) =>
         /*#__PURE__*/React.createElement("div", { key: i, style: { flex: "0 0 calc(50% - 12px)", minWidth: 220, display: "flex", gap: 12, alignItems: "flex-start", background: C.offW, borderRadius: 14, padding: "18px 20px" } },
-          /*#__PURE__*/React.createElement("span", { style: { color: [C.gold, C.coral, C.blue, C.green][i], fontWeight: 800, fontSize: 20, flexShrink: 0 } }, "2713"),
+          /*#__PURE__*/React.createElement("span", { style: { color: [C.gold, C.coral, C.blue, C.green][i], fontWeight: 800, fontSize: 20, flexShrink: 0 } }, "\u2713"),
           /*#__PURE__*/React.createElement("span", { style: { fontFamily: Fb, fontSize: 15, color: C.navy, lineHeight: 1.5 } }, item)
         )
       )
