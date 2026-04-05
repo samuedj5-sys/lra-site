@@ -16,7 +16,8 @@
 .actGrid{grid-template-columns:1fr!important}
 .about-two-col{grid-template-columns:1fr!important!important}
 .about-story-grid{grid-template-columns:1fr!important!important}
-.founder-grid{grid-template-columns:1fr!important!important}
+.founder-grid{grid-template-columns:1fr!important;gap:24px!important}
+.mobile-center-bar{margin:0 auto!important}
 .pillars-grid{grid-template-columns:1fr 1fr!important}
 .pillars-image-wrap{margin-top:20px!important;margin-bottom:26px!important}
 .pillars-image-frame{max-width:100%!important}
@@ -167,20 +168,25 @@ const Nav = ({
       padding: "8px 24px",
       fontSize: 12,
       fontFamily: Fh,
-      flexWrap: "wrap",
-      gap: 6
+      flexWrap: "nowrap",
+      gap: 20
     }
   }, /*#__PURE__*/React.createElement("span", {
     style: {
       color: "rgba(255,255,255,0.55)",
-      fontSize: 11
+      fontSize: 11,
+      whiteSpace: "nowrap",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      minWidth: 0
     }
   }, CFG.email, " | ", CFG.phone), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       gap: 16,
       alignItems: "center",
-      marginLeft: "auto"
+      marginLeft: "auto",
+      flexShrink: 0
     }
   }, /*#__PURE__*/React.createElement("a", {
     href: "https://www.facebook.com/people/Legacy-Rise-Academy/61581914596974/",
@@ -2755,15 +2761,15 @@ const FounderBio = ({
       margin: "0 auto",
       display: "grid",
       gridTemplateColumns: "minmax(0,340px) 1fr",
-      gap: 32,
+      gap: 40,
       alignItems: "center",
       position: "relative",
       zIndex: 2
     },
-    className: "founder-grid mobile-center"
+    className: "founder-grid"
   },
     /*#__PURE__*/React.createElement("div", {
-      style: { position: "relative", maxWidth: 340, margin: "0 auto" }
+      style: { position: "relative", maxWidth: 340, margin: "0 auto", width: "100%" }
     },
       /*#__PURE__*/React.createElement("div", {
         style: {
@@ -2829,6 +2835,7 @@ const FounderBio = ({
         }
       }, "Mother. Educator. Visionary Leader. Community Builder."),
       /*#__PURE__*/React.createElement("div", {
+        className: "mobile-center-bar",
         style: {
           width: 80,
           height: 4,
@@ -3563,7 +3570,7 @@ function App() {
   }), /*#__PURE__*/React.createElement("link", {
     href: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap",
     rel: "stylesheet"
-  }), /*#__PURE__*/React.createElement("style", null, `*{box-sizing:border-box;margin:0;padding:0}body{margin:0}input,select,textarea,button{font-family:inherit}img{max-width:100%}@media(max-width:768px){.dN{display:none!important}.mB{display:flex!important}.hero-grid{grid-template-columns:1fr!important}.actGrid{grid-template-columns:1fr!important}.about-two-col{grid-template-columns:1fr!important!important}.about-story-grid{grid-template-columns:1fr!important!important}.founder-grid{grid-template-columns:1fr!important!important}.pillars-grid{grid-template-columns:1fr 1fr!important}.pillars-image-wrap{margin-top:20px!important;margin-bottom:26px!important}.pillars-image-frame{max-width:100%!important}.pillars-image-frame img{border-radius:18px!important}.mobile-center{text-align:center!important}.mobile-center-flex{align-items:center!important}.mobile-full{max-width:100%!important}}@media(max-width:560px){.pillars-grid{grid-template-columns:1fr!important}}@media(min-width:769px){.mB{display:none!important}.mM{display:none!important}}`), /*#__PURE__*/React.createElement(Nav, {
+  }), /*#__PURE__*/React.createElement("style", null, `*{box-sizing:border-box;margin:0;padding:0}body{margin:0}input,select,textarea,button{font-family:inherit}img{max-width:100%}@media(max-width:768px){.dN{display:none!important}.mB{display:flex!important}.hero-grid{grid-template-columns:1fr!important}.actGrid{grid-template-columns:1fr!important}.about-two-col{grid-template-columns:1fr!important!important}.about-story-grid{grid-template-columns:1fr!important!important}.founder-grid{grid-template-columns:1fr!important;gap:24px!important}.mobile-center-bar{margin:0 auto!important}.pillars-grid{grid-template-columns:1fr 1fr!important}.pillars-image-wrap{margin-top:20px!important;margin-bottom:26px!important}.pillars-image-frame{max-width:100%!important}.pillars-image-frame img{border-radius:18px!important}.mobile-center{text-align:center!important}.mobile-center-flex{align-items:center!important}.mobile-full{max-width:100%!important}}@media(max-width:560px){.pillars-grid{grid-template-columns:1fr!important}}@media(min-width:769px){.mB{display:none!important}.mM{display:none!important}}`), /*#__PURE__*/React.createElement(Nav, {
     page: page,
     go: go
   }), page === "home" && /*#__PURE__*/React.createElement(Home, {
