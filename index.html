@@ -478,8 +478,8 @@ const Nav = ({
   }, "Announcement"), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: Fb,
-      fontSize: 20,
-      fontWeight: 600,
+      fontSize: "clamp(20px,3.5vw,26px)",
+      fontWeight: 700,
       color: C.navy
     }
   }, "Enrolling for Summer Program"), /*#__PURE__*/React.createElement("a", {
@@ -488,11 +488,13 @@ const Nav = ({
     rel: "noreferrer",
     style: {
       fontFamily: Fh,
-      fontSize: 15,
-      fontWeight: 700,
+      fontSize: "clamp(16px,3vw,20px)",
+      fontWeight: 800,
       color: C.blue,
       textDecoration: "underline",
-      cursor: "pointer"
+      cursor: "pointer",
+      textTransform: "uppercase",
+      letterSpacing: 0.5
     }
   }, "Register Now \u2192")));
 };
