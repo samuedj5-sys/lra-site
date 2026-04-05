@@ -30,8 +30,6 @@
 }
 @media(min-width:769px){.mB{display:none!important}.mM{display:none!important}}
 @media(max-width:768px){
-.hero-photos{overflow:hidden!important;min-height:260px!important}
-.hero-photos .polaroid{display:none!important}
 .topbar{padding:6px 12px!important}
 .topbar .topbar-contact{font-size:9px!important;line-height:1.3}
 .topbar .topbar-icons{gap:10px!important}
@@ -312,14 +310,14 @@ const Home = ({go}) => {
           ),
           React.createElement("button", {onClick:()=>go("enroll"),style:{background:C.green,color:C.white,border:"none",borderRadius:30,padding:"16px 40px",fontFamily:Fh,fontWeight:800,fontSize:16,textTransform:"uppercase",letterSpacing:1,cursor:"pointer"}}, "Get Started")
         ),
-        React.createElement("div", {className:"hero-photos",style:{position:"relative",minHeight:"clamp(350px,50vw,520px)"}},
+        React.createElement("div", {style:{position:"relative",minHeight:"clamp(350px,50vw,520px)"}},
           React.createElement("div", {style:{position:"absolute",left:"5%",top:"5%",width:"65%",zIndex:2}},
             React.createElement("div", {style:{position:"absolute",inset:-6,borderRadius:22,background:"linear-gradient(135deg, #ffc91f, #ef5d3b, #fa4dc8)",zIndex:0}}),
             React.createElement("img", {src:"/images/DSC03071.JPG",alt:"Legacy Rise Academy",style:{width:"100%",height:320,objectFit:"cover",objectPosition:"center center",borderRadius:18,position:"relative",zIndex:1,display:"block",boxShadow:"0 16px 48px rgba(0,0,0,0.3)"}})
           ),
-          React.createElement("div", {className:"polaroid"},React.createElement(Polaroid, {src:"/images/DSC03124.JPG",rotate:5,style:{position:"absolute",right:"0%",top:"0%",width:"36%",zIndex:3}})),
-          React.createElement("div", {className:"polaroid"},React.createElement(Polaroid, {src:"/images/DSC03065.JPG",rotate:-6,style:{position:"absolute",left:"0%",bottom:"2%",width:"36%",zIndex:3}})),
-          React.createElement("div", {className:"polaroid"},React.createElement(Polaroid, {src:"/images/DSC03044.JPG",rotate:4,style:{position:"absolute",right:"3%",bottom:"2%",width:"36%",zIndex:3}}))
+          React.createElement(Polaroid, {src:"/images/DSC03124.JPG",rotate:5,style:{position:"absolute",right:"0%",top:"0%",width:"36%",zIndex:3}}),
+          React.createElement(Polaroid, {src:"/images/DSC03065.JPG",rotate:-6,style:{position:"absolute",left:"0%",bottom:"2%",width:"36%",zIndex:3}}),
+          React.createElement(Polaroid, {src:"/images/DSC03044.JPG",rotate:4,style:{position:"absolute",right:"3%",bottom:"2%",width:"36%",zIndex:3}})
         )
       )
     ),
@@ -332,7 +330,7 @@ const Home = ({go}) => {
         React.createElement("div", null,
           React.createElement("h2", {style:{fontFamily:Fh,fontSize:"clamp(24px,4.5vw,38px)",fontWeight:900,color:C.white,textTransform:"uppercase",marginBottom:10,lineHeight:1.15}},
             "WHERE LEARNING CONTINUES AND ",
-            React.createElement("span", {style:{background:C.gold,color:C.navy,padding:"2px 10px"}}, "LEGACIES BEGIN !")
+            React.createElement("span", {style:{background:C.gold,color:C.navy,padding:"4px 10px",display:"inline-block",lineHeight:1.3,borderRadius:4}}, "LEGACIES BEGIN !")
           ),
           React.createElement("h3", {style:{fontFamily:Fh,fontSize:17,fontWeight:800,color:C.white,textTransform:"uppercase",marginBottom:14}}, "Before School. After School. Summer. All in One Powerful Experience."),
           React.createElement("div", null,
