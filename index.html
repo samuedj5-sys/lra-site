@@ -126,9 +126,9 @@ const Nav = ({page, go}) => {
       )
     ),
     React.createElement("nav", {style:{position:"sticky",top:0,zIndex:999,background:C.white,boxShadow:sc?"0 2px 20px rgba(0,0,0,0.08)":"0 1px 0 rgba(0,0,0,0.06)",transition:"0.3s"}},
-      React.createElement("div", {style:{maxWidth:1200,margin:"0 auto",display:"flex",alignItems:"center",justifyContent:"space-between",height:80,padding:"0 16px"}},
+      React.createElement("div", {style:{maxWidth:1200,margin:"0 auto",display:"flex",alignItems:"center",justifyContent:"space-between",height:100,padding:"0 16px"}},
         React.createElement("div", {onClick:()=>go("home"),style:{cursor:"pointer",flexShrink:0}},
-          React.createElement("img", {src:I.logo,alt:"LRA",style:{height:75}})
+          React.createElement("img", {src:I.logo,alt:"LRA",style:{height:110}})
         ),
         React.createElement("div", {className:"dN",style:{display:"flex",alignItems:"center",gap:2}},
           navItems.map(item=>React.createElement("div", {key:item.id,style:{position:"relative"},onMouseEnter:()=>item.children&&setDd(item.id),onMouseLeave:()=>setDd(null)},
