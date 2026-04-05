@@ -311,13 +311,13 @@ const Home = ({go}) => {
           React.createElement("button", {onClick:()=>go("enroll"),style:{background:C.green,color:C.white,border:"none",borderRadius:30,padding:"16px 40px",fontFamily:Fh,fontWeight:800,fontSize:16,textTransform:"uppercase",letterSpacing:1,cursor:"pointer"}}, "Get Started")
         ),
         React.createElement("div", {style:{position:"relative",minHeight:"clamp(350px,50vw,520px)"}},
-          React.createElement("div", {style:{position:"absolute",left:"5%",top:"5%",width:"65%",zIndex:2}},
+          React.createElement("div", {style:{position:"absolute",left:"12%",top:"5%",width:"76%",zIndex:2}},
             React.createElement("div", {style:{position:"absolute",inset:-6,borderRadius:22,background:"linear-gradient(135deg, #ffc91f, #ef5d3b, #fa4dc8)",zIndex:0}}),
             React.createElement("img", {src:"/images/DSC03071.JPG",alt:"Legacy Rise Academy",style:{width:"100%",height:320,objectFit:"cover",objectPosition:"center center",borderRadius:18,position:"relative",zIndex:1,display:"block",boxShadow:"0 16px 48px rgba(0,0,0,0.3)"}})
           ),
-          React.createElement(Polaroid, {src:"/images/DSC03124.JPG",rotate:5,style:{position:"absolute",right:"0%",top:"0%",width:"36%",zIndex:3}}),
-          React.createElement(Polaroid, {src:"/images/DSC03065.JPG",rotate:-6,style:{position:"absolute",left:"0%",bottom:"2%",width:"36%",zIndex:3}}),
-          React.createElement(Polaroid, {src:"/images/DSC03044.JPG",rotate:4,style:{position:"absolute",right:"3%",bottom:"2%",width:"36%",zIndex:3}})
+          React.createElement(Polaroid, {src:"/images/DSC03124.JPG",rotate:5,style:{position:"absolute",right:"-2%",top:"2%",width:"24%",zIndex:1}}),
+          React.createElement(Polaroid, {src:"/images/DSC03065.JPG",rotate:-6,style:{position:"absolute",left:"-2%",bottom:"5%",width:"24%",zIndex:1}}),
+          React.createElement(Polaroid, {src:"/images/DSC03044.JPG",rotate:4,style:{position:"absolute",right:"-2%",bottom:"5%",width:"24%",zIndex:1}})
         )
       )
     ),
@@ -683,6 +683,23 @@ const Careers = ({go}) => React.createElement(React.Fragment, null,
           React.createElement("span", {style:{fontFamily:Fh,fontSize:16,fontWeight:700,color:C.navy}}, r),
           React.createElement("span", {style:{fontFamily:Fh,fontSize:12,fontWeight:700,color:C.blue,cursor:"pointer"}}, "View on Indeed →")
         )
+      )
+    )
+  ),
+  React.createElement("section", {style:{background:C.white,padding:"72px 24px"}},
+    React.createElement("div", {style:{maxWidth:900,margin:"0 auto"}},
+      React.createElement("h2", {style:{fontFamily:Fh,fontSize:"clamp(24px,4vw,34px)",fontWeight:900,color:C.navy,textTransform:"uppercase",marginBottom:8,textAlign:"center"}}, "Who Thrives Here"),
+      React.createElement("p", {style:{fontFamily:Fb,fontSize:16,color:C.gray,lineHeight:1.8,marginBottom:32,textAlign:"center",maxWidth:600,margin:"0 auto 32px"}}, "We are not just building a program. We are building a legacy. The right people make all the difference."),
+      React.createElement("div", {style:{display:"flex",flexWrap:"wrap",gap:16,justifyContent:"center"}},
+        [
+          {label:"Thrives Here",role:"All Before & After School Staff",c:C.blue},
+          {label:"Thrives Here",role:"Summer Program Educators",c:C.green},
+          {label:"Thrives Here",role:"Enrichment & Activity Leaders",c:C.coral},
+          {label:"Thrives Here",role:"Operations & Support Staff",c:C.gold}
+        ].map((item,i)=>React.createElement("div", {key:i,style:{flex:"0 0 calc(50% - 8px)",minWidth:220,background:C.offW,borderRadius:16,padding:"22px 24px",borderLeft:"4px solid "+item.c}},
+          React.createElement("div", {style:{fontFamily:Fh,fontSize:11,fontWeight:800,letterSpacing:1.4,textTransform:"uppercase",color:item.c,marginBottom:6}}, item.label),
+          React.createElement("div", {style:{fontFamily:Fh,fontSize:17,fontWeight:900,color:C.navy}}, item.role)
+        ))
       )
     )
   ),
