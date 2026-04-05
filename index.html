@@ -100,7 +100,7 @@ const Nav = ({page, go}) => {
   const navItems = [
     {id:"home",label:"Home"},
     {id:"about",label:"About",children:[{id:"about",label:"Our Story"},{id:"founder",label:"Meet the Founder"},{id:"team",label:"Our Team"}]},
-    {id:"programs",label:"Our Programs",children:[{id:"afterschool",label:"Before & After School Programs"},{id:"summer",label:"Summer Programs"},{id:"enrichment",label:"Legacy in Action"}]},
+    {id:"programs",label:"Our Programs",children:[{id:"afterschool",label:"Before/After-School Programs"},{id:"summer",label:"Summer Programs"},{id:"enrichment",label:"Legacy in Action"}]},
     {id:"locations",label:"Locations"},
     {id:"partnerships",label:"For Schools"},
     {id:"careers",label:"Careers"},
@@ -202,10 +202,18 @@ const Form = ({blue}) => {
   const inp = {width:"100%",padding:"14px 16px",border:"none",borderRadius:10,fontFamily:Fb,fontSize:15,outline:"none",boxSizing:"border-box",background:blue?"rgba(255,255,255,0.95)":"#f0f2f5"};
   const lbl = {fontFamily:Fh,fontSize:13,fontWeight:700,color:blue?C.white:C.navy,display:"block",marginBottom:6};
   return React.createElement("form", {onSubmit:sub},
-    [["First Name",true],["Last Name",true],["Email",true],["Phone",false]].map(([l,req],i)=>React.createElement("div", {key:i,style:{marginBottom:14}},
-      React.createElement("label", {style:lbl}, l," ",req&&React.createElement("span", {style:{color:C.coral}}, "*")),
-      React.createElement("input", {name:l.toLowerCase().replace(/ /g,"_"),type:l==="Email"?"email":"text",required:req,style:inp})
-    )),
+    React.createElement("div", {style:{display:"flex",gap:12}},
+      ["First Name","Last Name"].map((l,i)=>React.createElement("div", {key:i,style:{marginBottom:14,flex:1}},
+        React.createElement("label", {style:lbl}, l," ",React.createElement("span", {style:{color:C.coral}}, "*")),
+        React.createElement("input", {name:l.toLowerCase().replace(/ /g,"_"),type:"text",required:true,style:inp})
+      ))
+    ),
+    React.createElement("div", {style:{display:"flex",gap:12}},
+      [["Email",true],["Phone",false]].map(([l,req],i)=>React.createElement("div", {key:i,style:{marginBottom:14,flex:1}},
+        React.createElement("label", {style:lbl}, l," ",req&&React.createElement("span", {style:{color:C.coral}}, "*")),
+        React.createElement("input", {name:l.toLowerCase().replace(/ /g,"_"),type:l==="Email"?"email":"text",required:req,style:inp})
+      ))
+    ),
     React.createElement("div", {style:{marginBottom:14}},
       React.createElement("label", {style:lbl}, "I am a..."),
       React.createElement("select", {name:"role",style:inp},
@@ -722,7 +730,7 @@ const Programs = ({go}) => React.createElement(React.Fragment, null,
   React.createElement(Hero, {title:"Our Programs",sub:"From after school enrichment to summer adventures, every program nurtures the whole child.",img:I.k1}),
   React.createElement("section", {style:{background:C.offW,padding:"72px 24px"}},
     React.createElement("div", {style:{maxWidth:1000,margin:"0 auto",display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:24}},
-      [{t:"Before & After School Programs",d:"A safe, enriching environment for K-12 scholars.",img:I.k1,tag:"Now Enrolling",tc:C.green,id:"afterschool"},
+      [{t:"Before/After-School Programs",d:"A safe, enriching environment for K-12 scholars.",img:I.k1,tag:"Now Enrolling",tc:C.green,id:"afterschool"},
        {t:"Summer Programs",d:"Themed adventure weeks of academics and movement.",img:I.j2,tag:"Coming Soon",tc:C.amber,id:"summer"},
        {t:"Legacy in Action",d:"Sign language, financial literacy, etiquette, fitness, and technology.",img:I.pr1,tag:"Year-Round",tc:C.blue,id:"enrichment"}
       ].map((p,i)=>React.createElement("div", {key:i,onClick:()=>go(p.id),style:{borderRadius:20,overflow:"hidden",background:C.white,boxShadow:"0 4px 24px rgba(0,0,0,0.06)",cursor:"pointer",border:"1px solid "+C.grayLt}},
@@ -739,7 +747,7 @@ const Programs = ({go}) => React.createElement(React.Fragment, null,
   )
 );
 
-const AfterSchool = ({go}) => React.createElement(ProgPage, {go,title:"Before & After School Programs",sub:"PK-12 Scholars | Now Enrolling",desc:"Our After School Program provides a safe, structured, and enriching environment for scholars in grades K through 12.",features:["Academic enrichment through STEM, literacy, and learning support","Creative exploration through media, music, culinary arts, and movement","Character development rooted in leadership and teamwork","Safe supervision with intentional transitions","Exposure to mentors and real-world experiences","Culturally responsive programming"],highlight:"We are not simply after school care. We are a leadership lab for young scholars.",img:I.k1});
+const AfterSchool = ({go}) => React.createElement(ProgPage, {go,title:"Before/After-School Programs",sub:"K-12 Scholars | Now Enrolling",desc:"Our After School Program provides a safe, structured, and enriching environment for scholars in grades K through 12.",features:["Academic enrichment through STEM, literacy, and learning support","Creative exploration through media, music, culinary arts, and movement","Character development rooted in leadership and teamwork","Safe supervision with intentional transitions","Exposure to mentors and real-world experiences","Culturally responsive programming"],highlight:"We are not simply after school care. We are a leadership lab for young scholars.",img:I.k1});
 
 const Summer = ({go}) => React.createElement(ProgPage, {go,title:"Summer Programs",sub:"PK - 12",desc:"Our Summer Enrichment Experience keeps scholars engaged and inspired through meaningful, joy-filled experiences.",features:["Themed learning weeks with literacy, STEM, and projects","Field experiences with community partners","Leadership challenges","Physical wellness and movement","Creative arts and cultural exploration","Structured for working families"],highlight:"Summer at Legacy Rise is about growth, discovery, and empowerment.",img:I.j2});
 
@@ -817,9 +825,6 @@ const Enroll = ({go}) => React.createElement(React.Fragment, null,
       )
     )
   ),
-  React.createElement("div", null,
-    React.createElement("img", {src:I.j1,alt:"",style:{width:"100%",height:300,objectFit:"contain",display:"block"}})
-  )
 );
 
 function App() {
