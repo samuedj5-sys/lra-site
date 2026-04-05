@@ -29,6 +29,11 @@
 .pillars-grid{grid-template-columns:1fr!important}
 }
 @media(min-width:769px){.mB{display:none!important}.mM{display:none!important}}
+@media(max-width:768px){
+.topbar{flex-direction:column!important;gap:4px!important;padding:6px 12px!important;text-align:center}
+.topbar .topbar-contact{font-size:10px!important;text-align:center}
+.topbar .topbar-icons{justify-content:center!important}
+}
 </style>
 </head>
 <body>
@@ -101,9 +106,9 @@ const Nav = ({page, go}) => {
     {id:"faq",label:"Family Guide"}
   ];
   return React.createElement("header", null,
-    React.createElement("div", {style:{background:C.navy,display:"flex",justifyContent:"space-between",alignItems:"center",padding:"8px 24px",fontSize:12,fontFamily:Fh,flexWrap:"wrap",gap:6}},
-      React.createElement("span", {style:{color:"rgba(255,255,255,0.55)"}}, CFG.email+" | "+CFG.phone),
-      React.createElement("div", {style:{display:"flex",gap:16}},
+    React.createElement("div", {className:"topbar",style:{background:C.navy,display:"flex",justifyContent:"space-between",alignItems:"center",padding:"8px 16px",fontSize:12,fontFamily:Fh,gap:6}},
+      React.createElement("span", {className:"topbar-contact",style:{color:"rgba(255,255,255,0.55)"}}, CFG.email+" | "+CFG.phone),
+      React.createElement("div", {className:"topbar-icons",style:{display:"flex",gap:16}},
         React.createElement("a", {href:"https://www.facebook.com/people/Legacy-Rise-Academy/61581914596974/",target:"_blank",rel:"noreferrer",style:{color:"rgba(255,255,255,0.55)",textDecoration:"none",display:"flex",alignItems:"center"}},
           React.createElement("svg", {width:"16",height:"16",viewBox:"0 0 24 24",fill:"rgba(255,255,255,0.55)",stroke:"none"},
             React.createElement("path", {d:"M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"})
