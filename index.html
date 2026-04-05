@@ -120,9 +120,9 @@ const Nav = ({page, go}) => {
       )
     ),
     React.createElement("nav", {style:{position:"sticky",top:0,zIndex:999,background:C.white,boxShadow:sc?"0 2px 20px rgba(0,0,0,0.08)":"0 1px 0 rgba(0,0,0,0.06)",transition:"0.3s"}},
-      React.createElement("div", {style:{maxWidth:1200,margin:"0 auto",display:"flex",alignItems:"center",justifyContent:"space-between",height:115,padding:"0 24px"}},
-        React.createElement("div", {onClick:()=>go("home"),style:{cursor:"pointer"}},
-          React.createElement("img", {src:I.logo,alt:"LRA",style:{height:140}})
+      React.createElement("div", {style:{maxWidth:1200,margin:"0 auto",display:"flex",alignItems:"center",justifyContent:"space-between",height:80,padding:"0 16px"}},
+        React.createElement("div", {onClick:()=>go("home"),style:{cursor:"pointer",flexShrink:0}},
+          React.createElement("img", {src:I.logo,alt:"LRA",style:{height:75}})
         ),
         React.createElement("div", {className:"dN",style:{display:"flex",alignItems:"center",gap:2}},
           navItems.map(item=>React.createElement("div", {key:item.id,style:{position:"relative"},onMouseEnter:()=>item.children&&setDd(item.id),onMouseLeave:()=>setDd(null)},
@@ -135,10 +135,12 @@ const Nav = ({page, go}) => {
             )
           ))
         ),
-        React.createElement("button", {onClick:()=>go("enroll"),style:{background:C.coral,color:C.white,border:"none",borderRadius:30,padding:"11px 26px",fontFamily:Fh,fontWeight:800,fontSize:13,textTransform:"uppercase",letterSpacing:0.5,cursor:"pointer",marginLeft:8}}, "Get Started")
-      ),
-      React.createElement("button", {className:"mB",onClick:()=>setMOpen(!mOpen),style:{display:"none",background:"none",border:"none",cursor:"pointer",padding:8,flexDirection:"column",gap:5}},
-        [0,1,2].map(i=>React.createElement("span", {key:i,style:{display:"block",width:26,height:3,background:C.navy,borderRadius:2,transition:"0.3s",transform:i===0&&mOpen?"rotate(45deg) translate(5px,5px)":i===2&&mOpen?"rotate(-45deg) translate(5px,-5px)":"none",opacity:i===1&&mOpen?0:1}}))
+        React.createElement("div", {style:{display:"flex",alignItems:"center",gap:12}},
+          React.createElement("button", {className:"dN",onClick:()=>go("enroll"),style:{background:C.coral,color:C.white,border:"none",borderRadius:30,padding:"11px 26px",fontFamily:Fh,fontWeight:800,fontSize:13,textTransform:"uppercase",letterSpacing:0.5,cursor:"pointer"}}, "Get Started"),
+          React.createElement("button", {className:"mB",onClick:()=>setMOpen(!mOpen),style:{display:"none",background:"none",border:"none",cursor:"pointer",padding:"8px",flexDirection:"column",gap:5,alignItems:"center",justifyContent:"center"}},
+            [0,1,2].map(i=>React.createElement("span", {key:i,style:{display:"block",width:26,height:3,background:C.navy,borderRadius:2,transition:"0.3s",transform:i===0&&mOpen?"rotate(45deg) translate(5px,5px)":i===2&&mOpen?"rotate(-45deg) translate(5px,-5px)":"none",opacity:i===1&&mOpen?0:1}}))
+          )
+        )
       ),
       mOpen&&React.createElement("div", {className:"mM",style:{padding:"8px 20px 24px",borderTop:"1px solid "+C.grayLt}},
         navItems.map(item=>React.createElement("div", {key:item.id},
@@ -153,7 +155,7 @@ const Nav = ({page, go}) => {
     ),
     React.createElement("div", {style:{background:C.goldLt,padding:"20px 24px",display:"flex",justifyContent:"center",gap:16,flexWrap:"wrap",alignItems:"center",borderBottom:"3px solid "+C.gold}},
       React.createElement("span", {style:{background:C.gold,borderRadius:20,padding:"6px 18px",fontFamily:Fh,fontSize:13,fontWeight:800,color:C.navy,textTransform:"uppercase",letterSpacing:1.2}}, "Announcement"),
-      React.createElement("span", {style:{fontFamily:Fh,fontSize:20,fontWeight:800,color:C.navy,letterSpacing:0.3}}, "Now Enrolling for Summer"),
+      React.createElement("span", {style:{fontFamily:Fh,fontSize:20,fontWeight:800,color:C.navy,letterSpacing:0.3}}, "Now Enrolling for Summer 2026!"),
       React.createElement("a", {href:"https://newbirth.fellowshiponego.com/external/form/b100f9cc-0da0-44c8-a36a-9e6dfa71dbde",target:"_blank",rel:"noreferrer",style:{fontFamily:Fh,fontSize:16,fontWeight:700,color:C.blue,textDecoration:"underline",cursor:"pointer"}}, "Register Now →")
     )
   );
