@@ -478,21 +478,23 @@ const Nav = ({
   }, "Announcement"), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: Fb,
-      fontSize: 16,
-      fontWeight: 500,
+      fontSize: 20,
+      fontWeight: 600,
       color: C.navy
     }
-  }, "Enrolling for Summer Program"), /*#__PURE__*/React.createElement("span", {
-    onClick: () => go("enroll"),
+  }, "Enrolling for Summer Program"), /*#__PURE__*/React.createElement("a", {
+    href: "https://newbirth.fellowshiponego.com/external/form/b100f9cc-0da0-44c8-a36a-9e6dfa71dbde",
+    target: "_blank",
+    rel: "noreferrer",
     style: {
       fontFamily: Fh,
-      fontSize: 14,
+      fontSize: 15,
       fontWeight: 700,
       color: C.blue,
       textDecoration: "underline",
       cursor: "pointer"
     }
-  }, "Learn more \u2192")));
+  }, "Register Now \u2192")));
 };
 
 /* FOOTER - removed Blog, Register/Login, Discounts */
@@ -3317,6 +3319,15 @@ const Careers = ({
         )
       )
     )
+  )
+),
+/*#__PURE__*/React.createElement("section", { style: { background: C.offW, padding: "48px 24px" } },
+  /*#__PURE__*/React.createElement("div", { style: { maxWidth: 900, margin: "0 auto", borderRadius: 20, overflow: "hidden", boxShadow: "0 12px 40px rgba(0,0,0,0.1)" } },
+    /*#__PURE__*/React.createElement("img", {
+      src: "/images/D70AC3A8-A6DE-4AFA-B577-20D8FE26343E.PNG",
+      alt: "Legacy Rise Academy team",
+      style: { width: "100%", height: "clamp(250px,35vw,400px)", objectFit: "cover", display: "block" }
+    })
   )
 ),
 /*#__PURE__*/React.createElement("section", { style: { background: C.white, padding: "72px 24px" } },
